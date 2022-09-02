@@ -20,6 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
+127.0.0.1 test.test
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
