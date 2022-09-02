@@ -20,7 +20,6 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-127.0.0.1 test.test
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
@@ -313,7 +312,7 @@
 127.0.0.1 windwinter.tistory.com
 127.0.0.1 malangmalang.com
 127.0.0.1 poki.com
-127.0.0.1 test.io
+127.0.0.1 test2.io
 
 # toon
 127.0.0.1 comic.naver.com
