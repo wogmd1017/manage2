@@ -6,7 +6,7 @@ This project is to manage 30 classroom computers(Win10 Home ver.) easily.
 4. Prohibit installing VPN from browsers addon by hosts file, inbuilt firewall, regedit.exe, gpedit.msc
 
 
-1. Modify hosts file
+Modify hosts file
   Teacher edits hosts file on github
   Logon Admin account
   Download wget.exe from https://eternallybored.org/misc/wget/
