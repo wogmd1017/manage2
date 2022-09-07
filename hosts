@@ -20,6 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
+# 2022.09.07
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
@@ -57,6 +58,7 @@
 127.0.0.1 www.iogames.space
 127.0.0.1 123shoot.io
 127.0.0.1 Agar.io
+127.0.0.1 amongarena.io
 127.0.0.1 Antwar.io
 127.0.0.1 Aquapark.io
 127.0.0.1 Aquar.io
@@ -118,6 +120,7 @@
 127.0.0.1 Evades.io
 127.0.0.1 Evowars.io
 127.0.0.1 Fightz.io
+127.0.0.1 fisheater.io
 127.0.0.1 Flyordie.io
 127.0.0.1 Foes.io
 127.0.0.1 Galaxystrife.io
@@ -138,6 +141,7 @@
 127.0.0.1 Hexar.io
 127.0.0.1 Hole.io
 127.0.0.1 Hordes.io
+127.0.0.1 htmlreference.io
 127.0.0.1 Junon.io
 127.0.0.1 karnage.io
 127.0.0.1 Killer.io
@@ -312,7 +316,12 @@
 127.0.0.1 windwinter.tistory.com
 127.0.0.1 malangmalang.com
 127.0.0.1 poki.com
-127.0.0.1 test2.io
+127.0.0.1 player03.com
+127.0.0.1 mrearly.co.kr
+127.0.0.1 entertaininggames.club
+127.0.0.1 www-arealme-com
+127.0.0.1 www.arealme.com
+127.0.0.1 humanbenchmark.com
 
 # toon
 127.0.0.1 comic.naver.com
@@ -342,6 +351,9 @@
 127.0.0.1 www.qtoon.co.kr
 127.0.0.1 qtoon.co.kr
 127.0.0.1 m.qtoon.co.kr
+127.0.0.1 blacktoon66.com
+127.0.0.1 blacktoon189.com
+127.0.0.1 blacktoon190.com
 
 # store
 127.0.0.1 chrome.google.com
@@ -350,6 +362,8 @@
 127.0.0.1 www.microsoftedge.microsoft.com
 127.0.0.1 microsoft.com
 127.0.0.1 www.microsoft.com
+127.0.0.1 en.softonic.com
+127.0.0.1 www.softonic.com
 
 # video
 127.0.0.1 www.youtube.com
@@ -387,6 +401,8 @@
 127.0.0.1 qooqootvi.com
 127.0.0.1 k47.qooqootv.fun
 127.0.0.1 qooqootv.fun
+127.0.0.1 a22.joytv.cam
+127.0.0.1 a23.joytv.cam
 
 # sns
 127.0.0.1 www.instagram.com
@@ -441,6 +457,24 @@
 127.0.0.1 kproxy.com
 127.0.0.1 www.kproxy.com
 
+# link
+127.0.0.1 ddnews.co.kr
+127.0.0.1 www.hotword.site
+127.0.0.1 linkssg2.com
+127.0.0.1 linksch.co.kr
+127.0.0.1 nopiamanual.net
+127.0.0.1 extrememanual.net
+127.0.0.1 links.giveawayoftheday.com
+127.0.0.1 gflix.kr
+
+# shop
+127.0.0.1 auction.co.kr
+127.0.0.1 gmarket.co.kr
+127.0.0.1 smartstore.naver.com
+127.0.0.1 bunjang.co.kr
+127.0.0.1 m.bunjang.co.kr
+127.0.0.1 www.bunjang.co.kr
+
 # etc
 127.0.0.1 namu.wiki
 127.0.0.1 www.namu.wiki
@@ -464,9 +498,6 @@
 127.0.0.1 m.todayhumor.co.kr
 127.0.0.1 www.kurly.com
 127.0.0.1 ko.wikihow.com
-127.0.0.1 auction.co.kr
-127.0.0.1 gmarket.co.kr
-127.0.0.1 smartstore.naver.com
 127.0.0.1 www.op.gg
 127.0.0.1 op.gg
 127.0.0.1 www.bithumb.com
@@ -481,9 +512,8 @@
 127.0.0.1 mlbpark.donga.com
 127.0.0.1 secretdns.kilho.net
 127.0.0.1 down.kilho.net
-127.0.0.1 www.hotword.site
-127.0.0.1 linkssg2.com
-127.0.0.1 linksch.co.kr
+127.0.0.1 map.naver.com
+127.0.0.1 accounts.malangmalang.com
 
 # news
 127.0.0.1 news.naver.com
