@@ -140,6 +140,7 @@
 127.0.0.1 www.io
 127.0.0.1 iogames.space
 127.0.0.1 www.iogames.space
+127.0.0.1 iogames.onl
 127.0.0.1 123shoot.io
 127.0.0.1 Agar.io
 127.0.0.1 amongarena.io
@@ -402,6 +403,7 @@
 127.0.0.1 m.munpia.com
 127.0.0.1 novel.naver.com
 127.0.0.1 ridibooks.com
+127.0.0.1 view.ridibooks.com
 127.0.0.1 page.kakao.com
 127.0.0.1 novelpia.com
 127.0.0.1 we.novelpia.com
@@ -423,10 +425,12 @@
 127.0.0.1 www.youtube.com
 127.0.0.1 youtube.com
 127.0.0.1 m.youtube.com
+127.0.0.1 accounts.youtube.com
 127.0.0.1 www.tiktok.com
 127.0.0.1 tiktok.com
 127.0.0.1 tv.naver.com
 127.0.0.1 www.tv.naver.com
+127.0.0.1 tv.kakao.com
 127.0.0.1 www.afreecatv.com
 127.0.0.1 afreecatv.com
 127.0.0.1 play.afreecatv.com
@@ -437,6 +441,8 @@
 127.0.0.1 netflix.com
 127.0.0.1 watcha.com
 127.0.0.1 watcha.team
+127.0.0.1 www.tving.com
+127.0.0.1 tving.com
 127.0.0.1 programs.sbs.co.kr
 127.0.0.1 www.kreabaseball.com
 127.0.0.1 www.genie.co.kr
@@ -527,6 +533,7 @@
 127.0.0.1 happybean.naver.com
 127.0.0.1 map.naver.com
 127.0.0.1 adcr.naver.com
+127.0.0.1 kin.naver.com
 127.0.0.1 pann.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
@@ -537,6 +544,8 @@
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
 127.0.0.1 sites.google.com
+127.0.0.1 drive.google.com
+127.0.0.1 accounts.google.com
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
 127.0.0.1 medibangpaint.com
@@ -551,6 +560,7 @@
 127.0.0.1 gmarket.co.kr
 127.0.0.1 m.gmarket.co.kr
 127.0.0.1 www.coupang.com
+127.0.0.1 login.coupang.com
 127.0.0.1 m.www.coupang.com
 127.0.0.1 coupa.ng
 127.0.0.1 coupang.com
@@ -608,6 +618,10 @@
 127.0.0.1 m.dcinside.com
 127.0.0.1 www.dcinside.com
 127.0.0.1 gall.dcinside.com
+127.0.0.1 search.dcinside.com
+127.0.0.1 msign.dcinside.com
+127.0.0.1 edu.dcinside.com
+127.0.0.1 hobby.dcinside.com
 127.0.0.1 todayhumor.co.kr
 127.0.0.1 www.todayhumor.co.kr
 127.0.0.1 m.todayhumor.co.kr
