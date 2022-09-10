@@ -26,24 +26,24 @@
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 play.google.com
-127.0.0.1 vidkidz.tistory.com
-127.0.0.1 www.vidkidz.tistory.com
 127.0.0.1 angeliceyes.tistory.com
 127.0.0.1 www.angeliceyes.tistory.com
+127.0.0.1 baebangdong.tistory.com
+127.0.0.1 cheekyhong.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
-127.0.0.1 cheekyhong.tistory.com
-127.0.0.1 issueresearch1.tistory.com
-127.0.0.1 baebangdong.tistory.com
-127.0.0.1 job-hobby.tistory.com
-127.0.0.1 mynautilus.tistory.com
 127.0.0.1 inter87.tistory.com
-127.0.0.1 windwinter.tistory.com
-127.0.0.1 urllink.tistory.com
+127.0.0.1 issueresearch1.tistory.com
+127.0.0.1 job-hobby.tistory.com
 127.0.0.1 kdgb.tistory.com
-127.0.0.1 younggames.tistory.com
-127.0.0.1 wandookong.tistory.com
+127.0.0.1 mynautilus.tistory.com
 127.0.0.1 rich-useful.tistory.com
+127.0.0.1 urllink.tistory.com
+127.0.0.1 vidkidz.tistory.com
+127.0.0.1 www.vidkidz.tistory.com
+127.0.0.1 wandookong.tistory.com
+127.0.0.1 windwinter.tistory.com
+127.0.0.1 younggames.tistory.com
 127.0.0.1 intlivi.com
 127.0.0.1 www.intlivi.com
 127.0.0.1 flash24.co.kr
@@ -275,6 +275,7 @@
 127.0.0.1 Robostorm.io
 127.0.0.1 Rugby.io
 127.0.0.1 run3.io
+127.0.0.1 fnf.run3.io
 127.0.0.1 Rusher.io
 127.0.0.1 Satelite.io
 127.0.0.1 Schedios.io
@@ -532,6 +533,7 @@
 127.0.0.1 dreamquester.com
 127.0.0.1 happybean.naver.com
 127.0.0.1 map.naver.com
+127.0.0.1 v5.map.naver.com
 127.0.0.1 adcr.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 pann.nate.com
@@ -544,6 +546,7 @@
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
 127.0.0.1 sites.google.com
+127.0.0.1 earth.google.com
 127.0.0.1 drive.google.com
 127.0.0.1 accounts.google.com
 127.0.0.1 www.live.com
@@ -583,9 +586,13 @@
 # news
 127.0.0.1 news.naver.com
 127.0.0.1 m.news.naver.com
+127.0.0.1 sports.naver.com
+127.0.0.1 m.sports.naver.com
+127.0.0.1 sports.news.naver.com
 127.0.0.1 bing.com
 127.0.0.1 www.bing.com
 127.0.0.1 news.daum.net
+127.0.0.1 sports.daum.net
 127.0.0.1 www.msn.com
 127.0.0.1 msn.com
 127.0.0.1 www.chosun.com
@@ -644,6 +651,7 @@
 127.0.0.1 www.taboola.com
 127.0.0.1 api.taboola.com
 127.0.0.1 www.supercup.co.kr
+127.0.0.1 supercup.co.kr
 127.0.0.1 humorpick.com
 
 
