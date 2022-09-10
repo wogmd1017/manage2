@@ -107,6 +107,10 @@
 127.0.0.1 www.game24.co.kr
 127.0.0.1 www.4399.com
 127.0.0.1 news.4399.com
+127.0.0.1 www.zhenhunxiaoshuo.com
+127.0.0.1 xiaoyouxi.2345.com
+127.0.0.1 www.u7u9.com
+
 
 # io games
 127.0.0.1 fight-io.com
@@ -506,6 +510,7 @@
 127.0.0.1 m.blog.naver.com
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
+127.0.0.1 sites.google.com
 
 # shop
 127.0.0.1 auction.co.kr
