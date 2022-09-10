@@ -25,11 +25,6 @@
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
-127.0.0.1 tistory.com
-127.0.0.1 www.tistory.com
-127.0.0.1 blog.naver.com
-127.0.0.1 www.blog.naver.com
-127.0.0.1 m.blog.naver.com
 127.0.0.1 vidkidz.tistory.com
 127.0.0.1 www.vidkidz.tistory.com
 127.0.0.1 angeliceyes.tistory.com
@@ -110,6 +105,8 @@
 127.0.0.1 www.flash365.co.kr
 127.0.0.1 flash365.co.kr
 127.0.0.1 www.game24.co.kr
+127.0.0.1 www.4399.com
+127.0.0.1 news.4399.com
 
 # io games
 127.0.0.1 fight-io.com
@@ -341,13 +338,16 @@
 127.0.0.1 comic.naver.com
 127.0.0.1 m.comic.naver.com
 127.0.0.1 series.naver.com
+127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
+127.0.0.1 m.serieson.naver.com
 127.0.0.1 toptoon.com
 127.0.0.1 page.kakao.com
 127.0.0.1 webtoon.kakao.com
 127.0.0.1 kakao.com
 127.0.0.1 www.kakao.com
 127.0.0.1 m.kakao.com
+127.0.0.1 manga.line.me
 127.0.0.1 www.toptoon.com
 127.0.0.1 blacktoon187.com
 127.0.0.1 www.blacktoon187.com
@@ -359,8 +359,6 @@
 127.0.0.1 www.toomics.com
 127.0.0.1 toomics.com
 127.0.0.1 www.webtoons.com
-127.0.0.1 manga.line.me
-127.0.0.1 serieson.naver.com
 127.0.0.1 www.wattpad.com
 127.0.0.1 webtoonscorp.com
 127.0.0.1 linklove5.com
@@ -373,6 +371,14 @@
 
 # novel
 127.0.0.1 www.munpia.com
+127.0.0.1 munpia.com
+127.0.0.1 m.munpia.com
+127.0.0.1 novel.naver.com
+127.0.0.1 ridibooks.com
+127.0.0.1 page.kakao.com
+127.0.0.1 novelpia.com
+127.0.0.1 we.novelpia.com
+127.0.0.1 www.joara.com
 
 # store
 127.0.0.1 chrome.google.com
@@ -492,6 +498,14 @@
 127.0.0.1 dreamquester.com
 127.0.0.1 happybean.naver.com
 127.0.0.1 map.naver.com
+127.0.0.1 pann.nate.com
+127.0.0.1 tistory.com
+127.0.0.1 www.tistory.com
+127.0.0.1 blog.naver.com
+127.0.0.1 www.blog.naver.com
+127.0.0.1 m.blog.naver.com
+127.0.0.1 blog.daum.net
+127.0.0.1 m.blog.daum.net
 
 # shop
 127.0.0.1 auction.co.kr
