@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2022.09.07
+# 2022.09.10
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
@@ -364,6 +364,7 @@
 127.0.0.1 www.microsoft.com
 127.0.0.1 en.softonic.com
 127.0.0.1 www.softonic.com
+127.0.0.1 storeedgefd.dsx.mp.microsoft.com
 
 # video
 127.0.0.1 www.youtube.com
@@ -475,6 +476,16 @@
 127.0.0.1 m.bunjang.co.kr
 127.0.0.1 www.bunjang.co.kr
 
+# news
+127.0.0.1 news.naver.com
+127.0.0.1 bing.com
+127.0.0.1 news.daum.net
+127.0.0.1 www.msn.com
+127.0.0.1 msn.com
+
+# search
+127.0.0.1 webcache.googleusercontent.com
+
 # etc
 127.0.0.1 namu.wiki
 127.0.0.1 www.namu.wiki
@@ -514,13 +525,6 @@
 127.0.0.1 down.kilho.net
 127.0.0.1 map.naver.com
 127.0.0.1 accounts.malangmalang.com
-
-# news
-127.0.0.1 news.naver.com
-127.0.0.1 bing.com
-127.0.0.1 news.daum.net
-127.0.0.1 www.msn.com
-127.0.0.1 msn.com
 
 # codelove
 127.0.0.1 codelove.com
