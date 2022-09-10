@@ -4,3 +4,4 @@ This project is to manage 30 classroom computers(Win10 Home ver.) easily.
 2. Disable app installing by gpedit.msc or regedit.exe
 3. Prohibit access to control panel by gpedit.msc or regedit.exe
 4. Prohibit installing VPN from browsers addon by hosts file, inbuilt firewall, regedit.exe, gpedit.msc
+5. Prohibit io games by inbuilt firewall with ip range https://www.cloudflare.com/ko-kr/ips/
