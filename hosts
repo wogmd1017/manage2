@@ -33,6 +33,17 @@
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
 127.0.0.1 cheekyhong.tistory.com
+127.0.0.1 issueresearch1.tistory.com
+127.0.0.1 baebangdong.tistory.com
+127.0.0.1 job-hobby.tistory.com
+127.0.0.1 mynautilus.tistory.com
+127.0.0.1 inter87.tistory.com
+127.0.0.1 windwinter.tistory.com
+127.0.0.1 urllink.tistory.com
+127.0.0.1 kdgb.tistory.com
+127.0.0.1 younggames.tistory.com
+127.0.0.1 wandookong.tistory.com
+127.0.0.1 rich-useful.tistory.com
 127.0.0.1 intlivi.com
 127.0.0.1 www.intlivi.com
 127.0.0.1 flash24.co.kr
@@ -61,11 +72,9 @@
 127.0.0.1 sparebeat.com
 127.0.0.1 www.sparebeat.com
 127.0.0.1 taiko.bui.pm
-127.0.0.1 issueresearch1.tistory.com
 127.0.0.1 android-apk.org
 127.0.0.1 www.android-apk.org
 127.0.0.1 thetip.co.kr
-127.0.0.1 baebangdong.tistory.com
 127.0.0.1 kkutu.co.kr
 127.0.0.1 gaamess.com
 127.0.0.1 www.gaamess.com
@@ -74,19 +83,16 @@
 127.0.0.1 assetstore.unity.com
 127.0.0.1 unity.com
 127.0.0.1 www.unity.com
-127.0.0.1 job-hobby.tistory.com
 127.0.0.1 1v1lol.online
-127.0.0.1 mynautilus.tistory.com
 127.0.0.1 jr.naver.com
+127.0.0.1 game.jr.naver.com
 127.0.0.1 static-jr.pstatic.net
 127.0.0.1 flash-jr.pstatic.net
 127.0.0.1 www.arealme.com
 127.0.0.1 www.trex-game.skipser.com
-127.0.0.1 inter87.tistory.com
 127.0.0.1 www.lego.com
 127.0.0.1 lego.com
 127.0.0.1 player03.com
-127.0.0.1 windwinter.tistory.com
 127.0.0.1 poki.com
 127.0.0.1 player03.com
 127.0.0.1 mrearly.co.kr
@@ -118,7 +124,14 @@
 127.0.0.1 m.bilibili.com
 127.0.0.1 search.bilibili.com
 127.0.0.1 space.bilibili.com
-
+127.0.0.1 kidszzanggame.net
+127.0.0.1 www.exotworking.com
+127.0.0.1 zonzaemgame.com
+127.0.0.1 www.simcong.com
+127.0.0.1 bellruns.com
+127.0.0.1 judygame.gameangel.com
+127.0.0.1 www.simsimi.com
+127.0.0.1 gameglobal.co.kr
 
 # io games
 127.0.0.1 fight-io.com
@@ -349,6 +362,8 @@
 # toon
 127.0.0.1 comic.naver.com
 127.0.0.1 m.comic.naver.com
+127.0.0.1 cc.naver.com
+127.0.0.1 nid.naver.com
 127.0.0.1 series.naver.com
 127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
@@ -399,6 +414,7 @@
 127.0.0.1 www.microsoftedge.microsoft.com
 127.0.0.1 microsoft.com
 127.0.0.1 www.microsoft.com
+127.0.0.1 go.microsoft.com
 127.0.0.1 en.softonic.com
 127.0.0.1 www.softonic.com
 127.0.0.1 storeedgefd.dsx.mp.microsoft.com
@@ -510,6 +526,7 @@
 127.0.0.1 dreamquester.com
 127.0.0.1 happybean.naver.com
 127.0.0.1 map.naver.com
+127.0.0.1 adcr.naver.com
 127.0.0.1 pann.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
@@ -522,11 +539,14 @@
 127.0.0.1 sites.google.com
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
+127.0.0.1 medibangpaint.com
 
 # shop
 127.0.0.1 www.auction.co.kr
 127.0.0.1 auction.co.kr
 127.0.0.1 m.auction.co.kr
+127.0.0.1 kd.auction.co.kr
+127.0.0.1 browse.auction.co.kr
 127.0.0.1 www.gmarket.co.kr
 127.0.0.1 gmarket.co.kr
 127.0.0.1 m.gmarket.co.kr
@@ -545,9 +565,14 @@
 127.0.0.1 www.bunjang.co.kr
 127.0.0.1 smtownandstore.com
 127.0.0.1 beyondlive.com
+127.0.0.1 www.vshop.one
+127.0.0.1 napkforpc.com
+127.0.0.1 www.weverseshop.io
+127.0.0.1 phocamarket.com
 
 # news
 127.0.0.1 news.naver.com
+127.0.0.1 m.news.naver.com
 127.0.0.1 bing.com
 127.0.0.1 www.bing.com
 127.0.0.1 news.daum.net
@@ -604,6 +629,9 @@
 127.0.0.1 down.kilho.net
 127.0.0.1 www.taboola.com
 127.0.0.1 api.taboola.com
+127.0.0.1 www.supercup.co.kr
+127.0.0.1 humorpick.com
+
 
 # codelove
 127.0.0.1 codelove.com
