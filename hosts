@@ -25,6 +25,7 @@
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
+127.0.0.1 play.google.com
 127.0.0.1 vidkidz.tistory.com
 127.0.0.1 www.vidkidz.tistory.com
 127.0.0.1 angeliceyes.tistory.com
@@ -110,6 +111,13 @@
 127.0.0.1 www.zhenhunxiaoshuo.com
 127.0.0.1 xiaoyouxi.2345.com
 127.0.0.1 www.u7u9.com
+127.0.0.1 www.game24.co.kr
+127.0.0.1 taongafarm.com
+127.0.0.1 www.bilibili.com
+127.0.0.1 bilibili.com
+127.0.0.1 m.bilibili.com
+127.0.0.1 search.bilibili.com
+127.0.0.1 space.bilibili.com
 
 
 # io games
@@ -508,13 +516,29 @@
 127.0.0.1 blog.naver.com
 127.0.0.1 www.blog.naver.com
 127.0.0.1 m.blog.naver.com
+127.0.0.1 section.blog.naver.com
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
 127.0.0.1 sites.google.com
+127.0.0.1 www.live.com
+127.0.0.1 login.live.com
 
 # shop
+127.0.0.1 www.auction.co.kr
 127.0.0.1 auction.co.kr
+127.0.0.1 m.auction.co.kr
+127.0.0.1 www.gmarket.co.kr
 127.0.0.1 gmarket.co.kr
+127.0.0.1 m.gmarket.co.kr
+127.0.0.1 www.coupang.com
+127.0.0.1 m.www.coupang.com
+127.0.0.1 coupa.ng
+127.0.0.1 coupang.com
+127.0.0.1 m.coupang.com
+127.0.0.1 www.musinsa.com
+127.0.0.1 store.musinsa.com
+127.0.0.1 search.musinsa.com
+127.0.0.1 m.musinsa.com
 127.0.0.1 smartstore.naver.com
 127.0.0.1 bunjang.co.kr
 127.0.0.1 m.bunjang.co.kr
@@ -525,12 +549,20 @@
 # news
 127.0.0.1 news.naver.com
 127.0.0.1 bing.com
+127.0.0.1 www.bing.com
 127.0.0.1 news.daum.net
 127.0.0.1 www.msn.com
 127.0.0.1 msn.com
+127.0.0.1 www.chosun.com
+127.0.0.1 biz.chosun.com
+127.0.0.1 sports.chosun.com
+127.0.0.1 www.ytn.co.kr
+127.0.0.1 www.imbc.com
+127.0.0.1 imnews.imbc.com
 
 # search
 127.0.0.1 webcache.googleusercontent.com
+127.0.0.1 www.gstatic.com
 127.0.0.1 yandex.com
 
 # etc
@@ -570,6 +602,8 @@
 127.0.0.1 mlbpark.donga.com
 127.0.0.1 secretdns.kilho.net
 127.0.0.1 down.kilho.net
+127.0.0.1 www.taboola.com
+127.0.0.1 api.taboola.com
 
 # codelove
 127.0.0.1 codelove.com
