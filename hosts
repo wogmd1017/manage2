@@ -26,23 +26,28 @@
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 play.google.com
+127.0.0.1 game.naver.com
 127.0.0.1 angeliceyes.tistory.com
 127.0.0.1 www.angeliceyes.tistory.com
 127.0.0.1 baebangdong.tistory.com
 127.0.0.1 cheekyhong.tistory.com
+127.0.0.1 eunice12.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
+127.0.0.1 iphonefactory.tistory.com
 127.0.0.1 inter87.tistory.com
 127.0.0.1 issueresearch1.tistory.com
 127.0.0.1 job-hobby.tistory.com
 127.0.0.1 kdgb.tistory.com
 127.0.0.1 mynautilus.tistory.com
+127.0.0.1 newsmoum.tistory.com
 127.0.0.1 rich-useful.tistory.com
 127.0.0.1 urllink.tistory.com
 127.0.0.1 vidkidz.tistory.com
 127.0.0.1 www.vidkidz.tistory.com
 127.0.0.1 wandookong.tistory.com
 127.0.0.1 windwinter.tistory.com
+127.0.0.1 woojuu.tistory.com
 127.0.0.1 younggames.tistory.com
 127.0.0.1 intlivi.com
 127.0.0.1 www.intlivi.com
@@ -88,6 +93,9 @@
 127.0.0.1 game.jr.naver.com
 127.0.0.1 static-jr.pstatic.net
 127.0.0.1 flash-jr.pstatic.net
+127.0.0.1 kin-phinf.pstatic.net
+127.0.0.1 search.pstatic.net
+127.0.0.1 mblogthumb-phinf.pstatic.net
 127.0.0.1 www.arealme.com
 127.0.0.1 www.trex-game.skipser.com
 127.0.0.1 www.lego.com
@@ -108,6 +116,8 @@
 127.0.0.1 tt-coin-c.malangmalang.com
 127.0.0.1 tt-block-c.malangmalang.com
 127.0.0.1 rain.malangmalang.com
+127.0.0.1 xelf.malangmalang.com
+127.0.0.1 cdn.malangmalang.com
 127.0.0.1 fg.gameangel.com
 127.0.0.1 www.flash365.co.kr
 127.0.0.1 flash365.co.kr
@@ -126,13 +136,28 @@
 127.0.0.1 space.bilibili.com
 127.0.0.1 kidszzanggame.net
 127.0.0.1 www.exotworking.com
+127.0.0.1 studioseufz.com
 127.0.0.1 zonzaemgame.com
 127.0.0.1 www.simcong.com
 127.0.0.1 bellruns.com
+127.0.0.1 www.gameangel.com
+127.0.0.1 m.gameangel.com
+127.0.0.1 styleup.gameangel.com
 127.0.0.1 judygame.gameangel.com
 127.0.0.1 www.simsimi.com
 127.0.0.1 gameglobal.co.kr
 127.0.0.1 www.aimbooster.com
+127.0.0.1 zonzaemgame.com
+127.0.0.1 1v1.lol
+127.0.0.1 bellruns.com
+127.0.0.1 gameglobal.co.kr
+127.0.0.1 game.nate.com
+127.0.0.1 ggemdol.com
+127.0.0.1 diep.ggemdol.com
+127.0.0.1 omok.ggemdol.com
+127.0.0.1 zangsi.net
+127.0.0.1 www.auway.net
+127.0.0.1 www.tractor.vip
 
 # io games
 127.0.0.1 fight-io.com
@@ -371,6 +396,8 @@
 127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
 127.0.0.1 m.serieson.naver.com
+127.0.0.1 webtoon.naver.com
+127.0.0.1 member.webtoon.naver.com
 127.0.0.1 toptoon.com
 127.0.0.1 page.kakao.com
 127.0.0.1 webtoon.kakao.com
@@ -378,6 +405,7 @@
 127.0.0.1 www.kakao.com
 127.0.0.1 m.kakao.com
 127.0.0.1 manga.line.me
+127.0.0.1 toonnbook.nate.com
 127.0.0.1 www.toptoon.com
 127.0.0.1 blacktoon187.com
 127.0.0.1 www.blacktoon187.com
@@ -399,6 +427,9 @@
 127.0.0.1 blacktoon189.com
 127.0.0.1 blacktoon190.com
 127.0.0.1 medibangpaint.com
+127.0.0.1 www.zuzunza.com
+127.0.0.1 www.pixiv.net
+127.0.0.1 accounts.pixiv.net
 
 # novel
 127.0.0.1 www.munpia.com
@@ -420,6 +451,7 @@
 127.0.0.1 microsoft.com
 127.0.0.1 www.microsoft.com
 127.0.0.1 go.microsoft.com
+127.0.0.1 login.microsoftonline.com
 127.0.0.1 en.softonic.com
 127.0.0.1 www.softonic.com
 127.0.0.1 storeedgefd.dsx.mp.microsoft.com
@@ -433,6 +465,7 @@
 127.0.0.1 tiktok.com
 127.0.0.1 tv.naver.com
 127.0.0.1 www.tv.naver.com
+127.0.0.1 vibe.naver.com
 127.0.0.1 tv.kakao.com
 127.0.0.1 www.afreecatv.com
 127.0.0.1 afreecatv.com
@@ -466,6 +499,9 @@
 127.0.0.1 qooqootv.fun
 127.0.0.1 a22.joytv.cam
 127.0.0.1 a23.joytv.cam
+127.0.0.1 www.vlive.tv
+127.0.0.1 vlive.tv
+127.0.0.1 m.vlive.tv
 
 # sns
 127.0.0.1 www.instagram.com
@@ -474,6 +510,7 @@
 127.0.0.1 www.facebook.com
 127.0.0.1 facebook.com
 127.0.0.1 m.facebook.com
+127.0.0.1 ko-kr.facebook.com
 127.0.0.1 twitter.com
 127.0.0.1 m.twitter.com
 127.0.0.1 www.twitter.com
@@ -496,6 +533,8 @@
 127.0.0.1 accounts.kakao.com
 127.0.0.1 kakao.com
 127.0.0.1 www.kakao.com
+127.0.0.1 sharer.kakao.com
+127.0.0.1 story.kakao.com
 127.0.0.1 now.naver.com
 
 # vpn
@@ -539,7 +578,10 @@
 127.0.0.1 v5.map.naver.com
 127.0.0.1 adcr.naver.com
 127.0.0.1 kin.naver.com
+127.0.0.1 cafe.naver.com
+127.0.0.1 www.nate.com
 127.0.0.1 pann.nate.com
+127.0.0.1 nateonweb.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
 127.0.0.1 blog.naver.com
@@ -552,6 +594,7 @@
 127.0.0.1 earth.google.com
 127.0.0.1 drive.google.com
 127.0.0.1 accounts.google.com
+127.0.0.1 adssettings.google.com
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
 127.0.0.1 medibangpaint.com
@@ -565,6 +608,9 @@
 127.0.0.1 www.gmarket.co.kr
 127.0.0.1 gmarket.co.kr
 127.0.0.1 m.gmarket.co.kr
+127.0.0.1 www.11st.co.kr
+127.0.0.1 m.11st.co.kr
+127.0.0.1 search.11st.co.kr
 127.0.0.1 www.coupang.com
 127.0.0.1 login.coupang.com
 127.0.0.1 m.www.coupang.com
@@ -577,6 +623,11 @@
 127.0.0.1 search.musinsa.com
 127.0.0.1 m.musinsa.com
 127.0.0.1 smartstore.naver.com
+127.0.0.1 shopping.naver.com
+127.0.0.1 search.shopping.naver.com
+127.0.0.1 cr.shopping.naver.com
+127.0.0.1 cr2.shopping.naver.com
+127.0.0.1 cr3.shopping.naver.com
 127.0.0.1 bunjang.co.kr
 127.0.0.1 m.bunjang.co.kr
 127.0.0.1 www.bunjang.co.kr
@@ -586,6 +637,7 @@
 127.0.0.1 napkforpc.com
 127.0.0.1 www.weverseshop.io
 127.0.0.1 phocamarket.com
+127.0.0.1 www.weverseshop.io
 
 # news
 127.0.0.1 news.naver.com
@@ -603,10 +655,20 @@
 127.0.0.1 www.chosun.com
 127.0.0.1 biz.chosun.com
 127.0.0.1 sports.chosun.com
+127.0.0.1 www.hankyung.com
+127.0.0.1 tenasia.hankyung.com
 127.0.0.1 www.ytn.co.kr
 127.0.0.1 ytn.co.kr
 127.0.0.1 www.imbc.com
 127.0.0.1 imnews.imbc.com
+127.0.0.1 issuenews.co.kr
+127.0.0.1 www.sportalkorea.com
+127.0.0.1 sportalkorea.com
+127.0.0.1 www.khan.co.kr
+127.0.0.1 sports.khan.co.kr
+127.0.0.1 www.daejonilbo.com
+127.0.0.1 www.xportsnews.com
+127.0.0.1 www.newsinside.kr
 
 # search
 127.0.0.1 webcache.googleusercontent.com
@@ -638,6 +700,7 @@
 127.0.0.1 todayhumor.co.kr
 127.0.0.1 www.todayhumor.co.kr
 127.0.0.1 m.todayhumor.co.kr
+127.0.0.1 humorpick.com
 127.0.0.1 www.kurly.com
 127.0.0.1 ko.wikihow.com
 127.0.0.1 www.op.gg
@@ -656,10 +719,18 @@
 127.0.0.1 down.kilho.net
 127.0.0.1 www.taboola.com
 127.0.0.1 api.taboola.com
+127.0.0.1 trc.taboola.com
 127.0.0.1 www.supercup.co.kr
 127.0.0.1 supercup.co.kr
 127.0.0.1 humorpick.com
-
+127.0.0.1 www.simcong.com
+127.0.0.1 simsimi.com
+127.0.0.1 www.appstory.co.kr
+127.0.0.1 wrd.appstory.co.kr
+127.0.0.1 c.appstory.co.kr
+127.0.0.1 m.appstory.co.kr
+127.0.0.1 www.tipsandtrickskorea.com
+127.0.0.1 www.home-learn.co.kr
 
 # codelove
 127.0.0.1 codelove.com
