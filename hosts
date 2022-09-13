@@ -28,17 +28,25 @@
 127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
 127.0.0.1 10dollars.tistory.com
+127.0.0.1 analogcity.tistory.com
 127.0.0.1 angeliceyes.tistory.com
 127.0.0.1 www.angeliceyes.tistory.com
+127.0.0.1 angelplayer.tistory.com
 127.0.0.1 baebangdong.tistory.com
 127.0.0.1 blackheartman.tistory.com
 127.0.0.1 blacksoy.tistory.com
+127.0.0.1 bookyumyum.tistory.com
 127.0.0.1 cheekyhong.tistory.com
+127.0.0.1 commox111.tistory.com
+127.0.0.1 danasn.tistory.com
 127.0.0.1 dday.tistory.com
 127.0.0.1 dearpen.tistory.com
+127.0.0.1 dreaminfo.tistory.com
+127.0.0.1 dung-2.tistory.com
 127.0.0.1 eunice12.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
+127.0.0.1 gdbs.tistory.com
 127.0.0.1 gdrwl.tistory.com
 127.0.0.1 geuruna.tistory.com
 127.0.0.1 grandvert.tistory.com
@@ -49,6 +57,7 @@
 127.0.0.1 issueresearch1.tistory.com
 127.0.0.1 job-hobby.tistory.com
 127.0.0.1 kdgb.tistory.com
+127.0.0.1 koreaguidebook.tistory.com
 127.0.0.1 khti.tistory.com
 127.0.0.1 letitbe99.tistory.com
 127.0.0.1 libmarco.tistory.com
@@ -60,11 +69,17 @@
 127.0.0.1 newsmoum.tistory.com
 127.0.0.1 nhnf5.tistory.com
 127.0.0.1 nunker.tistory.com
+127.0.0.1 oasisinfo.tistory.com
 127.0.0.1 rabia.tistory.com
 127.0.0.1 rich-useful.tistory.com
+127.0.0.1 semomemida.tistory.com
+127.0.0.1 slover.tistory.com
 127.0.0.1 smartygold.tistory.com
+127.0.0.1 somlove.tistory.com
+127.0.0.1 sosolifestory.tistory.com
 127.0.0.1 soumfactory.tistory.com
 127.0.0.1 tnoli.tistory.com
+127.0.0.1 tranquility6.tistory.com
 127.0.0.1 twigaocum.tistory.com
 127.0.0.1 unysong9.tistory.com
 127.0.0.1 urllink.tistory.com
@@ -74,6 +89,7 @@
 127.0.0.1 wandookong.tistory.com
 127.0.0.1 windwinter.tistory.com
 127.0.0.1 woojuu.tistory.com
+127.0.0.1 xerxes-break.tistory.com
 127.0.0.1 ydoog.tistory.com
 127.0.0.1 yeso.tistory.com
 127.0.0.1 younggames.tistory.com
@@ -195,8 +211,25 @@
 127.0.0.1 www.oldflashgame.com
 127.0.0.1 www.foddy.net
 127.0.0.1 elgoog.im
+127.0.0.1 superbalance.co.kr
+127.0.0.1 bebitu.com
+127.0.0.1 www.bebitu.com
+127.0.0.1 mahjonghit.com
+127.0.0.1 genshin.hoyoverse.com
+127.0.0.1 gameshowing.com
+127.0.0.1 www.gameshowing.com
+127.0.0.1 www.247checkers.com
+127.0.0.1 www.247crossword.com
+127.0.0.1 www.247freepoker.com
+127.0.0.1 www.247spacerocks.com
+127.0.0.1 www.247sudoku.com
+127.0.0.1 www.cbc.ca
+127.0.0.1 www.16personalities.com
+127.0.0.1 www.izzygames.com
+127.0.0.1 www.maxgames.com
 
 # io games
+127.0.0.1 2048.io
 127.0.0.1 fight-io.com
 127.0.0.1 www.fight-io.com
 127.0.0.1 io
@@ -370,6 +403,7 @@
 127.0.0.1 Slush.io
 127.0.0.1 Smashkarts.io
 127.0.0.1 snake.io
+127.0.0.1 snakeio.co
 127.0.0.1 Snix.io
 127.0.0.1 Snok.io
 127.0.0.1 Snowball.io
@@ -478,6 +512,7 @@
 127.0.0.1 www.webtoons.com
 127.0.0.1 www.wattpad.com
 127.0.0.1 webtoonscorp.com
+127.0.0.1 recruit.webtoonscorp.com
 127.0.0.1 linklove5.com
 127.0.0.1 www.qtoon.co.kr
 127.0.0.1 qtoon.co.kr
@@ -527,6 +562,8 @@
 127.0.0.1 en.softonic.com
 127.0.0.1 www.softonic.com
 127.0.0.1 storeedgefd.dsx.mp.microsoft.com
+127.0.0.1 windowspc.software
+127.0.0.1 apk.windowspc.software
 
 # video
 127.0.0.1 www.youtube.com
@@ -583,6 +620,8 @@
 127.0.0.1 pay.seezntv.com
 127.0.0.1 info.brightcove.com
 127.0.0.1 www.brightcove.com
+127.0.0.1 www.ava360.com
+127.0.0.1 korean.ava360.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -716,6 +755,9 @@
 127.0.0.1 yes24.com
 127.0.0.1 www.yes24.com
 127.0.0.1 ticket.yes24.com
+127.0.0.1 www.interpark.com
+127.0.0.1 shopping.interpark.com
+127.0.0.1 store.interpark.com
 127.0.0.1 www.aladin.co.kr
 127.0.0.1 www.coupang.com
 127.0.0.1 login.coupang.com
@@ -724,6 +766,8 @@
 127.0.0.1 coupang.com
 127.0.0.1 m.coupang.com
 127.0.0.1 link.coupang.com
+127.0.0.1 www.tmon.co.kr
+127.0.0.1 search.tmon.co.kr
 127.0.0.1 www.musinsa.com
 127.0.0.1 store.musinsa.com
 127.0.0.1 search.musinsa.com
@@ -737,6 +781,7 @@
 127.0.0.1 shoppinglive.naver.com
 127.0.0.1 pay.naver.com
 127.0.0.1 inflow.pay.naver.com
+127.0.0.1 www.ssg.com
 127.0.0.1 bunjang.co.kr
 127.0.0.1 m.bunjang.co.kr
 127.0.0.1 www.bunjang.co.kr
@@ -859,6 +904,7 @@
 127.0.0.1 m.appstory.co.kr
 127.0.0.1 www.tipsandtrickskorea.com
 127.0.0.1 www.home-learn.co.kr
+127.0.0.1 www.4kdownload.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
