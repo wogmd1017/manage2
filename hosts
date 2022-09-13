@@ -20,35 +20,48 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2022.09.10
+# 2022.09.13
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
+127.0.0.1 10dollars.tistory.com
 127.0.0.1 angeliceyes.tistory.com
 127.0.0.1 www.angeliceyes.tistory.com
 127.0.0.1 baebangdong.tistory.com
+127.0.0.1 blackheartman.tistory.com
+127.0.0.1 blacksoy.tistory.com
 127.0.0.1 cheekyhong.tistory.com
+127.0.0.1 dday.tistory.com
+127.0.0.1 dearpen.tistory.com
 127.0.0.1 eunice12.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
+127.0.0.1 hackzamgames.tistory.com
 127.0.0.1 iphonefactory.tistory.com
 127.0.0.1 inter87.tistory.com
 127.0.0.1 issueresearch1.tistory.com
 127.0.0.1 job-hobby.tistory.com
 127.0.0.1 kdgb.tistory.com
+127.0.0.1 linuxmaster1004.tistory.com
+127.0.0.1 lucky04.tistory.com
+127.0.0.1 luxmylife.tistory.com
+127.0.0.1 mmnara.tistory.com
 127.0.0.1 mynautilus.tistory.com
 127.0.0.1 newsmoum.tistory.com
 127.0.0.1 rich-useful.tistory.com
+127.0.0.1 twigaocum.tistory.com
 127.0.0.1 urllink.tistory.com
 127.0.0.1 vidkidz.tistory.com
 127.0.0.1 www.vidkidz.tistory.com
+127.0.0.1 vnfkaus.tistory.com
 127.0.0.1 wandookong.tistory.com
 127.0.0.1 windwinter.tistory.com
 127.0.0.1 woojuu.tistory.com
 127.0.0.1 younggames.tistory.com
+127.0.0.1 yunara.tistory.com
 127.0.0.1 intlivi.com
 127.0.0.1 www.intlivi.com
 127.0.0.1 flash24.co.kr
@@ -96,7 +109,6 @@
 127.0.0.1 kin-phinf.pstatic.net
 127.0.0.1 search.pstatic.net
 127.0.0.1 mblogthumb-phinf.pstatic.net
-127.0.0.1 www.arealme.com
 127.0.0.1 www.trex-game.skipser.com
 127.0.0.1 www.lego.com
 127.0.0.1 lego.com
@@ -158,6 +170,9 @@
 127.0.0.1 zangsi.net
 127.0.0.1 www.auway.net
 127.0.0.1 www.tractor.vip
+127.0.0.1 snowballio2.com
+127.0.0.1 kr.ldplayer.net
+127.0.0.1 soksok.co.kr
 
 # io games
 127.0.0.1 fight-io.com
@@ -328,6 +343,7 @@
 127.0.0.1 Snix.io
 127.0.0.1 Snok.io
 127.0.0.1 Snowball.io
+127.0.0.1 Snowball-io.io
 127.0.0.1 Snowfight.io
 127.0.0.1 SnowWar.io
 127.0.0.1 Spaceblast.io
@@ -356,6 +372,8 @@
 127.0.0.1 Tankwars.io
 127.0.0.1 Tenk.io
 127.0.0.1 Territor.io
+127.0.0.1 tetr.io
+127.0.0.1 ch.tetr.io
 127.0.0.1 Tetrads.io
 127.0.0.1 Throwz.io
 127.0.0.1 Tileman.io
@@ -430,6 +448,14 @@
 127.0.0.1 www.zuzunza.com
 127.0.0.1 www.pixiv.net
 127.0.0.1 accounts.pixiv.net
+127.0.0.1 www.postype.com
+127.0.0.1 postype.com
+127.0.0.1 seull-pota.postype.com
+127.0.0.1 oilsoup.postype.com
+127.0.0.1 2damhae.postype.com
+127.0.0.1 papillon.postype.com
+127.0.0.1 sa-lmon.postype.com
+127.0.0.1 ermeil.keystoneuniformcap.com
 
 # novel
 127.0.0.1 www.munpia.com
@@ -461,10 +487,13 @@
 127.0.0.1 youtube.com
 127.0.0.1 m.youtube.com
 127.0.0.1 accounts.youtube.com
+127.0.0.1 www.youtubekids.com
 127.0.0.1 www.tiktok.com
 127.0.0.1 tiktok.com
 127.0.0.1 tv.naver.com
 127.0.0.1 www.tv.naver.com
+127.0.0.1 movie.naver.com
+127.0.0.1 entertain.naver.com
 127.0.0.1 vibe.naver.com
 127.0.0.1 tv.kakao.com
 127.0.0.1 www.afreecatv.com
@@ -502,6 +531,10 @@
 127.0.0.1 www.vlive.tv
 127.0.0.1 vlive.tv
 127.0.0.1 m.vlive.tv
+127.0.0.1 www.seezntv.com
+127.0.0.1 pay.seezntv.com
+127.0.0.1 info.brightcove.com
+127.0.0.1 www.brightcove.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -574,11 +607,27 @@
 127.0.0.1 dreamquester.com
 127.0.0.1 apt.dreamquester.com
 127.0.0.1 happybean.naver.com
+127.0.0.1 m.naver.com
+127.0.0.1 m.site.naver.com
+127.0.0.1 site.naver.com
+127.0.0.1 now.naver.com
+127.0.0.1 m.now.naver.com
+127.0.0.1 whale.naver.com
 127.0.0.1 map.naver.com
 127.0.0.1 v5.map.naver.com
+127.0.0.1 place.naver.com
+127.0.0.1 pcmap.place.naver.com
 127.0.0.1 adcr.naver.com
 127.0.0.1 kin.naver.com
+127.0.0.1 m.kin.naver.com
+127.0.0.1 keep.naver.com
 127.0.0.1 cafe.naver.com
+127.0.0.1 m.cafe.naver.com
+127.0.0.1 section.cafe.naver.com
+127.0.0.1 post.naver.com
+127.0.0.1 m.post.naver.com
+127.0.0.1 land.naver.com
+127.0.0.1 m.land.naver.com
 127.0.0.1 www.nate.com
 127.0.0.1 pann.nate.com
 127.0.0.1 nateonweb.nate.com
@@ -611,6 +660,10 @@
 127.0.0.1 www.11st.co.kr
 127.0.0.1 m.11st.co.kr
 127.0.0.1 search.11st.co.kr
+127.0.0.1 yes24.com
+127.0.0.1 www.yes24.com
+127.0.0.1 ticket.yes24.com
+127.0.0.1 www.aladin.co.kr
 127.0.0.1 www.coupang.com
 127.0.0.1 login.coupang.com
 127.0.0.1 m.www.coupang.com
@@ -628,9 +681,13 @@
 127.0.0.1 cr.shopping.naver.com
 127.0.0.1 cr2.shopping.naver.com
 127.0.0.1 cr3.shopping.naver.com
+127.0.0.1 shoppinglive.naver.com
+127.0.0.1 pay.naver.com
+127.0.0.1 inflow.pay.naver.com
 127.0.0.1 bunjang.co.kr
 127.0.0.1 m.bunjang.co.kr
 127.0.0.1 www.bunjang.co.kr
+127.0.0.1 www.joongna.com
 127.0.0.1 smtownandstore.com
 127.0.0.1 beyondlive.com
 127.0.0.1 www.vshop.one
@@ -638,10 +695,12 @@
 127.0.0.1 www.weverseshop.io
 127.0.0.1 phocamarket.com
 127.0.0.1 www.weverseshop.io
+127.0.0.1 www.styleshare.kr
 
 # news
 127.0.0.1 news.naver.com
 127.0.0.1 m.news.naver.com
+127.0.0.1 newsstand.naver.com
 127.0.0.1 sports.naver.com
 127.0.0.1 m.sports.naver.com
 127.0.0.1 sports.news.naver.com
@@ -655,12 +714,17 @@
 127.0.0.1 www.chosun.com
 127.0.0.1 biz.chosun.com
 127.0.0.1 sports.chosun.com
+127.0.0.1 sportschosun.com
+127.0.0.1 picpen.chosun.com
 127.0.0.1 www.hankyung.com
 127.0.0.1 tenasia.hankyung.com
 127.0.0.1 www.ytn.co.kr
 127.0.0.1 ytn.co.kr
 127.0.0.1 www.imbc.com
 127.0.0.1 imnews.imbc.com
+127.0.0.1 www.sbs.co.kr
+127.0.0.1 sbs.co.kr
+127.0.0.1 news.sbs.co.kr
 127.0.0.1 issuenews.co.kr
 127.0.0.1 www.sportalkorea.com
 127.0.0.1 sportalkorea.com
@@ -669,17 +733,22 @@
 127.0.0.1 www.daejonilbo.com
 127.0.0.1 www.xportsnews.com
 127.0.0.1 www.newsinside.kr
+127.0.0.1 cosmopolitan.co.kr
+127.0.0.1 www.cosmopolitan.co.kr
 
 # search
 127.0.0.1 webcache.googleusercontent.com
 127.0.0.1 www.gstatic.com
 127.0.0.1 yandex.com
+127.0.0.1 website.informer.com
 
 # etc
 127.0.0.1 namu.wiki
 127.0.0.1 www.namu.wiki
+127.0.0.1 www.wikitree.co.kr
 127.0.0.1 upbit.com
 127.0.0.1 www.upbit.com
+127.0.0.1 www.bitget.com
 127.0.0.1 simritest.com
 127.0.0.1 www.simritest.com
 127.0.0.1 www.piku.co.kr
@@ -731,6 +800,11 @@
 127.0.0.1 m.appstory.co.kr
 127.0.0.1 www.tipsandtrickskorea.com
 127.0.0.1 www.home-learn.co.kr
+
+# ad
+127.0.0.1 ad.doubleclick.net
+127.0.0.1 adclick.g.doubleclick.net
+127.0.0.1 googleads.g.doubleclick.net
 
 # codelove
 127.0.0.1 codelove.com
