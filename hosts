@@ -25,6 +25,8 @@
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
+127.0.0.1 code.org
+127.0.0.1 studio.code.org
 127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
 127.0.0.1 10dollars.tistory.com
@@ -41,6 +43,7 @@
 127.0.0.1 danasn.tistory.com
 127.0.0.1 dday.tistory.com
 127.0.0.1 dearpen.tistory.com
+127.0.0.1 devyninla.tistory.com
 127.0.0.1 dreaminfo.tistory.com
 127.0.0.1 dung-2.tistory.com
 127.0.0.1 eunice12.tistory.com
@@ -49,6 +52,7 @@
 127.0.0.1 gdbs.tistory.com
 127.0.0.1 gdrwl.tistory.com
 127.0.0.1 geuruna.tistory.com
+127.0.0.1 gong6587.tistory.com
 127.0.0.1 grandvert.tistory.com
 127.0.0.1 hackzamgames.tistory.com
 127.0.0.1 haezzal.tistory.com
@@ -57,6 +61,7 @@
 127.0.0.1 issueresearch1.tistory.com
 127.0.0.1 job-hobby.tistory.com
 127.0.0.1 kdgb.tistory.com
+127.0.0.1 koostar.tistory.com
 127.0.0.1 koreaguidebook.tistory.com
 127.0.0.1 khti.tistory.com
 127.0.0.1 letitbe99.tistory.com
@@ -66,11 +71,15 @@
 127.0.0.1 luxmylife.tistory.com
 127.0.0.1 mmnara.tistory.com
 127.0.0.1 mynautilus.tistory.com
+127.0.0.1 nagada1000.tistory.com
 127.0.0.1 newsmoum.tistory.com
 127.0.0.1 nhnf5.tistory.com
+127.0.0.1 nonogue.tistory.com
 127.0.0.1 nunker.tistory.com
 127.0.0.1 oasisinfo.tistory.com
+127.0.0.1 olbbemegames.tistory.com
 127.0.0.1 rabia.tistory.com
+127.0.0.1 realmojo.tistory.com
 127.0.0.1 rich-useful.tistory.com
 127.0.0.1 semomemida.tistory.com
 127.0.0.1 slover.tistory.com
@@ -78,6 +87,7 @@
 127.0.0.1 somlove.tistory.com
 127.0.0.1 sosolifestory.tistory.com
 127.0.0.1 soumfactory.tistory.com
+127.0.0.1 stardasun.tistory.com
 127.0.0.1 tnoli.tistory.com
 127.0.0.1 tranquility6.tistory.com
 127.0.0.1 twigaocum.tistory.com
@@ -227,6 +237,14 @@
 127.0.0.1 www.16personalities.com
 127.0.0.1 www.izzygames.com
 127.0.0.1 www.maxgames.com
+127.0.0.1 funissu.com
+127.0.0.1 sudokuhit.com
+127.0.0.1 www.2048.org
+127.0.0.1 play2048.co
+127.0.0.1 www.2048gameonline.com
+127.0.0.1 www.googlesnake.com
+127.0.0.1 www.googlesolitaire.com
+127.0.0.1 gamersroyal.com
 
 # io games
 127.0.0.1 2048.io
@@ -537,6 +555,7 @@
 127.0.0.1 newtoki152.com
 127.0.0.1 newtoki153.com
 127.0.0.1 newtoki154.com
+127.0.0.1 bam275co.com
 
 # novel
 127.0.0.1 www.munpia.com
@@ -564,6 +583,10 @@
 127.0.0.1 storeedgefd.dsx.mp.microsoft.com
 127.0.0.1 windowspc.software
 127.0.0.1 apk.windowspc.software
+127.0.0.1 www.apple.com
+127.0.0.1 appleid.apple.com
+127.0.0.1 account-auth.weverse.io
+127.0.0.1 apps.apple.com
 
 # video
 127.0.0.1 www.youtube.com
@@ -622,6 +645,12 @@
 127.0.0.1 www.brightcove.com
 127.0.0.1 www.ava360.com
 127.0.0.1 korean.ava360.com
+127.0.0.1 bluelivetv.com
+127.0.0.1 korealtyusa.com
+127.0.0.1 highlightsfootball.net
+cooltv1.com
+chatv1.com
+tentv77.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -678,6 +707,8 @@
 127.0.0.1 networkbypass.com
 127.0.0.1 kproxy.com
 127.0.0.1 www.kproxy.com
+127.0.0.1 proxysite.com
+127.0.0.1 www.youtubeunblocked.live
 
 # link
 127.0.0.1 ddnews.co.kr
@@ -749,6 +780,9 @@
 127.0.0.1 www.gmarket.co.kr
 127.0.0.1 gmarket.co.kr
 127.0.0.1 m.gmarket.co.kr
+127.0.0.1 sna.gmarket.co.kr
+127.0.0.1 search.gmarket.co.kr
+127.0.0.1 browse.gmarket.co.kr
 127.0.0.1 www.11st.co.kr
 127.0.0.1 m.11st.co.kr
 127.0.0.1 search.11st.co.kr
@@ -799,6 +833,8 @@
 127.0.0.1 kream.co.kr
 127.0.0.1 oliveyoung.co.kr
 127.0.0.1 www.oliveyoung.co.kr
+127.0.0.1 weverse.io
+127.0.0.1 account.weverse.io
 
 # news
 127.0.0.1 news.naver.com
