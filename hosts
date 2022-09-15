@@ -26,8 +26,7 @@
 127.0.0.1 google.com
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
-127.0.0.1 msn.com
-127.0.0.1 www.msn.com
+
 
 # game
 127.0.0.1 playentry.org
@@ -850,6 +849,8 @@
 127.0.0.1 adssettings.google.com
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
+127.0.0.1 msn.com
+127.0.0.1 www.msn.com
 127.0.0.1 medibangpaint.com
 
 # shop
