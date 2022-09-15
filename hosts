@@ -20,7 +20,15 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2022.09.13
+# 2022.09.15
+# Temp
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 msn.com
+127.0.0.1 www.msn.com
+
 # game
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
