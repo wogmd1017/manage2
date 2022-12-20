@@ -22,14 +22,14 @@
 
 # 2022.09.29
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
-#127.0.0.1 search.naver.com
-#127.0.0.1 kin.naver.com
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 search.naver.com
+127.0.0.1 kin.naver.com
 127.0.0.1 map.naver.com
 127.0.0.1 earth.google.com
 127.0.0.1 developer.microsoft.com
