@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.05.12
+# 2023.05.13
 # Temp
 #127.0.0.1 www.google.com
 #127.0.0.1 google.com
@@ -639,8 +639,8 @@
 127.0.0.1 www.joara.com
 
 # store
-#127.0.0.1 chrome.google.com
-#127.0.0.1 www.chrome.google.com
+127.0.0.1 chrome.google.com
+127.0.0.1 www.chrome.google.com
 127.0.0.1 microsoftedge.microsoft.com
 127.0.0.1 www.microsoftedge.microsoft.com
 127.0.0.1 microsoft.com
@@ -960,7 +960,7 @@
 127.0.0.1 www.google.com.ph
 127.0.0.1 www.google.com.pk
 127.0.0.1 www.google.pl
-27.0.0.1 www.google.com.pr
+127.0.0.1 www.google.com.pr
 127.0.0.1 www.google.pt
 127.0.0.1 www.google.com.py
 127.0.0.1 www.google.com.qa
@@ -1026,6 +1026,7 @@
 127.0.0.1 www.google.co.ug
 127.0.0.1 www.google.co.ve
 127.0.0.1 www.google.ws
+
 # shop
 127.0.0.1 www.auction.co.kr
 127.0.0.1 auction.co.kr
@@ -1135,7 +1136,7 @@
 #127.0.0.1 webcache.googleusercontent.com
 #127.0.0.1 www.gstatic.com
 127.0.0.1 yandex.com
-127.0.0.1 website.informer.com
+#127.0.0.1 website.informer.com
 127.0.0.1 www.wadiz.kr
 127.0.0.1 www.visymo.com
 127.0.0.1 visymo.com
