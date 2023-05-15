@@ -643,8 +643,8 @@
 127.0.0.1 www.chrome.google.com
 127.0.0.1 microsoftedge.microsoft.com
 127.0.0.1 www.microsoftedge.microsoft.com
-127.0.0.1 microsoft.com
-127.0.0.1 www.microsoft.com
+#127.0.0.1 microsoft.com
+#127.0.0.1 www.microsoft.com
 127.0.0.1 go.microsoft.com
 127.0.0.1 login.microsoftonline.com
 127.0.0.1 en.softonic.com
