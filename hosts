@@ -40,8 +40,8 @@
 127.0.0.1 playentry.org
 127.0.0.1 www.playentry.org
 #127.0.0.1 scratch.mit.edu
-#127.0.0.1 code.org
-#127.0.0.1 studio.code.org
+127.0.0.1 code.org
+127.0.0.1 studio.code.org
 127.0.0.1 https://arcade.makecode.com
 127.0.0.1 arcade.makecode.com
 #127.0.0.1 play.google.com
