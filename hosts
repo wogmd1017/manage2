@@ -20,16 +20,16 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.06.15
+# 2023.06.16
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
-#127.0.0.1 search.naver.com
-#127.0.0.1 kin.naver.com
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 search.naver.com
+127.0.0.1 kin.naver.com
 127.0.0.1 map.naver.com
 127.0.0.1 earth.google.com
 127.0.0.1 developer.microsoft.com
@@ -37,14 +37,14 @@
 127.0.0.1 microsoft.com
 
 # game
-#127.0.0.1 playentry.org
-#127.0.0.1 www.playentry.org
+127.0.0.1 playentry.org
+127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
 127.0.0.1 studio.code.org
 127.0.0.1 https://arcade.makecode.com
 127.0.0.1 arcade.makecode.com
-#127.0.0.1 play.google.com
+127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
 127.0.0.1 10dollars.tistory.com
 127.0.0.1 96mouse.tistory.com
