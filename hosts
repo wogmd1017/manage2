@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.06.19
+# 2023.06.22
 # Temp
 #127.0.0.1 www.google.com
 #127.0.0.1 google.com
@@ -37,8 +37,8 @@
 127.0.0.1 microsoft.com
 
 # game
-127.0.0.1 playentry.org
-127.0.0.1 www.playentry.org
+#127.0.0.1 playentry.org
+#127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
 127.0.0.1 studio.code.org
