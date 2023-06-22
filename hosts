@@ -20,12 +20,12 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.06.22
+# 2023.06.23
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
@@ -37,8 +37,8 @@
 127.0.0.1 microsoft.com
 
 # game
-#127.0.0.1 playentry.org
-#127.0.0.1 www.playentry.org
+127.0.0.1 playentry.org
+127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
 127.0.0.1 studio.code.org
