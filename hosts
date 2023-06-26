@@ -853,10 +853,10 @@
 127.0.0.1 nateonweb.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
-#127.0.0.1 blog.naver.com
-#127.0.0.1 www.blog.naver.com
-#127.0.0.1 m.blog.naver.com
-#127.0.0.1 section.blog.naver.com
+127.0.0.1 blog.naver.com
+127.0.0.1 www.blog.naver.com
+127.0.0.1 m.blog.naver.com
+127.0.0.1 section.blog.naver.com
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
 127.0.0.1 finance.daum.net
