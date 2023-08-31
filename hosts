@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.08.14
+# 2023.08.31
 # Temp
 #127.0.0.1 www.google.com
 #127.0.0.1 google.com
@@ -67,6 +67,7 @@
 127.0.0.1 eunice12.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
+127.0.0.1 flashgamemall.com
 127.0.0.1 flashmaniac.tistory.com
 127.0.0.1 gamei.tistory.com
 127.0.0.1 gdbs.tistory.com
@@ -312,6 +313,8 @@
 127.0.0.1 xn--2o2b110c8qb.com
 127.0.0.1 imposter-game.com
 127.0.0.1 www.ducksters.com
+127.0.0.1 xerxes-break.tistory.com
+127.0.0.1 kkutu.pink
 
 # io games
 127.0.0.1 2048.io
