@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.10.27
+# 2023.11.10
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -1047,6 +1047,10 @@
 127.0.0.1 www.google.co.ug
 127.0.0.1 www.google.co.ve
 127.0.0.1 www.google.ws
+127.0.0.1 www.zum.com
+127.0.0.1 zum.com
+127.0.0.1 m.zum.com
+127.0.0.1 m.tv.zum.com
 
 # shop
 127.0.0.1 www.auction.co.kr
