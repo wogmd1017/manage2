@@ -749,6 +749,24 @@
 127.0.0.1 www.aniwolf.com
 127.0.0.1 anilife.live
 127.0.0.1 www.anilife.live
+127.0.0.1 www.dailymotion.com
+127.0.0.1 dailymotion.com
+127.0.0.1 m.dailymotion.com
+127.0.0.1 vimeo.com
+127.0.0.1 www.vimeo.com
+127.0.0.1 m.vimeo.com
+127.0.0.1 kinolights.com
+127.0.0.1 www.kinolights.com
+127.0.0.1 m.kinolights.com
+127.0.0.1 www.nicovideo.jp
+127.0.0.1 ch.nicovideo.jp
+127.0.0.1 m.nicovideo.jp
+127.0.0.1 www.bilibili.tv
+127.0.0.1 bilibili.tv
+127.0.0.1 m.bilibili.tv
+127.0.0.1 www.bilibili.com
+127.0.0.1 bilibili.com
+127.0.0.1 m.bilibili.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -800,6 +818,11 @@
 127.0.0.1 apkcombo.com
 127.0.0.1 apkpure.com
 127.0.0.1 m.apkpure.com
+127.0.0.1 nordvpn.com
+127.0.0.1 protonvpn.com
+127.0.0.1 hide.me
+127.0.0.1 windscribe.com
+127.0.0.1 www.cyberghostvpn.com
 
 # proxy
 127.0.0.1 www.filterbypass.me
@@ -821,6 +844,7 @@
 127.0.0.1 www.kproxy.com
 127.0.0.1 www.croxyproxy.com
 127.0.0.1 www.youtubeunblocked.live
+127.0.0.1 getunicorn.app
 
 # link
 127.0.0.1 ddnews.co.kr
