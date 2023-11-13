@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2023.11.10
+# 2023.11.13
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -884,7 +884,11 @@
 127.0.0.1 land.naver.com
 127.0.0.1 m.land.naver.com
 127.0.0.1 www.nate.com
+127.0.0.1 m.nate.com
 127.0.0.1 pann.nate.com
+127.0.0.1 m.pann.nate.com
+127.0.0.1 news.nate.com
+127.0.0.1 m.news.nate.com
 127.0.0.1 nateonweb.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
@@ -1075,6 +1079,9 @@
 127.0.0.1 zum.com
 127.0.0.1 m.zum.com
 127.0.0.1 m.tv.zum.com
+127.0.0.1 www.ppomppu.co.kr
+127.0.0.1 ppomppu.co.kr
+127.0.0.1 m.ppomppu.co.kr
 
 # shop
 127.0.0.1 www.auction.co.kr
@@ -1260,6 +1267,9 @@
 127.0.0.1 gagalive.com
 127.0.0.1 www.handsfriend.com
 127.0.0.1 handsfriend.com
+127.0.0.1 www.inven.co.kr
+127.0.0.1 inven.co.kr
+127.0.0.1 m.inven.co.kr
 
 # ad
 127.0.0.1 ad.doubleclick.net
