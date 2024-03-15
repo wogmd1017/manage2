@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.03.13
+# 2024.03.15
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -30,6 +30,13 @@
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
 127.0.0.1 kin.naver.com
+127.0.0.1 www.hancom.co.kr
+127.0.0.1 hancom.co.kr
+127.0.0.1 www.hancom.com
+127.0.0.1 cdn.hancom.com
+127.0.0.1 hancom.com
+127.0.0.1 hancomtaja.com
+127.0.0.1 www.hancomtaja.com
 127.0.0.1 www.daum.net
 127.0.0.1 daum.net
 127.0.0.1 m.daum.net
@@ -768,6 +775,10 @@
 127.0.0.1 bilibili.com
 127.0.0.1 m.bilibili.com
 
+#music
+127.0.0.1 Spotfiy.com
+127.0.0.1 www.Spotfiy.com
+
 # sns
 127.0.0.1 www.instagram.com
 127.0.0.1 instagram.com
@@ -1270,6 +1281,15 @@
 127.0.0.1 www.inven.co.kr
 127.0.0.1 inven.co.kr
 127.0.0.1 m.inven.co.kr
+127.0.0.1 everland.com
+127.0.0.1 www.everland.com
+127.0.0.1 iyfbodn.com
+127.0.0.1 www.iyfbodn.com
+127.0.0.1 Ibspaint.com
+127.0.0.1 www.Ibspaint.com
+127.0.0.1 aikoka.com
+127.0.0.1 www.aikoka.com
+
 
 # ad
 127.0.0.1 ad.doubleclick.net
