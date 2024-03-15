@@ -37,6 +37,15 @@
 127.0.0.1 hancom.com
 127.0.0.1 hancomtaja.com
 127.0.0.1 www.hancomtaja.com
+127.0.0.1 malangmalang.com
+127.0.0.1 accounts.malangmalang.com
+127.0.0.1 tt-mole-c.malangmalang.com
+127.0.0.1 tt-coin-c.malangmalang.com
+127.0.0.1 tt-block-c.malangmalang.com
+127.0.0.1 rain.malangmalang.com
+127.0.0.1 xelf.malangmalang.com
+127.0.0.1 cdn.malangmalang.com
+127.0.0.1 typing.malangmalang.com
 127.0.0.1 www.daum.net
 127.0.0.1 daum.net
 127.0.0.1 m.daum.net
@@ -56,6 +65,8 @@
 127.0.0.1 arcade.makecode.com
 127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
+127.0.0.1 minecraft.net
+127.0.0.1 www.minecraft.net
 127.0.0.1 10dollars.tistory.com
 127.0.0.1 96mouse.tistory.com
 127.0.0.1 analogcity.tistory.com
@@ -230,14 +241,6 @@
 127.0.0.1 humanbenchmark.com
 127.0.0.1 hajagame.com
 127.0.0.1 www.aimbooster.com
-127.0.0.1 malangmalang.com
-127.0.0.1 accounts.malangmalang.com
-127.0.0.1 tt-mole-c.malangmalang.com
-127.0.0.1 tt-coin-c.malangmalang.com
-127.0.0.1 tt-block-c.malangmalang.com
-127.0.0.1 rain.malangmalang.com
-127.0.0.1 xelf.malangmalang.com
-127.0.0.1 cdn.malangmalang.com
 127.0.0.1 fg.gameangel.com
 127.0.0.1 www.flash365.co.kr
 127.0.0.1 flash365.co.kr
@@ -680,6 +683,7 @@
 127.0.0.1 accounts.youtube.com
 127.0.0.1 studio.youtube.com
 127.0.0.1 www.youtubekids.com
+127.0.0.1 www.youtube-nocookie.com
 127.0.0.1 www.tiktok.com
 127.0.0.1 tiktok.com
 127.0.0.1 tv.naver.com
@@ -778,6 +782,9 @@
 #music
 127.0.0.1 Spotfiy.com
 127.0.0.1 www.Spotfiy.com
+127.0.0.1 open.Spotfiy.com
+127.0.0.1 mellon.com
+127.0.0.1 www.mellon.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -894,6 +901,8 @@
 127.0.0.1 m.post.naver.com
 127.0.0.1 land.naver.com
 127.0.0.1 m.land.naver.com
+127.0.0.1 papago.com
+127.0.0.1 www.papago.com
 127.0.0.1 www.nate.com
 127.0.0.1 m.nate.com
 127.0.0.1 pann.nate.com
@@ -1159,6 +1168,21 @@
 127.0.0.1 weverse.io
 127.0.0.1 account.weverse.io
 127.0.0.1 www.burgerking.co.kr
+127.0.0.1 toss.com
+127.0.0.1 www.toss.com
+127.0.0.1 toss.me
+127.0.0.1 www.toss.me
+127.0.0.1 daiso.com
+127.0.0.1 www.daiso.com
+127.0.0.1 lg.co.kr
+127.0.0.1 www.lg.co.kr
+127.0.0.1 lg.com
+127.0.0.1 www.lg.com
+127.0.0.1 samsung.com
+127.0.0.1 www.samsung.com
+127.0.0.1 emart.com
+127.0.0.1 www.emart.com
+127.0.0.1 store.emart.com
 
 # news
 127.0.0.1 news.naver.com
@@ -1208,6 +1232,8 @@
 127.0.0.1 www.visymo.com
 127.0.0.1 visymo.com
 127.0.0.1 search.visymo.com
+127.0.0.1 asked.kr
+127.0.0.1 www.asked.kr
 
 # etc
 127.0.0.1 namu.wiki
@@ -1289,7 +1315,8 @@
 127.0.0.1 www.Ibspaint.com
 127.0.0.1 aikoka.com
 127.0.0.1 www.aikoka.com
-
+127.0.0.1 seventeen.com
+127.0.0.1 www.seventeen.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
