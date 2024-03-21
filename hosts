@@ -61,7 +61,7 @@
 127.0.0.1 scratch.mit.edu
 #127.0.0.1 code.org
 #127.0.0.1 studio.code.org
-127.0.0.1 https://arcade.makecode.com
+127.0.0.1 arcade.makecode.com
 127.0.0.1 arcade.makecode.com
 127.0.0.1 playbot.spaceii.com
 127.0.0.1 lightbot.com
@@ -1185,6 +1185,7 @@
 127.0.0.1 emart.com
 127.0.0.1 www.emart.com
 127.0.0.1 store.emart.com
+127.0.0.1 lotte.com
 
 # news
 127.0.0.1 news.naver.com
