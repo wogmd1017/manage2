@@ -20,12 +20,12 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.03.21
+# 2024.03.26
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
@@ -54,17 +54,21 @@
 127.0.0.1 developer.microsoft.com
 127.0.0.1 www.microsoft.com
 127.0.0.1 microsoft.com
+127.0.0.1 zoom.us
+127.0.0.1 google.zoom.us
 
-# game
-#127.0.0.1 playentry.org
-#127.0.0.1 www.playentry.org
+# coding
+127.0.0.1 playentry.org
+127.0.0.1 www.playentry.org
 127.0.0.1 scratch.mit.edu
-#127.0.0.1 code.org
-#127.0.0.1 studio.code.org
+127.0.0.1 code.org
+127.0.0.1 studio.code.org
 127.0.0.1 arcade.makecode.com
 127.0.0.1 arcade.makecode.com
 127.0.0.1 playbot.spaceii.com
 127.0.0.1 lightbot.com
+
+# game
 127.0.0.1 play.google.com
 127.0.0.1 game.naver.com
 127.0.0.1 minecraft.net
@@ -780,6 +784,7 @@
 127.0.0.1 www.bilibili.com
 127.0.0.1 bilibili.com
 127.0.0.1 m.bilibili.com
+127.0.0.1 fpdownload.macromedia.com
 
 #music
 127.0.0.1 Spotfiy.com
@@ -1186,6 +1191,9 @@
 127.0.0.1 www.emart.com
 127.0.0.1 store.emart.com
 127.0.0.1 lotte.com
+127.0.0.1 www.lotte.com
+127.0.0.1 lotteon.com
+127.0.0.1 www.lotteon.com
 
 # news
 127.0.0.1 news.naver.com
