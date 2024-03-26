@@ -26,6 +26,9 @@
 127.0.0.1 google.com
 127.0.0.1 www.google.co.kr
 127.0.0.1 google.co.kr
+#127.0.0.1 drive.google.com
+#127.0.0.1 accounts.google.com
+#127.0.0.1 adssettings.google.com
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
@@ -698,6 +701,8 @@
 127.0.0.1 entertain.naver.com
 127.0.0.1 vibe.naver.com
 127.0.0.1 tv.kakao.com
+127.0.0.1 wavve.com
+127.0.0.1 www.wavve.com
 127.0.0.1 www.afreecatv.com
 127.0.0.1 afreecatv.com
 127.0.0.1 play.afreecatv.com
@@ -787,11 +792,23 @@
 127.0.0.1 fpdownload.macromedia.com
 
 #music
+127.0.0.1 spotify.com
+127.0.0.1 www.spotify.com
+127.0.0.1 open.spotify.com
 127.0.0.1 Spotfiy.com
 127.0.0.1 www.Spotfiy.com
 127.0.0.1 open.Spotfiy.com
+127.0.0.1 melon.com
+127.0.0.1 www.melon.com
 127.0.0.1 mellon.com
 127.0.0.1 www.mellon.com
+127.0.0.1 blip.kr
+127.0.0.1 s.blip.kr
+127.0.0.1 www.blip.kr
+127.0.0.1 playdb.co.kr
+127.0.0.1 www.playdb.co.kr
+127.0.0.1 www.theartist.co.kr
+127.0.0.1 theartist.co.kr
 
 # sns
 127.0.0.1 www.instagram.com
@@ -829,7 +846,10 @@
 127.0.0.1 www.kakao.com
 127.0.0.1 sharer.kakao.com
 127.0.0.1 story.kakao.com
+127.0.0.1 pf.kakao.com
 127.0.0.1 now.naver.com
+127.0.0.1 sotwe.com
+127.0.0.1 www.sotwe.com
 
 # vpn
 127.0.0.1 www.softether.jp
@@ -932,9 +952,6 @@
 127.0.0.1 movie.daum.net
 127.0.0.1 sites.google.com
 127.0.0.1 earth.google.com
-#127.0.0.1 drive.google.com
-#127.0.0.1 accounts.google.com
-#127.0.0.1 adssettings.google.com
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
 127.0.0.1 msn.com
@@ -1109,6 +1126,8 @@
 127.0.0.1 www.ppomppu.co.kr
 127.0.0.1 ppomppu.co.kr
 127.0.0.1 m.ppomppu.co.kr
+127.0.0.1 instiz.net
+127.0.0.1 www.instiz.net
 
 # shop
 127.0.0.1 www.auction.co.kr
@@ -1194,6 +1213,18 @@
 127.0.0.1 www.lotte.com
 127.0.0.1 lotteon.com
 127.0.0.1 www.lotteon.com
+127.0.0.1 temu.com
+127.0.0.1 www.temu.com
+127.0.0.1 a-bly.com
+127.0.0.1 www.a-bly.com
+127.0.0.1 m.a-bly.com
+127.0.0.1 ali-express.com
+127.0.0.1 aliexpress.com
+127.0.0.1 www.aliexpress.com
+127.0.0.1 best.aliexpress.com
+127.0.0.1 homeplus.co.kr
+127.0.0.1 front.homeplus.co.kr
+127.0.0.1 withsome.com
 
 # news
 127.0.0.1 news.naver.com
@@ -1233,6 +1264,14 @@
 127.0.0.1 www.newsinside.kr
 127.0.0.1 cosmopolitan.co.kr
 127.0.0.1 www.cosmopolitan.co.kr
+127.0.0.1 www.allurekorea.com
+127.0.0.1 allurekorea.com
+127.0.0.1 eroun.net
+127.0.0.1 www.eroun.net
+127.0.0.1 etnews.com
+127.0.0.1 www.etnews.com
+127.0.0.1 starnewskorea.com
+127.0.0.1 www.starnewskorea.com
 
 # search
 #127.0.0.1 webcache.googleusercontent.com
@@ -1245,6 +1284,9 @@
 127.0.0.1 search.visymo.com
 127.0.0.1 asked.kr
 127.0.0.1 www.asked.kr
+127.0.0.1 urlscan.io
+127.0.0.1 www.dmitory.com
+127.0.0.1 dmitory.com
 
 # etc
 127.0.0.1 namu.wiki
@@ -1256,6 +1298,9 @@
 127.0.0.1 www.upbit.com
 127.0.0.1 www.bitget.com
 127.0.0.1 simritest.com
+127.0.0.1 www.simritest.com
+127.0.0.1 testbom.com
+127.0.0.1 www.testbom.com
 127.0.0.1 www.simritest.com
 127.0.0.1 www.piku.co.kr
 127.0.0.1 piku.co.kr
@@ -1313,6 +1358,7 @@
 127.0.0.1 filemong.com
 127.0.0.1 www.gagalive.com
 127.0.0.1 gagalive.com
+127.0.0.1 fmktrk.live
 127.0.0.1 www.handsfriend.com
 127.0.0.1 handsfriend.com
 127.0.0.1 www.inven.co.kr
@@ -1328,11 +1374,14 @@
 127.0.0.1 www.aikoka.com
 127.0.0.1 seventeen.com
 127.0.0.1 www.seventeen.com
+127.0.0.1 glukropi.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
 127.0.0.1 adclick.g.doubleclick.net
 127.0.0.1 googleads.g.doubleclick.net
+127.0.0.1 googleplaystore.com
+127.0.0.1 www.googleplaystore.com
 
 # codelove
 127.0.0.1 codelove.com
