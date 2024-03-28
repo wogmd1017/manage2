@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.03.26
+# 2024.03.28
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -63,6 +63,7 @@
 # coding
 #127.0.0.1 playentry.org
 #127.0.0.1 www.playentry.org
+127.0.0.1 space.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
 127.0.0.1 studio.code.org
@@ -655,6 +656,10 @@
 127.0.0.1 newtoki153.com
 127.0.0.1 newtoki154.com
 127.0.0.1 bam275co.com
+127.0.0.1 ibispaint.com
+127.0.0.1 www.ibispaint.com
+127.0.0.1 penup.com
+127.0.0.1 www.penup.com
 
 # novel
 127.0.0.1 www.munpia.com
@@ -961,6 +966,8 @@
 127.0.0.1 c.msn.com
 127.0.0.1 srtb.msn.com
 127.0.0.1 medibangpaint.com
+127.0.0.1 korea.com
+127.0.0.1 www.korea.com
 127.0.0.1 www.google.ae
 127.0.0.1 www.google.com.af
 127.0.0.1 www.google.com.ag
