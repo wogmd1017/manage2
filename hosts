@@ -221,7 +221,6 @@
 127.0.0.1 android-apk.org
 127.0.0.1 www.android-apk.org
 127.0.0.1 thetip.co.kr
-127.0.0.1 kkutu.co.kr
 127.0.0.1 gaamess.com
 127.0.0.1 www.gaamess.com
 127.0.0.1 www.5hgames.com
@@ -338,12 +337,17 @@
 127.0.0.1 imposter-game.com
 127.0.0.1 www.ducksters.com
 127.0.0.1 xerxes-break.tistory.com
-127.0.0.1 kkutu.pink
 127.0.0.1 www.flasharch.com
 127.0.0.1 kiz10.com
 127.0.0.1 www.kiz10.com
 127.0.0.1 taptapking.com
 127.0.0.1 www.taptapking.com
+127.0.0.1 kkutu.org
+127.0.0.1 kkutu.ai
+127.0.0.1 kkutu.io
+127.0.0.1 kkutu.co.kr
+127.0.0.1 kkutu.pink
+127.0.0.1 kkutu.co.kr
 
 # io games
 127.0.0.1 2048.io
@@ -1136,6 +1140,7 @@
 127.0.0.1 m.ppomppu.co.kr
 127.0.0.1 instiz.net
 127.0.0.1 www.instiz.net
+127.0.0.1 www.dongacc.com
 
 # shop
 127.0.0.1 www.auction.co.kr
