@@ -20,10 +20,10 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.03.28
+# 2024.04.02
 # Temp
-127.0.0.1 www.google.com
-127.0.0.1 google.com
+#127.0.0.1 www.google.com
+#127.0.0.1 google.com
 127.0.0.1 www.google.co.kr
 127.0.0.1 google.co.kr
 127.0.0.1 drive.google.com
