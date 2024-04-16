@@ -20,10 +20,10 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.04.02
+# 2024.04.16
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
+127.0.0.1 www.google.com
+127.0.0.1 google.com
 127.0.0.1 www.google.co.kr
 127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
@@ -696,15 +696,15 @@
 127.0.0.1 apps.apple.com
 
 # video
-#127.0.0.1 www.youtube.com
-#127.0.0.1 youtube.com
-#127.0.0.1 m.youtube.com
-#127.0.0.1 accounts.youtube.com
-#127.0.0.1 studio.youtube.com
+127.0.0.1 www.youtube.com
+127.0.0.1 youtube.com
+127.0.0.1 m.youtube.com
+127.0.0.1 accounts.youtube.com
+127.0.0.1 studio.youtube.com
 127.0.0.1 www.youtubekids.com
 127.0.0.1 www.youtube-nocookie.com
-#127.0.0.1 www.tiktok.com
-#127.0.0.1 tiktok.com
+127.0.0.1 www.tiktok.com
+127.0.0.1 tiktok.com
 127.0.0.1 tv.naver.com
 127.0.0.1 www.tv.naver.com
 127.0.0.1 movie.naver.com
