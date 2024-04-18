@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.04.16
+# 2024.04.18
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -62,9 +62,9 @@
 127.0.0.1 google.zoom.us
 
 # coding
-127.0.0.1 playentry.org
-127.0.0.1 www.playentry.org
-127.0.0.1 space.playentry.org
+#127.0.0.1 playentry.org
+#127.0.0.1 www.playentry.org
+#127.0.0.1 space.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
 127.0.0.1 studio.code.org
