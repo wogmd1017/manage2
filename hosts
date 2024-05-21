@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.05.07
+# 2024.05.21
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -30,8 +30,8 @@
 127.0.0.1 drive.google.com
 127.0.0.1 accounts.google.com
 127.0.0.1 adssettings.google.com
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 www.hancom.co.kr
@@ -62,8 +62,8 @@
 127.0.0.1 google.zoom.us
 
 # coding
-#127.0.0.1 playentry.org
-#127.0.0.1 www.playentry.org
+127.0.0.1 playentry.org
+127.0.0.1 www.playentry.org
 127.0.0.1 space.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
@@ -597,8 +597,8 @@
 # toon
 127.0.0.1 comic.naver.com
 127.0.0.1 m.comic.naver.com
-#127.0.0.1 cc.naver.com
-#127.0.0.1 nid.naver.com
+127.0.0.1 cc.naver.com
+127.0.0.1 nid.naver.com
 127.0.0.1 series.naver.com
 127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
