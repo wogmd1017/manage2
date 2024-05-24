@@ -20,16 +20,16 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.05.21
+# 2024.05.24
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
-#127.0.0.1 drive.google.com
+127.0.0.1 drive.google.com
 #127.0.0.1 accounts.google.com
-#127.0.0.1 adssettings.google.com
+127.0.0.1 adssettings.google.com
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
