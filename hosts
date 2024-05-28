@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.05.24
+# 2024.05.28
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -60,6 +60,9 @@
 127.0.0.1 microsoft.com
 127.0.0.1 zoom.us
 127.0.0.1 google.zoom.us
+127.0.0.1 ko.wikipedia.org
+127.0.0.1 wikipedia.org
+127.0.0.1 www.wikipedia.org
 
 # coding
 127.0.0.1 playentry.org
