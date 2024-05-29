@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.05.28
+# 2024.05.29
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -354,6 +354,23 @@
 127.0.0.1 kkutu.pink
 127.0.0.1 kkutu.co.kr
 127.0.0.1 tetris.com
+127.0.0.1 gaamess.dk
+127.0.0.1 joynetgame.com
+127.0.0.1 www.joynetgame.com
+127.0.0.1 mushwarriorh5.joynetgame.com
+127.0.0.1 gameinko.com
+127.0.0.1 www.gameinko.com
+127.0.0.1 miggame.com
+127.0.0.1 www.miggame.com
+127.0.0.1 seasonlp.conquerorsblade.com
+127.0.0.1 conquerorsblade.com
+127.0.0.1 www.conquerorsblade.com
+127.0.0.1 playplaygames.com
+127.0.0.1 www.playplaygames.com
+127.0.0.1 www.googleadservices.com
+127.0.0.1 googleadservices.com
+127.0.0.1 footballog.net
+127.0.0.1 www.footballog.net
 
 # io games
 127.0.0.1 2048.io
@@ -432,6 +449,7 @@
 127.0.0.1 Foes.io
 127.0.0.1 Galaxystrife.io
 127.0.0.1 Gallons.io
+127.0.0.1 gameshost.io
 127.0.0.1 Gartic.io
 127.0.0.1 Gats.io
 127.0.0.1 Generals.io
@@ -1394,6 +1412,7 @@
 127.0.0.1 seventeen.com
 127.0.0.1 www.seventeen.com
 127.0.0.1 glukropi.com
+127.0.0.1 snskeyboard.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
