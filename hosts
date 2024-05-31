@@ -707,6 +707,8 @@
 127.0.0.1 www.chrome.google.com
 127.0.0.1 chromewebstore.google.com
 127.0.0.1 www.chromewebstore.google.com
+127.0.0.1 www.chromeactions.com
+127.0.0.1 chromeactions.com
 127.0.0.1 microsoftedge.microsoft.com
 127.0.0.1 www.microsoftedge.microsoft.com
 127.0.0.1 go.microsoft.com
