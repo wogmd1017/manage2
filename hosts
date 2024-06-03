@@ -41,6 +41,7 @@
 127.0.0.1 hancom.com
 127.0.0.1 hancomtaja.com
 127.0.0.1 www.hancomtaja.com
+127.0.0.1 tt.hancomtaja.com
 127.0.0.1 malangmalang.com
 127.0.0.1 accounts.malangmalang.com
 127.0.0.1 tt-mole-c.malangmalang.com
@@ -50,6 +51,7 @@
 127.0.0.1 xelf.malangmalang.com
 127.0.0.1 cdn.malangmalang.com
 127.0.0.1 typing.malangmalang.com
+127.0.0.1 typing.zidell.me
 127.0.0.1 www.daum.net
 127.0.0.1 daum.net
 127.0.0.1 m.daum.net
@@ -63,6 +65,9 @@
 127.0.0.1 ko.wikipedia.org
 127.0.0.1 wikipedia.org
 127.0.0.1 www.wikipedia.org
+127.0.0.1 blooket.com
+127.0.0.1 www.blooket.com
+127.0.0.1 play.blooket.com
 
 # coding
 127.0.0.1 playentry.org
@@ -106,6 +111,7 @@
 127.0.0.1 www.flashgamemall.tistory.com
 127.0.0.1 flashgamemall.com
 127.0.0.1 flashmaniac.tistory.com
+127.0.0.1 game-kingdom.tistory.com
 127.0.0.1 gamei.tistory.com
 127.0.0.1 gdbs.tistory.com
 127.0.0.1 gdrwl.tistory.com
@@ -729,6 +735,10 @@
 127.0.0.1 appleid.apple.com
 127.0.0.1 account-auth.weverse.io
 127.0.0.1 apps.apple.com
+
+# browser theme
+127.0.0.1 custom-cursor.com
+127.0.0.1 www.custom-cursor.com
 
 # video
 127.0.0.1 www.youtube.com
