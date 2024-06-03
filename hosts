@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.05.31
+# 2024.06.03
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -374,8 +374,10 @@
 127.0.0.1 segagames.co.kr
 127.0.0.1 www.segagames.co.kr
 127.0.0.1 xn--o79ax03boqd.kr
+127.0.0.1 슈게임.kr
 127.0.0.1 flasharch.com
 127.0.0.1 www.flasharch.com
+
 
 # io games
 127.0.0.1 2048.io
@@ -1221,7 +1223,9 @@
 127.0.0.1 shoppinglive.naver.com
 127.0.0.1 pay.naver.com
 127.0.0.1 inflow.pay.naver.com
+127.0.0.1 ssg.com
 127.0.0.1 www.ssg.com
+127.0.0.1 emart.ssg.com
 127.0.0.1 bunjang.co.kr
 127.0.0.1 m.bunjang.co.kr
 127.0.0.1 www.bunjang.co.kr
@@ -1424,6 +1428,10 @@
 127.0.0.1 www.seventeen.com
 127.0.0.1 glukropi.com
 127.0.0.1 snskeyboard.com
+127.0.0.1 theqoo.com
+127.0.0.1 www.theqoo.com
+127.0.0.1 theqoo.net
+127.0.0.1 www.theqoo.net
 
 # ad
 127.0.0.1 ad.doubleclick.net
