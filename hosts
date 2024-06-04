@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.06.03
+# 2024.06.04
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -34,6 +34,24 @@
 127.0.0.1 www.naver.com
 127.0.0.1 search.naver.com
 127.0.0.1 kin.naver.com
+127.0.0.1 www.daum.net
+127.0.0.1 daum.net
+127.0.0.1 m.daum.net
+127.0.0.1 map.naver.com
+127.0.0.1 earth.google.com
+127.0.0.1 developer.microsoft.com
+127.0.0.1 www.microsoft.com
+127.0.0.1 microsoft.com
+127.0.0.1 zoom.us
+127.0.0.1 google.zoom.us
+127.0.0.1 ko.wikipedia.org
+127.0.0.1 wikipedia.org
+127.0.0.1 www.wikipedia.org
+127.0.0.1 blooket.com
+127.0.0.1 www.blooket.com
+127.0.0.1 play.blooket.com
+
+#typing
 127.0.0.1 www.hancom.co.kr
 127.0.0.1 hancom.co.kr
 127.0.0.1 www.hancom.com
@@ -52,22 +70,8 @@
 127.0.0.1 cdn.malangmalang.com
 127.0.0.1 typing.malangmalang.com
 127.0.0.1 typing.zidell.me
-127.0.0.1 www.daum.net
-127.0.0.1 daum.net
-127.0.0.1 m.daum.net
-127.0.0.1 map.naver.com
-127.0.0.1 earth.google.com
-127.0.0.1 developer.microsoft.com
-127.0.0.1 www.microsoft.com
-127.0.0.1 microsoft.com
-127.0.0.1 zoom.us
-127.0.0.1 google.zoom.us
-127.0.0.1 ko.wikipedia.org
-127.0.0.1 wikipedia.org
-127.0.0.1 www.wikipedia.org
-127.0.0.1 blooket.com
-127.0.0.1 www.blooket.com
-127.0.0.1 play.blooket.com
+127.0.0.1 dino-typing.com
+127.0.0.1 www.dino-typing.com
 
 # coding
 127.0.0.1 playentry.org
@@ -383,7 +387,18 @@
 127.0.0.1 슈게임.kr
 127.0.0.1 flasharch.com
 127.0.0.1 www.flasharch.com
-
+127.0.0.1 v3.xbox-interactive.com
+127.0.0.1 game.com
+127.0.0.1 www.game.com
+127.0.0.1 tt.game.com
+127.0.0.1 gmae.com
+127.0.0.1 www6.gmae.com
+127.0.0.1 play.com
+127.0.0.1 www.play.com
+127.0.0.1 playgame.com
+127.0.0.1 www.playgame.com
+127.0.0.1 gameland.kr
+127.0.0.1 www.gameland.kr
 
 # io games
 127.0.0.1 2048.io
@@ -988,6 +1003,9 @@
 127.0.0.1 m.land.naver.com
 127.0.0.1 papago.com
 127.0.0.1 www.papago.com
+127.0.0.1 papago.kr
+127.0.0.1 www.papago.kr
+127.0.0.1 papago.naver.com
 127.0.0.1 www.nate.com
 127.0.0.1 m.nate.com
 127.0.0.1 pann.nate.com
@@ -1288,6 +1306,8 @@
 127.0.0.1 homeplus.co.kr
 127.0.0.1 front.homeplus.co.kr
 127.0.0.1 withsome.com
+127.0.0.1 rakuten.com
+127.0.0.1 www.rakuten.com
 
 # news
 127.0.0.1 news.naver.com
@@ -1462,3 +1482,5 @@
 127.0.0.1 codelove.de
 127.0.0.1 code-love.com
 127.0.0.1 cordlove.mybigcommerce.com
+127.0.0.1 entree.com
+127.0.0.1 www.entree.com
