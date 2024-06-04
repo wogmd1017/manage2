@@ -33,7 +33,7 @@
 #127.0.0.1 .com
 #127.0.0.1 www..com
 #127.0.0.1 search..com
-#127.0.0.1 kin.naver.com
+127.0.0.1 kin.naver.com
 127.0.0.1 www.daum.net
 127.0.0.1 daum.net
 127.0.0.1 m.daum.net
@@ -249,7 +249,7 @@
 127.0.0.1 static-jr.pstatic.net
 127.0.0.1 flash-jr.pstatic.net
 127.0.0.1 kin-phinf.pstatic.net
-127.0.0.1 search.pstatic.net
+#127.0.0.1 search.pstatic.net
 127.0.0.1 mblogthumb-phinf.pstatic.net
 127.0.0.1 www.trex-game.skipser.com
 127.0.0.1 www.lego.com
@@ -920,7 +920,7 @@
 127.0.0.1 sharer.kakao.com
 127.0.0.1 story.kakao.com
 127.0.0.1 pf.kakao.com
-#127.0.0.1 now.naver.com
+127.0.0.1 now.naver.com
 127.0.0.1 sotwe.com
 127.0.0.1 www.sotwe.com
 
@@ -980,8 +980,8 @@
 127.0.0.1 dreamquester.com
 127.0.0.1 apt.dreamquester.com
 127.0.0.1 happybean.naver.com
-#127.0.0.1 m.naver.com
-#127.0.0.1 m.site.naver.com
+127.0.0.1 m.naver.com
+127.0.0.1 m.site.naver.com
 #127.0.0.1 site.naver.com
 #127.0.0.1 now.naver.com
 127.0.0.1 m.now.naver.com
@@ -990,8 +990,8 @@
 127.0.0.1 v5.map.naver.com
 127.0.0.1 place.naver.com
 127.0.0.1 pcmap.place.naver.com
-#127.0.0.1 adcr.naver.com
-#127.0.0.1 kin.naver.com
+127.0.0.1 adcr.naver.com
+127.0.0.1 kin.naver.com
 127.0.0.1 m.kin.naver.com
 127.0.0.1 keep.naver.com
 #127.0.0.1 cafe.naver.com
@@ -1313,7 +1313,7 @@
 #127.0.0.1 news.naver.com
 #127.0.0.1 m.news.naver.com
 127.0.0.1 newsstand.naver.com
-#127.0.0.1 sports.naver.com
+127.0.0.1 sports.naver.com
 127.0.0.1 m.sports.naver.com
 127.0.0.1 sports.news.naver.com
 127.0.0.1 bing.com
