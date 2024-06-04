@@ -22,17 +22,17 @@
 
 # 2024.06.04
 # Temp
-#127.0.0.1 www.google.com
-#127.0.0.1 google.com
-#127.0.0.1 www.google.co.kr
-#127.0.0.1 google.co.kr
+127.0.0.1 www.google.com
+127.0.0.1 google.com
+127.0.0.1 www.google.co.kr
+127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
 127.0.0.1 drive.google.com
 #127.0.0.1 accounts.google.com
 127.0.0.1 adssettings.google.com
-#127.0.0.1 .com
-#127.0.0.1 www..com
-#127.0.0.1 search..com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 search.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 www.daum.net
 127.0.0.1 daum.net
@@ -649,8 +649,8 @@
 # toon
 127.0.0.1 comic.naver.com
 127.0.0.1 m.comic.naver.com
-#127.0.0.1 cc.naver.com
-#127.0.0.1 nid.naver.com
+127.0.0.1 cc.naver.com
+127.0.0.1 nid.naver.com
 127.0.0.1 series.naver.com
 127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
@@ -982,8 +982,8 @@
 127.0.0.1 happybean.naver.com
 127.0.0.1 m.naver.com
 127.0.0.1 m.site.naver.com
-#127.0.0.1 site.naver.com
-#127.0.0.1 now.naver.com
+127.0.0.1 site.naver.com
+127.0.0.1 now.naver.com
 127.0.0.1 m.now.naver.com
 127.0.0.1 whale.naver.com
 127.0.0.1 map.naver.com
@@ -997,7 +997,7 @@
 #127.0.0.1 cafe.naver.com
 127.0.0.1 m.cafe.naver.com
 127.0.0.1 section.cafe.naver.com
-#127.0.0.1 post.naver.com
+127.0.0.1 post.naver.com
 127.0.0.1 m.post.naver.com
 127.0.0.1 land.naver.com
 127.0.0.1 m.land.naver.com
@@ -1015,7 +1015,7 @@
 127.0.0.1 nateonweb.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
-#127.0.0.1 blog.naver.com
+127.0.0.1 blog.naver.com
 127.0.0.1 www.blog.naver.com
 127.0.0.1 m.blog.naver.com
 127.0.0.1 section.blog.naver.com
@@ -1310,8 +1310,8 @@
 127.0.0.1 www.rakuten.com
 
 # news
-#127.0.0.1 news.naver.com
-#127.0.0.1 m.news.naver.com
+127.0.0.1 news.naver.com
+127.0.0.1 m.news.naver.com
 127.0.0.1 newsstand.naver.com
 127.0.0.1 sports.naver.com
 127.0.0.1 m.sports.naver.com
