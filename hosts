@@ -402,6 +402,9 @@
 127.0.0.1 machugi.io
 127.0.0.1 bluestacks.com
 127.0.0.1 www.bluestacks.com
+127.0.0.1 xn--o79am3sh5ijue0ou.kr
+127.0.0.1 플시게임.kr
+127.0.0.1 valorantesports.com
 
 # io games
 127.0.0.1 2048.io
@@ -720,6 +723,7 @@
 127.0.0.1 www.ibispaint.com
 127.0.0.1 penup.com
 127.0.0.1 www.penup.com
+127.0.0.1 artmug.kr
 
 # novel
 127.0.0.1 www.munpia.com
@@ -796,7 +800,6 @@
 127.0.0.1 www.genie.co.kr
 127.0.0.1 genius.com
 127.0.0.1 www.fifa.com
-127.0.0.1 yandex.com
 127.0.0.1 www.pandalive.co.kr
 127.0.0.1 www.popkontv.com
 127.0.0.1 noonoo.tv
@@ -865,6 +868,17 @@
 127.0.0.1 bilibili.com
 127.0.0.1 m.bilibili.com
 127.0.0.1 fpdownload.macromedia.com
+127.0.0.1 jtbc.co.kr
+127.0.0.1 tv.jtbc.co.kr
+127.0.0.1 www.kbs.co.kr
+127.0.0.1 fun.kbs.co.kr
+127.0.0.1 program.kbs.co.kr
+127.0.0.1 vod.kbs.co.kr
+127.0.0.1 sports.kbs.co.kr
+127.0.0.1 music.kbs.co.kr
+127.0.0.1 imbc.com
+127.0.0.1 www.imbc.com
+127.0.0.1 program.imbc.com
 
 #music
 127.0.0.1 spotify.com
@@ -924,6 +938,9 @@
 127.0.0.1 sharer.kakao.com
 127.0.0.1 story.kakao.com
 127.0.0.1 pf.kakao.com
+127.0.0.1 band.us
+127.0.0.1 www.band.us
+127.0.0.1 auth.band.us
 127.0.0.1 now.naver.com
 127.0.0.1 sotwe.com
 127.0.0.1 www.sotwe.com
@@ -1005,6 +1022,7 @@
 127.0.0.1 m.post.naver.com
 127.0.0.1 land.naver.com
 127.0.0.1 m.land.naver.com
+127.0.0.1 finance.naver.com
 127.0.0.1 papago.com
 127.0.0.1 www.papago.com
 127.0.0.1 papago.kr
@@ -1211,6 +1229,7 @@
 127.0.0.1 instiz.net
 127.0.0.1 www.instiz.net
 127.0.0.1 www.dongacc.com
+127.0.0.1 www.whychina.co.kr
 
 # shop
 127.0.0.1 www.auction.co.kr
@@ -1359,11 +1378,21 @@
 127.0.0.1 www.etnews.com
 127.0.0.1 starnewskorea.com
 127.0.0.1 www.starnewskorea.com
+127.0.0.1 bbsa.or.kr
+127.0.0.1 www.bbsa.or.kr
+127.0.0.1 korea-baseball.com
+127.0.0.1 www.korea-baseball.com
+127.0.0.1 www.seoulbsa.net
+127.0.0.1 news1.kr
+127.0.0.1 www.news1.kr
 
 # search
 #127.0.0.1 webcache.googleusercontent.com
 #127.0.0.1 www.gstatic.com
 127.0.0.1 yandex.com
+127.0.0.1 www.yandex.com
+127.0.0.1 yandex.by
+127.0.0.1 music.yandex.by
 #127.0.0.1 website.informer.com
 127.0.0.1 www.wadiz.kr
 127.0.0.1 www.visymo.com
@@ -1412,6 +1441,8 @@
 127.0.0.1 ko.wikihow.com
 127.0.0.1 www.op.gg
 127.0.0.1 op.gg
+127.0.0.1 tracker.gg
+127.0.0.1 www.tracker.gg
 127.0.0.1 www.bithumb.com
 127.0.0.1 bithumb.com
 127.0.0.1 www.fmkorea.com
@@ -1467,6 +1498,9 @@
 127.0.0.1 www.theqoo.com
 127.0.0.1 theqoo.net
 127.0.0.1 www.theqoo.net
+127.0.0.1 dahnworld.com
+127.0.0.1 www.dahnworld.com
+127.0.0.1 www.shincheonji.org
 
 # ad
 127.0.0.1 ad.doubleclick.net
