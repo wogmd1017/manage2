@@ -405,6 +405,8 @@
 127.0.0.1 xn--o79am3sh5ijue0ou.kr
 127.0.0.1 플시게임.kr
 127.0.0.1 valorantesports.com
+127.0.0.1 gorisanson.github.io
+127.0.0.1 www.chess.com
 
 # io games
 127.0.0.1 2048.io
@@ -477,6 +479,7 @@
 127.0.0.1 ev.io
 127.0.0.1 Evades.io
 127.0.0.1 Evowars.io
+127.0.0.1 evoworld.io
 127.0.0.1 Fightz.io
 127.0.0.1 fisheater.io
 127.0.0.1 Flyordie.io
@@ -861,6 +864,7 @@
 127.0.0.1 www.nicovideo.jp
 127.0.0.1 ch.nicovideo.jp
 127.0.0.1 m.nicovideo.jp
+127.0.0.1 seiga.nicovideo.jp
 127.0.0.1 www.bilibili.tv
 127.0.0.1 bilibili.tv
 127.0.0.1 m.bilibili.tv
@@ -879,6 +883,11 @@
 127.0.0.1 imbc.com
 127.0.0.1 www.imbc.com
 127.0.0.1 program.imbc.com
+127.0.0.1 tvchosun.com
+127.0.0.1 www.tvchosun.com
+127.0.0.1 broadcast.tvchosun.com
+127.0.0.1 moviefigure.co.kr
+127.0.0.1 pyony.com
 
 #music
 127.0.0.1 spotify.com
@@ -1230,6 +1239,9 @@
 127.0.0.1 www.instiz.net
 127.0.0.1 www.dongacc.com
 127.0.0.1 www.whychina.co.kr
+127.0.0.1 baidu.com
+127.0.0.1 www.baidu.com
+127.0.0.1 image.baidu.com
 
 # shop
 127.0.0.1 www.auction.co.kr
