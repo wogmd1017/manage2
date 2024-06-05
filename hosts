@@ -20,7 +20,7 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-# 2024.06.04
+# 2024.06.05
 # Temp
 127.0.0.1 www.google.com
 127.0.0.1 google.com
@@ -116,6 +116,7 @@
 127.0.0.1 flashgamemall.com
 127.0.0.1 flashgamesite.tistory.com
 127.0.0.1 flashmaniac.tistory.com
+127.0.0.1 foreverhan.tistory.com
 127.0.0.1 game-kingdom.tistory.com
 127.0.0.1 gamelulu.tistory.com
 127.0.0.1 gamei.tistory.com
@@ -157,6 +158,7 @@
 127.0.0.1 okkgame.com
 127.0.0.1 olbbemegames.tistory.com
 127.0.0.1 owlgames.tistory.com
+127.0.0.1 pafa.tistory.com
 127.0.0.1 rabia.tistory.com
 127.0.0.1 realmojo.tistory.com
 127.0.0.1 rich-useful.tistory.com
@@ -416,6 +418,10 @@
 127.0.0.1 xn--o39akk23z42cnwnhih.com
 127.0.0.1 xn--o39akk23z42cnwnhih.kr
 127.0.0.1 슈의라면가게.kr
+127.0.0.1 blitz.gg
+127.0.0.1 www.blitz.gg
+127.0.0.1 iflirtclub.com
+
 
 # io games
 127.0.0.1 2048.io
@@ -897,6 +903,12 @@
 127.0.0.1 broadcast.tvchosun.com
 127.0.0.1 moviefigure.co.kr
 127.0.0.1 pyony.com
+127.0.0.1 dzen.ru
+127.0.0.1 www.onlyporn.to
+127.0.0.1 pornhub.com
+127.0.0.1 www.pornhub.com
+127.0.0.1 pornhup.com
+127.0.0.1 www.pornhup.com
 
 #music
 127.0.0.1 spotify.com
@@ -932,6 +944,9 @@
 127.0.0.1 twitter.com
 127.0.0.1 m.twitter.com
 127.0.0.1 www.twitter.com
+127.0.0.1 x.com
+127.0.0.1 www.x.com
+127.0.0.1 m.x.com
 127.0.0.1 www.pinterest.co.kr
 127.0.0.1 pinterest.co.kr
 127.0.0.1 m.pinterest.co.kr
@@ -962,6 +977,8 @@
 127.0.0.1 now.naver.com
 127.0.0.1 sotwe.com
 127.0.0.1 www.sotwe.com
+127.0.0.1 vk.com
+127.0.0.1 www.vk.com
 
 # vpn
 127.0.0.1 www.softether.jp
@@ -1013,6 +1030,7 @@
 127.0.0.1 links.giveawayoftheday.com
 127.0.0.1 gflix.kr
 127.0.0.1 info.channel.seoul.kr
+127.0.0.1 wjdqhzld.com
 
 # portal
 127.0.0.1 tgd.kr
@@ -1251,6 +1269,9 @@
 127.0.0.1 baidu.com
 127.0.0.1 www.baidu.com
 127.0.0.1 image.baidu.com
+127.0.0.1 manzlab.com
+127.0.0.1 www.manzlab.com
+127.0.0.1 ya.ru
 
 # shop
 127.0.0.1 www.auction.co.kr
@@ -1352,6 +1373,13 @@
 127.0.0.1 withsome.com
 127.0.0.1 rakuten.com
 127.0.0.1 www.rakuten.com
+127.0.0.1 kbench.com
+127.0.0.1 pc-builds.com
+127.0.0.1 danawa.com
+127.0.0.1 www.danawa.com
+127.0.0.1 prod.danawa.com
+127.0.0.1 quasarzone.com
+127.0.0.1 www.quasarzone.com
 
 # news
 127.0.0.1 news.naver.com
@@ -1406,6 +1434,10 @@
 127.0.0.1 www.seoulbsa.net
 127.0.0.1 news1.kr
 127.0.0.1 www.news1.kr
+127.0.0.1 maxim.com
+127.0.0.1 www.maxim.com
+127.0.0.1 maximkorea.net
+127.0.0.1 www.maximkorea.net
 
 # search
 #127.0.0.1 webcache.googleusercontent.com
@@ -1414,6 +1446,8 @@
 127.0.0.1 www.yandex.com
 127.0.0.1 yandex.by
 127.0.0.1 music.yandex.by
+127.0.0.1 yandex.ru
+127.0.0.1 www.yandex.ru
 #127.0.0.1 website.informer.com
 127.0.0.1 www.wadiz.kr
 127.0.0.1 www.visymo.com
@@ -1424,6 +1458,7 @@
 127.0.0.1 urlscan.io
 127.0.0.1 www.dmitory.com
 127.0.0.1 dmitory.com
+127.0.0.1 fiscalcode.com
 
 # etc
 127.0.0.1 namu.wiki
