@@ -38,10 +38,10 @@
 127.0.0.1 chrome.google.com
 127.0.0.1 www.chrome.google.com
 #127.0.0.1 www.gstatic.com
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
-#127.0.0.1 m.naver.com
-#127.0.0.1 search.naver.com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 m.naver.com
+127.0.0.1 search.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 m.kin.naver.com
 127.0.0.1 blog.naver.com
