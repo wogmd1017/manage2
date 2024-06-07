@@ -115,6 +115,8 @@
 127.0.0.1 blooket.com
 127.0.0.1 www.blooket.com
 127.0.0.1 play.blooket.com
+127.0.0.1 id.blooket.com
+127.0.0.1 dashboard.blooket.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
@@ -122,6 +124,7 @@
 127.0.0.1 googleads.g.doubleclick.net
 127.0.0.1 googleplaystore.com
 127.0.0.1 www.googleplaystore.com
+127.0.0.1 ced23.pushuiop.com
 
 # browser theme
 127.0.0.1 custom-cursor.com
@@ -761,13 +764,16 @@
 127.0.0.1 www.playdb.co.kr
 127.0.0.1 www.theartist.co.kr
 127.0.0.1 theartist.co.kr
+127.0.0.1 aespa.com
+127.0.0.1 www.aespa.com
+127.0.0.1 prince.com
+127.0.0.1 smtown.com
+127.0.0.1 www.smtown.com
+127.0.0.1 audition.smtown.com
+127.0.0.1 smentertainment.com
+127.0.0.1 www.smentertainment.com
 
 # news
-127.0.0.1 bing.com
-127.0.0.1 www.bing.com
-127.0.0.1 th.bing.com
-127.0.0.1 www.msn.com
-127.0.0.1 msn.com
 127.0.0.1 www.chosun.com
 127.0.0.1 biz.chosun.com
 127.0.0.1 sports.chosun.com
@@ -850,12 +856,18 @@
 127.0.0.1 sports.daum.net
 127.0.0.1 www.live.com
 127.0.0.1 login.live.com
+127.0.0.1 bing.com
+127.0.0.1 www.bing.com
+127.0.0.1 th.bing.com
 127.0.0.1 msn.com
 127.0.0.1 www.msn.com
 127.0.0.1 ntp.msn.com
 127.0.0.1 assets.msn.com
 127.0.0.1 c.msn.com
 127.0.0.1 srtb.msn.com
+127.0.0.1 microsoft.com
+127.0.0.1 www.microsoft.com
+127.0.0.1 microsoftedgewelcome.microsoft.com
 127.0.0.1 medibangpaint.com
 127.0.0.1 korea.com
 127.0.0.1 www.korea.com
@@ -1035,6 +1047,10 @@
 127.0.0.1 manzlab.com
 127.0.0.1 www.manzlab.com
 127.0.0.1 ya.ru
+127.0.0.1 yahoo.com
+127.0.0.1 www.yahoo.com
+127.0.0.1 yahoo.co.jp
+127.0.0.1 www.yahoo.co.jp
 
 # proxy
 127.0.0.1 www.filterbypass.me
@@ -1175,6 +1191,7 @@
 127.0.0.1 prod.danawa.com
 127.0.0.1 quasarzone.com
 127.0.0.1 www.quasarzone.com
+127.0.0.1 bictoriasecret.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -1328,6 +1345,8 @@
 127.0.0.1 www.rexmanga.com
 127.0.0.1 webtoonsite.com
 127.0.0.1 www.webtoonsite.com
+127.0.0.1 magma.com
+127.0.0.1 www.magma.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
@@ -1350,6 +1369,8 @@
 127.0.0.1 typing.zidell.me
 127.0.0.1 dino-typing.com
 127.0.0.1 www.dino-typing.com
+127.0.0.1 typing.com
+127.0.0.1 www.typing.com
 
 # video
 127.0.0.1 www.youtube.com
@@ -1359,8 +1380,12 @@
 127.0.0.1 studio.youtube.com
 127.0.0.1 www.youtubekids.com
 127.0.0.1 www.youtube-nocookie.com
+127.0.0.1 googlevideo.com
 127.0.0.1 www.tiktok.com
 127.0.0.1 tiktok.com
+127.0.0.1 yewtu.be
+127.0.0.1 api.invidious.io
+127.0.0.1 clipzag.com
 
 127.0.0.1 wavve.com
 127.0.0.1 www.wavve.com
