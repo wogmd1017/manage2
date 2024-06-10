@@ -125,6 +125,7 @@
 127.0.0.1 googleplaystore.com
 127.0.0.1 www.googleplaystore.com
 127.0.0.1 ced23.pushuiop.com
+127.0.0.1 update.org
 
 # browser theme
 127.0.0.1 custom-cursor.com
@@ -387,6 +388,8 @@
 127.0.0.1 슈의라면가게.kr
 127.0.0.1 xn--o79am3sh5ijue0ou.kr
 127.0.0.1 플시게임.kr
+127.0.0.1 tocaboca.com
+127.0.0.1 www.tocaboca.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -1094,6 +1097,8 @@
 127.0.0.1 fiscalcode.com
 
 # shop
+127.0.0.1 amazon.com
+127.0.0.1 www.amazon.com
 127.0.0.1 www.auction.co.kr
 127.0.0.1 auction.co.kr
 127.0.0.1 m.auction.co.kr
@@ -1192,6 +1197,10 @@
 127.0.0.1 quasarzone.com
 127.0.0.1 www.quasarzone.com
 127.0.0.1 bictoriasecret.com
+127.0.0.1 prada.com
+127.0.0.1 www.prada.com
+127.0.0.1 zigzag.com
+127.0.0.1 www.zigzag.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -1283,6 +1292,8 @@
 127.0.0.1 appleid.apple.com
 127.0.0.1 account-auth.weverse.io
 127.0.0.1 apps.apple.com
+127.0.0.1 apkpure.net
+127.0.0.1 www.apkpure.net
 
 # toon
 127.0.0.1 toptoon.com
@@ -1347,6 +1358,9 @@
 127.0.0.1 www.webtoonsite.com
 127.0.0.1 magma.com
 127.0.0.1 www.magma.com
+127.0.0.1 whiteboardfox.com
+127.0.0.1 www.whiteboardfox.com
+127.0.0.1 r9.whiteboardfox.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
@@ -1383,6 +1397,8 @@
 127.0.0.1 googlevideo.com
 127.0.0.1 www.tiktok.com
 127.0.0.1 tiktok.com
+127.0.0.1 tictok.com
+127.0.0.1 www.tictok.com
 127.0.0.1 yewtu.be
 127.0.0.1 api.invidious.io
 127.0.0.1 clipzag.com
@@ -1615,3 +1631,4 @@
 127.0.0.1 dahnworld.com
 127.0.0.1 www.dahnworld.com
 127.0.0.1 www.shincheonji.org
+127.0.0.1 blog.myso.kr
