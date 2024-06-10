@@ -816,6 +816,8 @@
 127.0.0.1 www.maxim.com
 127.0.0.1 maximkorea.net
 127.0.0.1 www.maximkorea.net
+127.0.0.1 slownews.kr
+127.0.0.1 www.slownews.kr
 
 # novel
 127.0.0.1 www.munpia.com
@@ -1201,6 +1203,13 @@
 127.0.0.1 www.prada.com
 127.0.0.1 zigzag.com
 127.0.0.1 www.zigzag.com
+127.0.0.1 arton.kr
+127.0.0.1 m.arton.kr
+127.0.0.1 www.maeil.com
+127.0.0.1 korea-iphone.com
+127.0.0.1 www.korea-iphone.com
+127.0.0.1 zara.com
+127.0.0.1 www.zara.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -1228,6 +1237,11 @@
 127.0.0.1 m.pinterest.com
 127.0.0.1 kr.pinterest.com
 127.0.0.1 jp.pinterest.com
+127.0.0.1 www.pinterest.jp
+127.0.0.1 es.pinterest.com
+127.0.0.1 www.pinterest.es
+127.0.0.1 fr.pinterest.com
+127.0.0.1 www.pinterest.fr
 127.0.0.1 discord.com
 127.0.0.1 m.discord.com
 127.0.0.1 www.discord.com
@@ -1361,6 +1375,18 @@
 127.0.0.1 whiteboardfox.com
 127.0.0.1 www.whiteboardfox.com
 127.0.0.1 r9.whiteboardfox.com
+127.0.0.1 icons8.kr
+127.0.0.1 depositphotos.com
+127.0.0.1 freepik.com
+127.0.0.1 kr.freepik.com
+127.0.0.1 lovepik.com
+127.0.0.1 kr.lovepik.com
+127.0.0.1 flaticon.com
+127.0.0.1 www.flaticon.com
+127.0.0.1 istockphoto.com
+127.0.0.1 www.istockphoto.com
+127.0.0.1 pngwing.com
+127.0.0.1 www.pngwing.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
@@ -1402,7 +1428,6 @@
 127.0.0.1 yewtu.be
 127.0.0.1 api.invidious.io
 127.0.0.1 clipzag.com
-
 127.0.0.1 wavve.com
 127.0.0.1 www.wavve.com
 127.0.0.1 www.afreecatv.com
