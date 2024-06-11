@@ -391,6 +391,9 @@
 127.0.0.1 tocaboca.com
 127.0.0.1 www.tocaboca.com
 127.0.0.1 suika-game.kr
+127.0.0.1 suika-game.app
+127.0.0.1 suika-game.jp
+127.0.0.1 snake.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -1212,6 +1215,8 @@
 127.0.0.1 www.korea-iphone.com
 127.0.0.1 zara.com
 127.0.0.1 www.zara.com
+127.0.0.1 ko.victoriassecret.com
+127.0.0.1 pink.com
 
 # sns
 127.0.0.1 www.instagram.com
@@ -1470,6 +1475,9 @@
 127.0.0.1 typing.com
 127.0.0.1 www.typing.com
 127.0.0.1 speedcoder.net
+127.0.0.1 www.speedcoder.net
+127.0.0.1 typingtom.com
+127.0.0.1 www.typingtom.com
 
 # video
 127.0.0.1 www.youtube.com
@@ -1717,3 +1725,4 @@
 127.0.0.1 www.shincheonji.org
 127.0.0.1 blog.myso.kr
 127.0.0.1 ably.com
+127.0.0.1 japan.com
