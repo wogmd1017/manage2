@@ -96,6 +96,7 @@
 127.0.0.1 cr2.shopping.naver.com
 127.0.0.1 cr3.shopping.naver.com
 127.0.0.1 shoppinglive.naver.com
+127.0.0.1 shopsquare.naver.com
 127.0.0.1 pay.naver.com
 127.0.0.1 inflow.pay.naver.com
 127.0.0.1 news.naver.com
@@ -380,13 +381,17 @@
 127.0.0.1 www.blitz.gg
 127.0.0.1 iflirtclub.com
 127.0.0.1 www.xn--910b94xglf32a.com
+127.0.0.1 www.xn--910b94xglf32a.kr
 127.0.0.1 xn--2o2b110c8qb.com
+127.0.0.1 xn--2o2b110c8qb.kr
+127.0.0.1 xn--o79ax03boqd.com
 127.0.0.1 xn--o79ax03boqd.kr
 127.0.0.1 슈게임.kr
 127.0.0.1 xn--o39akk23z42cnwnhih.com
 127.0.0.1 xn--o39akk23z42cnwnhih.kr
 127.0.0.1 슈의라면가게.kr
 127.0.0.1 xn--o79am3sh5ijue0ou.kr
+127.0.0.1 xn--o79am3sh5ijue0ou.com
 127.0.0.1 플시게임.kr
 127.0.0.1 tocaboca.com
 127.0.0.1 www.tocaboca.com
@@ -394,6 +399,7 @@
 127.0.0.1 suika-game.app
 127.0.0.1 suika-game.jp
 127.0.0.1 snake.com
+127.0.0.1 sadagugame.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -452,6 +458,7 @@
 127.0.0.1 minat.tistory.com
 127.0.0.1 mmnara.tistory.com
 127.0.0.1 modesty72.tistory.com
+127.0.0.1 mukppe.tistory.com
 127.0.0.1 mynautilus.tistory.com
 127.0.0.1 nagada1000.tistory.com
 127.0.0.1 newsmoum.tistory.com
@@ -1478,6 +1485,7 @@
 127.0.0.1 www.speedcoder.net
 127.0.0.1 typingtom.com
 127.0.0.1 www.typingtom.com
+127.0.0.1 tadaktadak.co.kr
 
 # video
 127.0.0.1 www.youtube.com
