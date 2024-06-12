@@ -104,9 +104,9 @@
 127.0.0.1 sports.naver.com
 127.0.0.1 m.sports.naver.com
 127.0.0.1 sports.news.naver.com
-127.0.0.1 developer.microsoft.com
-127.0.0.1 www.microsoft.com
-127.0.0.1 microsoft.com
+127.0.0.1 developer..com
+#127.0.0.1 www.microsoft.com
+#127.0.0.1 microsoft.com
 127.0.0.1 zoom.us
 127.0.0.1 google.zoom.us
 127.0.0.1 ko.wikipedia.org
@@ -874,9 +874,9 @@
 127.0.0.1 assets.msn.com
 127.0.0.1 c.msn.com
 127.0.0.1 srtb.msn.com
-127.0.0.1 microsoft.com
-127.0.0.1 www.microsoft.com
-127.0.0.1 microsoftedgewelcome.microsoft.com
+#127.0.0.1 microsoft.com
+#127.0.0.1 www.microsoft.com
+#127.0.0.1 microsoftedgewelcome.microsoft.com
 127.0.0.1 medibangpaint.com
 127.0.0.1 korea.com
 127.0.0.1 www.korea.com
@@ -1359,7 +1359,7 @@
 127.0.0.1 microsoftedge.microsoft.com
 127.0.0.1 www.microsoftedge.microsoft.com
 127.0.0.1 go.microsoft.com
-127.0.0.1 login.microsoftonline.com
+#127.0.0.1 login.microsoftonline.com
 127.0.0.1 en.softonic.com
 127.0.0.1 www.softonic.com
 127.0.0.1 storeedgefd.dsx.mp.microsoft.com
