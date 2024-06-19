@@ -22,6 +22,29 @@
 
 # 2024.06.19
 # Temp
+127.0.0.1 developer.com
+127.0.0.1 www.microsoft.com
+127.0.0.1 microsoft.com
+127.0.0.1 zoom.us
+127.0.0.1 google.zoom.us
+127.0.0.1 ko.wikipedia.org
+127.0.0.1 wikipedia.org
+127.0.0.1 www.wikipedia.org
+127.0.0.1 blooket.com
+127.0.0.1 www.blooket.com
+127.0.0.1 play.blooket.com
+127.0.0.1 id.blooket.com
+127.0.0.1 dashboard.blooket.com
+127.0.0.1 openai.com
+127.0.0.1 www.openai.com
+127.0.0.1 chatgpt.com
+127.0.0.1 www.chatgpt.com
+127.0.0.1 getgpt.app
+127.0.0.1 www.getgpt.app
+127.0.0.1 t.me
+127.0.0.1 www.t.me
+
+# Google
 127.0.0.1 www.google.com
 127.0.0.1 google.com
 #127.0.0.1 accounts.google.com
@@ -39,6 +62,8 @@
 127.0.0.1 chrome.google.com
 127.0.0.1 www.chrome.google.com
 #127.0.0.1 www.gstatic.com
+
+# Naver
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 m.naver.com
@@ -113,27 +138,6 @@
 127.0.0.1 sports.news.naver.com
 127.0.0.1 bboom.naver.com
 127.0.0.1 m.bboom.naver.com
-127.0.0.1 developer..com
-127.0.0.1 www.microsoft.com
-127.0.0.1 microsoft.com
-127.0.0.1 zoom.us
-127.0.0.1 google.zoom.us
-127.0.0.1 ko.wikipedia.org
-127.0.0.1 wikipedia.org
-127.0.0.1 www.wikipedia.org
-127.0.0.1 blooket.com
-127.0.0.1 www.blooket.com
-127.0.0.1 play.blooket.com
-127.0.0.1 id.blooket.com
-127.0.0.1 dashboard.blooket.com
-127.0.0.1 openai.com
-127.0.0.1 www.openai.com
-127.0.0.1 chatgpt.com
-127.0.0.1 www.chatgpt.com
-127.0.0.1 getgpt.app
-127.0.0.1 www.getgpt.app
-127.0.0.1 t.me
-127.0.0.1 www.t.me
 
 # ad
 127.0.0.1 ad.doubleclick.net
@@ -143,6 +147,16 @@
 127.0.0.1 www.googleplaystore.com
 127.0.0.1 ced23.pushuiop.com
 127.0.0.1 update.org
+
+# browser
+127.0.0.1 mozilla.org
+127.0.0.1 www.mozilla.org
+127.0.0.1 opera.com
+127.0.0.1 www.opera.com
+127.0.0.1 torproject.org
+127.0.0.1 www.torproject.org
+127.0.0.1 puffin.com
+127.0.0.1 www.puffin.com
 
 # browser theme
 127.0.0.1 custom-cursor.com
@@ -480,7 +494,6 @@
 127.0.0.1 www.potsarmed.com
 127.0.0.1 safartal.pp.ua
 127.0.0.1 tiwb.github.io
-
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -1897,15 +1910,11 @@
 127.0.0.1 vpn.net
 127.0.0.1 www.vpn.net
 127.0.0.1 vpn.kist.re.kr
-127.0.0.1 opera.com
-127.0.0.1 www.opera.com
 127.0.0.1 zoogvpn.com
 127.0.0.1 www.zoogvpn.com
 127.0.0.1 app.zoogvpn.com
 127.0.0.1 top10vpn.com
 127.0.0.1 www.top10vpn.com
-127.0.0.1 torproject.org
-127.0.0.1 www.torproject.org
 
 # etc
 127.0.0.1 namu.wiki
