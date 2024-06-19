@@ -29,6 +29,7 @@
 127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
 #127.0.0.1 drive.google.com
+127.0.0.1 doodles.google.com
 127.0.0.1 adssettings.google.com
 127.0.0.1 play.google.com
 127.0.0.1 earth.google.com
@@ -110,6 +111,8 @@
 127.0.0.1 sports.naver.com
 127.0.0.1 m.sports.naver.com
 127.0.0.1 sports.news.naver.com
+127.0.0.1 bboom.naver.com
+127.0.0.1 m.bboom.naver.com
 127.0.0.1 developer..com
 127.0.0.1 www.microsoft.com
 127.0.0.1 microsoft.com
@@ -127,6 +130,10 @@
 127.0.0.1 www.openai.com
 127.0.0.1 chatgpt.com
 127.0.0.1 www.chatgpt.com
+127.0.0.1 getgpt.app
+127.0.0.1 www.getgpt.app
+127.0.0.1 t.me
+127.0.0.1 www.t.me
 
 # ad
 127.0.0.1 ad.doubleclick.net
@@ -267,6 +274,7 @@
 127.0.0.1 search.bilibili.com
 127.0.0.1 space.bilibili.com
 127.0.0.1 kidszzanggame.net
+127.0.0.1 www.kidszzanggame.net
 127.0.0.1 www.exotworking.com
 127.0.0.1 studioseufz.com
 127.0.0.1 zonzaemgame.com
@@ -345,6 +353,10 @@
 127.0.0.1 kkutu.co.kr
 127.0.0.1 kkutu.pink
 127.0.0.1 kkutu.co.kr
+127.0.0.1 kkutu.blue
+127.0.0.1 www.kkutu.blue
+127.0.0.1 kkutu.plus
+127.0.0.1 www.kkutu.plus
 127.0.0.1 tetris.com
 127.0.0.1 gaamess.dk
 127.0.0.1 joynetgame.com
@@ -432,10 +444,43 @@
 127.0.0.1 www.twoplayergames.org
 127.0.0.1 dinogamers.com
 127.0.0.1 www.dinogamers.com
+127.0.0.1 chrome-dino.com
+127.0.0.1 www.chrome-dino.com
+127.0.0.1 offline-dino-game.firebaseapp.com
 127.0.0.1 chimhaha.net
 127.0.0.1 www.chimhaha.net
 127.0.0.1 laconic-generalstore.jp
 127.0.0.1 www.laconic-generalstore.jp
+127.0.0.1 2-player.github.io
+127.0.0.1 slither.com
+127.0.0.1 brunch.co.kr
+127.0.0.1 www.brunch.co.kr
+127.0.0.1 copy-bid-676628.framer.app
+127.0.0.1 daldal.so
+127.0.0.1 www.daldal.so
+127.0.0.1 softonic.kr
+127.0.0.1 www.softonic.kr
+127.0.0.1 fireboy-watergirl-6-fairy-tales.softonic.kr
+127.0.0.1 mobileindex.com
+127.0.0.1 www.mobileindex.com
+127.0.0.1 game.mobileindex.com
+127.0.0.1 theeverydaygame.com
+127.0.0.1 www.theeverydaygame.com
+127.0.0.1 holdhostel.space
+127.0.0.1 www.holdhostel.space
+127.0.0.1 gamedistribution.com
+127.0.0.1 www.gamedistribution.com
+127.0.0.1 html5.api.gamedistribution.com
+127.0.0.1 koreanbots.dev
+127.0.0.1 www.koreanbots.dev
+127.0.0.1 okkgame.com
+127.0.0.1 www.okkgame.com
+127.0.0.1 playcard.warmissue.com
+127.0.0.1 potsarmed.com
+127.0.0.1 www.potsarmed.com
+127.0.0.1 safartal.pp.ua
+127.0.0.1 tiwb.github.io
+
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -457,25 +502,42 @@
 127.0.0.1 dreaminfo.tistory.com
 127.0.0.1 dung-2.tistory.com
 127.0.0.1 eunice12.tistory.com
+127.0.0.1 flash-game-house.tistory.com
+127.0.0.1 www.flash-game-house.tistory.com
+127.0.0.1 flashbob.tistory.com
+127.0.0.1 www.flashbob.tistory.com
+127.0.0.1 flashgame1004.tistory.com
+127.0.0.1 www.flashgame1004.tistory.com
 127.0.0.1 flashgamemall.tistory.com
 127.0.0.1 www.flashgamemall.tistory.com
 127.0.0.1 flashgamemall.com
 127.0.0.1 flashgamesite.tistory.com
+127.0.0.1 flashgameheaven.tistory.com
+127.0.0.1 www.flashgameheaven.tistory.com
 127.0.0.1 flashmaniac.tistory.com
 127.0.0.1 flgamenara.tistory.com
 127.0.0.1 foreverhan.tistory.com
+127.0.0.1 funnorara.tistory.com
+127.0.0.1 www.funnorara.tistory.com
 127.0.0.1 game-kingdom.tistory.com
 127.0.0.1 gamelulu.tistory.com
 127.0.0.1 gamei.tistory.com
+127.0.0.1 gamesome.tistory.com
+127.0.0.1 www.gamesome.tistory.com
 127.0.0.1 gdbs.tistory.com
 127.0.0.1 gdrwl.tistory.com
+127.0.0.1 general-store.tistory.com
+127.0.0.1 www.general-store.tistory.com
 127.0.0.1 geuruna.tistory.com
 127.0.0.1 gong6587.tistory.com
 127.0.0.1 gookgom2.tistory.com
 127.0.0.1 grandvert.tistory.com
 127.0.0.1 hackzamgames.tistory.com
 127.0.0.1 haezzal.tistory.com
+127.0.0.1 happymari.tistory.com
+127.0.0.1 www.happymari.tistory.com
 127.0.0.1 happayhouse.tistory.com
+127.0.0.1 happyhouse.tistory.com
 127.0.0.1 iphonefactory.tistory.com
 127.0.0.1 inter87.tistory.com
 127.0.0.1 issueresearch1.tistory.com
@@ -505,10 +567,11 @@
 127.0.0.1 nonogue.tistory.com
 127.0.0.1 nunker.tistory.com
 127.0.0.1 oasisinfo.tistory.com
-127.0.0.1 okkgame.com
 127.0.0.1 olbbemegames.tistory.com
+127.0.0.1 onnuridanija.tistory.com
 127.0.0.1 owlgames.tistory.com
 127.0.0.1 pafa.tistory.com
+127.0.0.1 part-of-life.tistory.com
 127.0.0.1 rabia.tistory.com
 127.0.0.1 realmojo.tistory.com
 127.0.0.1 rich-useful.tistory.com
@@ -540,7 +603,7 @@
 127.0.0.1 yunara.tistory.com
 127.0.0.1 yunyun-onon.tistory.com
 127.0.0.1 zeusshin.tistory.com
-127.0.0.1 part-of-life.tistory.com
+127.0.0.1 zjvl.tistory.com
 
 # game(io games)
 127.0.0.1 2048.io
@@ -616,6 +679,7 @@
 127.0.0.1 evoworld.io
 127.0.0.1 Fightz.io
 127.0.0.1 fisheater.io
+127.0.0.1 flappybird.io
 127.0.0.1 Flyordie.io
 127.0.0.1 Foes.io
 127.0.0.1 Galaxystrife.io
@@ -716,6 +780,8 @@
 127.0.0.1 Slither.io
 127.0.0.1 slither2.io
 127.0.0.1 www.slither2.io
+127.0.0.1 slithergame.io
+127.0.0.1 www.slithergame.io
 127.0.0.1 Sliz.io
 127.0.0.1 Slush.io
 127.0.0.1 Smashkarts.io
@@ -745,6 +811,7 @@
 127.0.0.1 Supersnake.io
 127.0.0.1 Supertanks.io
 127.0.0.1 Surviv.io
+127.0.0.1 survive.io
 127.0.0.1 Swordz.io
 127.0.0.1 Takemine.io
 127.0.0.1 Tankar.io
@@ -800,6 +867,8 @@
 127.0.0.1 gflix.kr
 127.0.0.1 info.channel.seoul.kr
 127.0.0.1 wjdqhzld.com
+127.0.0.1 lifestudy.co.kr
+127.0.0.1 www.lifestudy.co.kr
 
 # music
 127.0.0.1 spotify.com
@@ -812,6 +881,10 @@
 127.0.0.1 www.melon.com
 127.0.0.1 mellon.com
 127.0.0.1 www.mellon.com
+127.0.0.1 bugs.co.kr
+127.0.0.1 www.bugs.co.kr
+127.0.0.1 m.bugs.co.kr
+127.0.0.1 music.bugs.co.kr
 127.0.0.1 blip.kr
 127.0.0.1 s.blip.kr
 127.0.0.1 www.blip.kr
@@ -836,6 +909,8 @@
 127.0.0.1 picpen.chosun.com
 127.0.0.1 www.hankyung.com
 127.0.0.1 tenasia.hankyung.com
+127.0.0.1 hankookilbo.com
+127.0.0.1 www.hankookilbo.com
 127.0.0.1 joongang.co.kr
 127.0.0.1 www.joongang.co.kr
 127.0.0.1 www.ytn.co.kr
@@ -845,6 +920,8 @@
 127.0.0.1 www.sbs.co.kr
 127.0.0.1 sbs.co.kr
 127.0.0.1 news.sbs.co.kr
+127.0.0.1 sbskpop.kr
+127.0.0.1 news.kbs.co.kr
 127.0.0.1 issuenews.co.kr
 127.0.0.1 www.sportalkorea.com
 127.0.0.1 sportalkorea.com
@@ -877,6 +954,9 @@
 127.0.0.1 mt.co.kr
 127.0.0.1 www.mt.co.kr
 127.0.0.1 news.mt.co.kr
+127.0.0.1 mnetplus.world
+127.0.0.1 www.mnetplus.world
+127.0.0.1 poc.mnetplus.world
 
 # novel
 127.0.0.1 www.munpia.com
@@ -1113,6 +1193,7 @@
 127.0.0.1 baidu.com
 127.0.0.1 www.baidu.com
 127.0.0.1 image.baidu.com
+127.0.0.1 pan.baidu.com
 127.0.0.1 manzlab.com
 127.0.0.1 www.manzlab.com
 127.0.0.1 ya.ru
@@ -1150,6 +1231,8 @@
 127.0.0.1 music.yandex.by
 127.0.0.1 yandex.ru
 127.0.0.1 www.yandex.ru
+127.0.0.1 yandex.eu
+127.0.0.1 yandex.eu
 127.0.0.1 go.yandex
 #127.0.0.1 website.informer.com
 127.0.0.1 www.wadiz.kr
@@ -1262,6 +1345,7 @@
 127.0.0.1 danawa.com
 127.0.0.1 www.danawa.com
 127.0.0.1 prod.danawa.com
+127.0.0.1 search.danawa.com
 127.0.0.1 quasarzone.com
 127.0.0.1 www.quasarzone.com
 127.0.0.1 bictoriasecret.com
@@ -1389,6 +1473,8 @@
 127.0.0.1 kakaogames.com
 127.0.0.1 www.kakaogames.com
 127.0.0.1 pubg.kakaogames.com
+127.0.0.1 kakaocorp.com
+127.0.0.1 www.kakaocorp.com
 127.0.0.1 band.us
 127.0.0.1 www.band.us
 127.0.0.1 auth.band.us
@@ -1396,6 +1482,12 @@
 127.0.0.1 www.sotwe.com
 127.0.0.1 vk.com
 127.0.0.1 www.vk.com
+127.0.0.1 weibo.com
+127.0.0.1 www.weibo.com
+127.0.0.1 m.weibo.com
+127.0.0.1 weibo.cn
+127.0.0.1 www.weibo.cn
+127.0.0.1 m.weibo.cn
 
 # sports
 127.0.0.1 bbsa.or.kr
@@ -1485,6 +1577,18 @@
 127.0.0.1 www.11toon3.com
 127.0.0.1 11toon4.com
 127.0.0.1 www.11toon4.com
+127.0.0.1 11toon125.com
+127.0.0.1 www.11toon125.com
+127.0.0.1 11toon126.com
+127.0.0.1 www.11toon126.com
+127.0.0.1 11toon127.com
+127.0.0.1 www.11toon127.com
+127.0.0.1 11toon128.com
+127.0.0.1 www.11toon128.com
+127.0.0.1 11toon129.com
+127.0.0.1 www.11toon129.com
+127.0.0.1 11toon130.com
+127.0.0.1 www.11toon130.com
 127.0.0.1 jjaltoon.gallery
 127.0.0.1 www.jjaltoon.gallery
 127.0.0.1 tkr116.com
@@ -1515,11 +1619,20 @@
 127.0.0.1 papillon.postype.com
 127.0.0.1 sa-lmon.postype.com
 127.0.0.1 ermeil.keystoneuniformcap.com
+127.0.0.1 newtoki.me
+127.0.0.1 www.newtoki.me
 127.0.0.1 newtoki150.com
 127.0.0.1 newtoki151.com
 127.0.0.1 newtoki152.com
 127.0.0.1 newtoki153.com
 127.0.0.1 newtoki154.com
+127.0.0.1 newtoki361.com
+127.0.0.1 newtoki362.com
+127.0.0.1 newtoki363.com
+127.0.0.1 newtoki364.com
+127.0.0.1 newtoki365.com
+127.0.0.1 newtoki366.com
+127.0.0.1 newtoki367.com
 127.0.0.1 bam275co.com
 127.0.0.1 ibispaint.com
 127.0.0.1 www.ibispaint.com
@@ -1547,6 +1660,20 @@
 127.0.0.1 www.istockphoto.com
 127.0.0.1 pngwing.com
 127.0.0.1 www.pngwing.com
+127.0.0.1 agitoon.in
+127.0.0.1 www.agitoon.in
+127.0.0.1 linkagit.com
+127.0.0.1 www.linkagit.com
+127.0.0.1 agit363.com
+127.0.0.1 www.agit363.com
+127.0.0.1 agit364.com
+127.0.0.1 www.agit364.com
+127.0.0.1 agit365.com
+127.0.0.1 www.agit365.com
+127.0.0.1 agit366.com
+127.0.0.1 www.agit366.com
+127.0.0.1 piccoma.com
+127.0.0.1 www.piccoma.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
@@ -1576,6 +1703,8 @@
 127.0.0.1 typingtom.com
 127.0.0.1 www.typingtom.com
 127.0.0.1 tadaktadak.co.kr
+127.0.0.1 hackertyper.net
+127.0.0.1 www.hackertyper.net
 
 # video
 127.0.0.1 www.youtube.com
@@ -1590,6 +1719,10 @@
 127.0.0.1 tiktok.com
 127.0.0.1 tictok.com
 127.0.0.1 www.tictok.com
+127.0.0.1 douyin.com
+127.0.0.1 www.douyin.com
+127.0.0.1 kuaishou.com
+127.0.0.1 www.kuaishou.com
 127.0.0.1 yewtu.be
 127.0.0.1 api.invidious.io
 127.0.0.1 clipzag.com
@@ -1609,6 +1742,8 @@
 127.0.0.1 www.tving.com
 127.0.0.1 tving.com
 127.0.0.1 programs.sbs.co.kr
+127.0.0.1 mnetplus.world
+127.0.0.1 www.mnetplus.world
 127.0.0.1 www.kreabaseball.com
 127.0.0.1 www.genie.co.kr
 127.0.0.1 genius.com
@@ -1726,10 +1861,19 @@
 127.0.0.1 www.tv45.wiki
 127.0.0.1 tv46.wiki
 127.0.0.1 www.tv46.wiki
+127.0.0.1 hoohootv67.xyz
+127.0.0.1 www.hoohootv67.xyz
+127.0.0.1 hoohootv68.xyz
+127.0.0.1 www.hoohootv68.xyz
+127.0.0.1 hoohootv69.xyz
+127.0.0.1 www.hoohootv69.xyz
+127.0.0.1 hoohootv70.xyz
+127.0.0.1 www.hoohootv70.xyz
 127.0.0.1 bluelive77.com
 127.0.0.1 www.bluelive77.com
 127.0.0.1 missvod.com
 127.0.0.1 www.missvod.com
+127.0.0.1 anikids.ebs.co.kr
 
 # vpn
 127.0.0.1 www.softether.jp
@@ -1750,6 +1894,8 @@
 127.0.0.1 www.cyberghostvpn.com
 127.0.0.1 vpn.com
 127.0.0.1 www.vpn.com
+127.0.0.1 vpn.net
+127.0.0.1 www.vpn.net
 127.0.0.1 vpn.kist.re.kr
 127.0.0.1 opera.com
 127.0.0.1 www.opera.com
@@ -1758,6 +1904,8 @@
 127.0.0.1 app.zoogvpn.com
 127.0.0.1 top10vpn.com
 127.0.0.1 www.top10vpn.com
+127.0.0.1 torproject.org
+127.0.0.1 www.torproject.org
 
 # etc
 127.0.0.1 namu.wiki
@@ -1858,3 +2006,6 @@
 127.0.0.1 blog.myso.kr
 127.0.0.1 ably.com
 127.0.0.1 japan.com
+127.0.0.1 life-of-panda.tistory.com
+127.0.0.1 thatsmags.com
+127.0.0.1 www.thatsmags.com
