@@ -42,6 +42,7 @@
 127.0.0.1 www.naver.com
 127.0.0.1 m.naver.com
 127.0.0.1 search.naver.com
+127.0.0.1 m.search.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 m.kin.naver.com
 127.0.0.1 blog.naver.com
@@ -84,6 +85,7 @@
 127.0.0.1 m.site.naver.com
 127.0.0.1 whale.naver.com
 127.0.0.1 place.naver.com
+127.0.0.1 m.place.naver.com
 127.0.0.1 pcmap.place.naver.com
 127.0.0.1 adcr.naver.com
 127.0.0.1 keep.naver.com
@@ -121,6 +123,10 @@
 127.0.0.1 play.blooket.com
 127.0.0.1 id.blooket.com
 127.0.0.1 dashboard.blooket.com
+127.0.0.1 openai.com
+127.0.0.1 www.openai.com
+127.0.0.1 chatgpt.com
+127.0.0.1 www.chatgpt.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
@@ -426,6 +432,10 @@
 127.0.0.1 www.twoplayergames.org
 127.0.0.1 dinogamers.com
 127.0.0.1 www.dinogamers.com
+127.0.0.1 chimhaha.net
+127.0.0.1 www.chimhaha.net
+127.0.0.1 laconic-generalstore.jp
+127.0.0.1 www.laconic-generalstore.jp
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -528,6 +538,7 @@
 127.0.0.1 yeso.tistory.com
 127.0.0.1 younggames.tistory.com
 127.0.0.1 yunara.tistory.com
+127.0.0.1 yunyun-onon.tistory.com
 127.0.0.1 zeusshin.tistory.com
 127.0.0.1 part-of-life.tistory.com
 
@@ -861,6 +872,11 @@
 127.0.0.1 www.maximkorea.net
 127.0.0.1 slownews.kr
 127.0.0.1 www.slownews.kr
+127.0.0.1 mydaily.co.kr
+127.0.0.1 www.mydaily.co.kr
+127.0.0.1 mt.co.kr
+127.0.0.1 www.mt.co.kr
+127.0.0.1 news.mt.co.kr
 
 # novel
 127.0.0.1 www.munpia.com
@@ -887,6 +903,8 @@
 127.0.0.1 m.pann.nate.com
 127.0.0.1 news.nate.com
 127.0.0.1 m.news.nate.com
+127.0.0.1 sports.news.nate.com
+127.0.0.1 m.sports.news.nate.com
 127.0.0.1 nateonweb.nate.com
 127.0.0.1 tistory.com
 127.0.0.1 www.tistory.com
@@ -895,6 +913,9 @@
 127.0.0.1 m.daum.net
 127.0.0.1 blog.daum.net
 127.0.0.1 m.blog.daum.net
+127.0.0.1 cafe.daum.net
+127.0.0.1 www.cafe.daum.net
+127.0.0.1 m.cafe.daum.net
 127.0.0.1 finance.daum.net
 127.0.0.1 v.daum.net
 127.0.0.1 game.daum.net
@@ -1381,6 +1402,9 @@
 127.0.0.1 www.bbsa.or.kr
 127.0.0.1 korea-baseball.com
 127.0.0.1 www.korea-baseball.com
+127.0.0.1 koreabaseball.com
+127.0.0.1 www.koreabaseball.com
+127.0.0.1 allstar.koreabaseball.com
 127.0.0.1 kbsa.or.kr
 127.0.0.1 giantsclub.com
 127.0.0.1 www.giantsclub.com
@@ -1396,6 +1420,8 @@
 127.0.0.1 www.interfootball.co.kr
 127.0.0.1 eeungdhan.tistory.com
 127.0.0.1 footballpediahistory.tistory.com
+127.0.0.1 spotvnews.co.kr
+127.0.0.1 www.spotvnews.co.kr
 
 # store
 127.0.0.1 chromewebstore.google.com
@@ -1730,6 +1756,8 @@
 127.0.0.1 zoogvpn.com
 127.0.0.1 www.zoogvpn.com
 127.0.0.1 app.zoogvpn.com
+127.0.0.1 top10vpn.com
+127.0.0.1 www.top10vpn.com
 
 # etc
 127.0.0.1 namu.wiki
