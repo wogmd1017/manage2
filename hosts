@@ -494,6 +494,8 @@
 127.0.0.1 www.potsarmed.com
 127.0.0.1 safartal.pp.ua
 127.0.0.1 tiwb.github.io
+127.0.0.1 pacman.com
+127.0.0.1 www.pacman.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -970,6 +972,9 @@
 127.0.0.1 mnetplus.world
 127.0.0.1 www.mnetplus.world
 127.0.0.1 poc.mnetplus.world
+127.0.0.1 dafanew.com
+127.0.0.1 busan.com
+127.0.0.1 www.busan.com
 
 # novel
 127.0.0.1 www.munpia.com
@@ -1687,6 +1692,7 @@
 127.0.0.1 www.agit366.com
 127.0.0.1 piccoma.com
 127.0.0.1 www.piccoma.com
+127.0.0.1 dribbble.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
@@ -1791,6 +1797,8 @@
 127.0.0.1 chatv1.com
 127.0.0.1 tentv77.com
 127.0.0.1 www.bbongtv.com
+127.0.0.1 xvideo.com
+127.0.0.1 www.xvideo.com
 127.0.0.1 xvideos3.com
 127.0.0.1 soundcloud.com
 127.0.0.1 www.spotvnow.co.kr
