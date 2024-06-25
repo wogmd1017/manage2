@@ -45,15 +45,15 @@
 127.0.0.1 www.t.me
 
 # Google
-127.0.0.1 www.google.com
-127.0.0.1 google.com
+#127.0.0.1 www.google.com
+#127.0.0.1 google.com
 #127.0.0.1 accounts.google.com
-127.0.0.1 www.google.co.kr
-127.0.0.1 google.co.kr
-127.0.0.1 research.google.com
+#127.0.0.1 www.google.co.kr
+#127.0.0.1 google.co.kr
+#127.0.0.1 research.google.com
 #127.0.0.1 drive.google.com
-127.0.0.1 doodles.google.com
-127.0.0.1 adssettings.google.com
+#127.0.0.1 doodles.google.com
+#127.0.0.1 adssettings.google.com
 127.0.0.1 play.google.com
 127.0.0.1 earth.google.com
 127.0.0.1 sites.google.com
