@@ -990,11 +990,11 @@
 127.0.0.1 tgd.kr
 127.0.0.1 dreamquester.com
 127.0.0.1 apt.dreamquester.com
-127.0.0.1 papago.com
-127.0.0.1 www.papago.com
-127.0.0.1 papago.kr
-127.0.0.1 www.papago.kr
-127.0.0.1 papago.naver.com
+#127.0.0.1 papago.com
+#127.0.0.1 www.papago.com
+#127.0.0.1 papago.kr
+#127.0.0.1 www.papago.kr
+#127.0.0.1 papago.naver.com
 127.0.0.1 www.nate.com
 127.0.0.1 m.nate.com
 127.0.0.1 pann.nate.com
