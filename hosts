@@ -64,10 +64,11 @@
 #127.0.0.1 www.gstatic.com
 
 # Naver
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
-#127.0.0.1 m.naver.com
-#127.0.0.1 search.naver.com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 m.naver.com
+#127.0.0.1 nid.naver.com
+127.0.0.1 search.naver.com
 127.0.0.1 m.search.naver.com
 127.0.0.1 kin.naver.com
 127.0.0.1 m.kin.naver.com
@@ -94,7 +95,6 @@
 127.0.0.1 comic.naver.com
 127.0.0.1 m.comic.naver.com
 127.0.0.1 cc.naver.com
-#127.0.0.1 nid.naver.com
 127.0.0.1 series.naver.com
 127.0.0.1 m.series.naver.com
 127.0.0.1 serieson.naver.com
