@@ -64,9 +64,9 @@
 #127.0.0.1 www.gstatic.com
 
 # Naver
-#127.0.0.1 naver.com
-#127.0.0.1 www.naver.com
-#127.0.0.1 m.naver.com
+127.0.0.1 naver.com
+127.0.0.1 www.naver.com
+127.0.0.1 m.naver.com
 #127.0.0.1 nid.naver.com
 127.0.0.1 search.naver.com
 127.0.0.1 m.search.naver.com
@@ -177,8 +177,8 @@
 127.0.0.1 www.entree.com
 
 # coding
-#127.0.0.1 playentry.org
-#127.0.0.1 www.playentry.org
+127.0.0.1 playentry.org
+127.0.0.1 www.playentry.org
 127.0.0.1 space.playentry.org
 127.0.0.1 scratch.mit.edu
 127.0.0.1 code.org
