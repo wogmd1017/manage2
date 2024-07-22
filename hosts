@@ -498,6 +498,8 @@
 127.0.0.1 www.pacman.com
 127.0.0.1 lagged.com
 127.0.0.1 www.lagged.com
+127.0.0.1 freebcc.com
+127.0.0.1 www.freebcc.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
