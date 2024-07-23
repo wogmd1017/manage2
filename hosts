@@ -43,6 +43,8 @@
 127.0.0.1 www.getgpt.app
 127.0.0.1 t.me
 127.0.0.1 www.t.me
+127.0.0.1 reddit.com
+127.0.0.1 www.reddit.com
 
 # Google
 127.0.0.1 www.google.com
@@ -500,6 +502,8 @@
 127.0.0.1 www.lagged.com
 127.0.0.1 freebcc.com
 127.0.0.1 www.freebcc.com
+127.0.0.1 fireboyandwatergirl.kr
+127.0.0.1 www.fireboyandwatergirl.kr
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -1268,6 +1272,8 @@
 127.0.0.1 dmitory.com
 127.0.0.1 fiscalcode.com
 127.0.0.1 duckduckgo.com
+127.0.0.1 tistory.kr
+127.0.0.1 www.tistory.kr
 
 # shop
 127.0.0.1 amazon.com
@@ -1704,6 +1710,8 @@
 127.0.0.1 hottoon24.com
 127.0.0.1 hodu363.net
 127.0.0.1 bam385co.com
+127.0.0.1 flickr.com
+127.0.0.1 www.flickr.com
 
 # typing
 127.0.0.1 www.hancom.co.kr
