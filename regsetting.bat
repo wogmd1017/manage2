@@ -1,4 +1,5 @@
 CD c:\windows\system32
+C:\Program Files\AhnLab\V3NET90\uninst.exe
 REM prevent changing desktop background of current user
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\ActiveDesktop" /v "NoChangingWallPaper" /t REG_DWORD /d 1 /f
 REM prevent changing desktop background of local machine
