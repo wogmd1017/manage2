@@ -52,4 +52,5 @@ REM Disable Regedit
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools" /t REG_DWORD /d 1 /f
 REM Disable USB Storage
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
+REM C:\Program Files\AhnLab\V3NET90\uninst.exe
 gpupdate /force
