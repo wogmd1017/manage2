@@ -49,10 +49,11 @@
 # Google
 127.0.0.1 www.google.com
 127.0.0.1 google.com
-#127.0.0.1 accounts.google.com
+127.0.0.1 accounts.google.com
 127.0.0.1 www.google.co.kr
 127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
+127.0.0.1 support.google.com
 127.0.0.1 drive.google.com
 127.0.0.1 doodles.google.com
 127.0.0.1 adssettings.google.com
@@ -69,7 +70,8 @@
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 m.naver.com
-#127.0.0.1 nid.naver.com
+127.0.0.1 nid.naver.com
+127.0.0.1 auth.worksmobile.com
 127.0.0.1 search.naver.com
 127.0.0.1 m.search.naver.com
 127.0.0.1 kin.naver.com
@@ -77,6 +79,7 @@
 127.0.0.1 blog.naver.com
 127.0.0.1 www.blog.naver.com
 127.0.0.1 m.blog.naver.com
+127.0.0.1 event.blog.naver.com
 127.0.0.1 section.blog.naver.com
 127.0.0.1 cafe.naver.com
 127.0.0.1 m.cafe.naver.com
@@ -140,6 +143,11 @@
 127.0.0.1 sports.news.naver.com
 127.0.0.1 bboom.naver.com
 127.0.0.1 m.bboom.naver.com
+127.0.0.1 navercorp.com
+127.0.0.1 www.navercorp.com
+127.0.0.1 naver.worksmobile.com
+127.0.0.1 navercloudcorp.com
+127.0.0.1 www.navercloudcorp.com
 
 # ad
 127.0.0.1 ad.doubleclick.net
@@ -510,6 +518,8 @@
 127.0.0.1 www.emulatorjs.com
 127.0.0.1 playsuikagame.com
 127.0.0.1 www.playsuikagame.com
+127.0.0.1 flasharch.com
+127.0.0.1 www.flasharch.com
 
 # game(tistory)
 127.0.0.1 10dollars.tistory.com
@@ -1396,6 +1406,8 @@
 127.0.0.1 www.zara.com
 127.0.0.1 ko.victoriassecret.com
 127.0.0.1 pink.com
+127.0.0.1 nike.com
+127.0.0.1 www.nike.com
 
 # sns
 127.0.0.1 www.instagram.com
