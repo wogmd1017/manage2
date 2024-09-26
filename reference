@@ -1,0 +1,49 @@
+for /F  "delims=\ tokens=2,*" %t in ('reg query HKU') do reg add HKU\%t\Software\AcmeSoft\AcmeApp /ve
+
+for /F  "delims=\ tokens=2,*" %t in ('reg query HKU') do reg add HKU\%t\Software\AcmeSoft\AcmeApp /v InstallLocation /d C:\\Program Files (x86)\\AcmeApp
+
+for /f  "delims=\ tokens=2,*" %t in ('reg query HKU') do reg query HKU\%t\Software\Microsoft\Windows\CurrentVersion\Run /s
+
+reg query \\<host>\HKLM\Software\Microsoft\Windows\CurrentVersion\Run /s
+
+FOR /F %i in (hosts.txt) DO @echo [+] %i && 
+@reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Run /s 2>NUL > output.txt && 
+FOR /F %n in (strings.txt) DO @type output.txt | findstr %n > NUL && 
+echo [!] %n was found on %i!
+
+@ECHO OFF
+REM
+REM Copyright Jared Barneck
+REM
+
+GOTO main
+
+:f_ldmain
+  REM This :f_ldmain works as a function and can be run in :main using this syntax:  REM call :f_ldmain  REM It has an "f_" beginning to mark it as a function.  REM Get the correct path to the managementsuite directory.  REM "tokens 2* makes token 2 and 3, with 3 having all remaining data on the line, including spaces/  FOR /F "tokens=2*" %%a in ('REG QUERY HKLM\SOFTWARE\LANDesk\ManagementSuite\WinClient /v Path ^|FINDSTR Path') DO SET ldclientdir=%%b
+GOTO end
+
+
+:main
+  CALL :f_ldmain  ECHO "The LDClient directory is here:"  ECHO %ldclientdir%  ECHO .
+GOTO end
+
+:end
+
+
+REM Modify a registry key in for all logged in users
+REM Also modify it in the .DEFAULT hive so future users get it.
+REM
+REM Copyright Jared Barneck
+REM
+
+GOTO main
+
+:modkey
+  REM %1 is the value of %a that is passed.  REG Add HKU\%1\SomeRegKey  REG ADD HKU\%1\SomeRegKey /v SomeDWORD /t REG_DWORD /d 1  REG ADD HKU\%1\SomeRegKey /v SomeString /t REG_SZ /d "Hello, World"  REM Going to :end here only ends this instance of the call to the  REM :modkey label. It does not end the whole batch file.
+GOTO end
+
+:main
+  FOR /F "tokens=2* delims=\" %%a IN ('REG QUERY HKU ^|Findstr /R "DEFAULT S-1-5-[0-9]*-[0-9-]*$"') DO CALL :modkey %%a  REM Going to :end here ends the whole batch file.
+GOTO end
+
+:end
