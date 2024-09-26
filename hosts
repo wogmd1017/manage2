@@ -23,8 +23,8 @@
 # 2024.06.19
 # Temp
 127.0.0.1 developer.com
-127.0.0.1 www.microsoft.com
-127.0.0.1 microsoft.com
+#127.0.0.1 www.microsoft.com
+#127.0.0.1 microsoft.com
 127.0.0.1 zoom.us
 127.0.0.1 google.zoom.us
 127.0.0.1 ko.wikipedia.org
