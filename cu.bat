@@ -47,9 +47,6 @@ REM Disable GPedit
 reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\MMC\{8FC0B734-A0E1-11D1-A7D3-0000F87571E3}" /v "Restrict_Run" /t REG_DWORD /d 1 /f
 REM Disable USB Storage
 reg add "HKEY_CURRENT_USER\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
-
-
-
 gpupdate /force
 cd %USERPROFILE%\downloads
 del cu.bat
