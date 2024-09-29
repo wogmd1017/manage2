@@ -44,5 +44,5 @@ reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\MMC\{8FC0B734-A0E1-11D1-A
 REM Disable USB Storage
 reg add "HKEY_CURRENT_USER\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
 gpupdate /force
-cd c:\user\download
+cd c:\user\%USERPROFILE%\download
 delete cu.bat
