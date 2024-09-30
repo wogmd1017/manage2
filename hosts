@@ -1934,6 +1934,10 @@
 127.0.0.1 missvod.com
 127.0.0.1 www.missvod.com
 127.0.0.1 anikids.ebs.co.kr
+127.0.0.1 anilife.com
+127.0.0.1 www.anilife.com
+127.0.0.1 anilife.app
+127.0.0.1 www.anilife.app
 
 # vpn
 127.0.0.1 www.softether.jp
@@ -2065,3 +2069,5 @@
 127.0.0.1 life-of-panda.tistory.com
 127.0.0.1 thatsmags.com
 127.0.0.1 www.thatsmags.com
+127.0.0.1 stim.com
+127.0.0.1 www.stim.com
