@@ -1243,6 +1243,11 @@
 127.0.0.1 www.yahoo.com
 127.0.0.1 yahoo.co.jp
 127.0.0.1 www.yahoo.co.jp
+127.0.0.1 taobao.com
+127.0.0.1 www.taobao.com
+127.0.0.1 s.taobao.com
+127.0.0.1 login.taobao.com
+127.0.0.1 passport.taobao.com
 
 # proxy
 127.0.0.1 www.filterbypass.me
@@ -1290,6 +1295,8 @@
 127.0.0.1 duckduckgo.com
 127.0.0.1 tistory.kr
 127.0.0.1 www.tistory.kr
+127.0.0.1 securesearchnow.com
+127.0.0.1 www.securesearchnow.com
 
 # shop
 127.0.0.1 amazon.com
@@ -1408,6 +1415,8 @@
 127.0.0.1 pink.com
 127.0.0.1 nike.com
 127.0.0.1 www.nike.com
+127.0.0.1 tmall.com
+127.0.0.1 www.tmall.com
 
 # sns
 127.0.0.1 www.instagram.com
