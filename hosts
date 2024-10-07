@@ -1947,6 +1947,8 @@
 127.0.0.1 www.anilife.com
 127.0.0.1 anilife.app
 127.0.0.1 www.anilife.app
+127.0.0.1 anilife.live
+127.0.0.1 www.anilife.live
 
 # vpn
 127.0.0.1 www.softether.jp
