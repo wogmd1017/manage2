@@ -123,6 +123,7 @@ REM Disable USB Storage
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
 REM Disable Start Menu
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\TileDataModelSvc" /v "Start" /t REG_DWORD /d 4 /f
+reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoStartMenuMorePrograms" /d 1 /f
 REM UAC enable
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 1 /f
 REM Disable CMD
