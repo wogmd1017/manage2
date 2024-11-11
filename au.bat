@@ -59,7 +59,8 @@ reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Dis
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "32" /t REG_MULTI_SZ /d "WmsSessionAgent.exe" /f
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "33" /t REG_MULTI_SZ /d "WmsShell.exe" /f
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "34" /t REG_MULTI_SZ /d "WmsSvc.exe" /f
-REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "35" /t REG_MULTI_SZ /d "explorer.exe" /f
+reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "35" /t REG_MULTI_SZ /d "mstsc.exe" /f
+REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "36" /t REG_MULTI_SZ /d "explorer.exe" /f
 REM Restrict Run
 REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "RestrictRun" /t REG_DWORD /d 1 /f
 REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\RestrictRun" /v "1" /t REG_SZ /d "chrome.exe" /f
@@ -92,6 +93,7 @@ reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoStartMenuNetworkPlaces" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoStartMenuPinnedList" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoStartMenuSubFolders" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Explorer" /v "ShowRunAsDifferentUserInStart" /t REG_DWORD /d 0 /f
 REM Disable the Run command
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoRun" /t REG_DWORD /d 1 /f
 REM Disable Task View
