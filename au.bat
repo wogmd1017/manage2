@@ -104,6 +104,7 @@ REM Disable Hover Select Desktop
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "HoverSelectDesktops" /t REG_DWORD /d 0 /f
 REM Disable Winkey Shortcut
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoWinKeys" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "NoWinKeys" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "DMT" /f
 REM Disable Tray Context Menu
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideClock" /t REG_DWORD /d 1 /f
@@ -133,6 +134,7 @@ REM No Network
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Network" /v "NoEntireNetwork" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_LanProperties" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_LanChangeProperties" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_RasConnect" /t REG_DWORD /d 1 /f
 REM Disable Resmon
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableResmon" /t REG_DWORD /d 1 /f
 REM Disable MSConfig
