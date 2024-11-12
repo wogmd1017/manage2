@@ -105,7 +105,7 @@ reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "HoverSe
 REM Disable Winkey Shortcut
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoWinKeys" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "NoWinKeys" /t REG_DWORD /d 1 /f
-reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "DMT" /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "DMTXL" /f
 REM Disable Tray Context Menu
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideClock" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAHealth" /t REG_DWORD /d 1 /f
