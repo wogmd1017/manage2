@@ -9,14 +9,14 @@ set A5=0
 @echo off
 cd c:\windows\system32
 echo ====================================================================================================
-echo before run : Uninstall V3
+echo ---Before run : Uninstall V3---
 echo 1. Delete Start App lists, %A1% times runed!
 echo 2. Desktop deny setting, %A2% times runed!
 echo 3. Schedule start, %A3% times runed!
 echo 4. HKU resitry setting, %A4% times runed!
 echo 5. HKLM resitry setting, %A5% times runed!
-set /p x=Choose work number:
 echo ====================================================================================================
+set /p x=Choose work number:
 
 goto %x%
 
