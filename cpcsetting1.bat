@@ -33,6 +33,7 @@ cd C:\Users\%%b\AppData\Roaming\Microsoft\Windows\Start Menu
 rd /s /q Programs
 )
 pause
+@echo off
 set /a A1+=1
 goto top
 
@@ -42,6 +43,7 @@ FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
 ICACLS C:\Users\%%c\Desktop /deny %%c:W
 )
 pause
+@echo off
 set /a A2+=1
 goto top
 
@@ -50,6 +52,7 @@ goto top
 schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\update.bat /sc minute
 schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute
 pause
+@echo off
 set /a A3+=1
 goto top
 
@@ -59,6 +62,7 @@ cd C:\Users\Administrator\Desktop\Data
 wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hku1.bat
 call hku1.bat
 pause
+@echo off
 set /a A4+=1
 goto top
 
@@ -68,5 +72,6 @@ cd C:\Users\Administrator\Desktop\Data
 wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm1.bat
 call hklm1.bat
 pause
+@echo off
 set /a A5+=1
 goto top
