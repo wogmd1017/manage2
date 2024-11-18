@@ -136,6 +136,14 @@ reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Network" /v 
 reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_LanProperties" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_LanChangeProperties" /t REG_DWORD /d 1 /f
 reg add "HKU\%%a\Software\Policies\Microsoft\Windows\Network Connections" /v "NC_RasConnect" /t REG_DWORD /d 1 /f
+REM Explorer
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoPreviewPane" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoNetConnectDisconnect" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "AlwaysShowClassicMenu" /t REG_DWORD /d 0 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoFolderOptions" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoFileMenu" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoShellSearchButton" /t REG_DWORD /d 1 /f
+reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "ExplorerRibbonStartsMinimized" /t REG_DWORD /d 1 /f
 REM Disable Resmon
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableResmon" /t REG_DWORD /d 1 /f
 REM Disable MSConfig
