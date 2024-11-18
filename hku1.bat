@@ -62,7 +62,8 @@ reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Dis
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "35" /t REG_MULTI_SZ /d "mstsc.exe" /f
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "36" /t REG_MULTI_SZ /d "seclogon.exe" /f
 reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "37" /t REG_MULTI_SZ /d "runas.exe" /f
-REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "38" /t REG_MULTI_SZ /d "explorer.exe" /f
+reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "38" /t REG_MULTI_SZ /d "notepad++.exe" /f
+REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "39" /t REG_MULTI_SZ /d "explorer.exe" /f
 REM Restrict Run
 REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "RestrictRun" /t REG_DWORD /d 1 /f
 REM reg add "HKU\%%a\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\RestrictRun" /v "1" /t REG_SZ /d "chrome.exe" /f
