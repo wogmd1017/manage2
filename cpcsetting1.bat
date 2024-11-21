@@ -40,7 +40,8 @@ goto top
 :2
 @echo on
 FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30) DO (
-ICACLS C:\Users\%%c\Desktop /deny %%c:W
+ICACLS C:\Users\%%c /t /deny %%c:W
+ICACLS C:\Users\%%c\Desktop /grant %%c:RX /deny %%c:W
 )
 pause
 @echo off
