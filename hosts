@@ -70,7 +70,7 @@
 127.0.0.1 naver.com
 127.0.0.1 www.naver.com
 127.0.0.1 m.naver.com
-127.0.0.1 nid.naver.com
+#127.0.0.1 nid.naver.com
 127.0.0.1 auth.worksmobile.com
 127.0.0.1 search.naver.com
 127.0.0.1 m.search.naver.com
