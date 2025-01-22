@@ -22,6 +22,10 @@ goto %x%
 
 :1
 @echo on
+ICACLS C:\Windows\System32\mspaint.exe /setowner Administrator /C
+ICACLS C:\Windows\System32\mspaint.exe /grant Administrator:F /C
+ICACLS C:\Windows\System32\SnippingTool.exe /setowner Administrator /C
+ICACLS C:\Windows\System32\SnippingTool.exe /grant Administrator:F /C
 del C:\Windows\System32\mspaint.exe
 del C:\Windows\System32\SnippingTool.exe
 cd C:\ProgramData\Microsoft\Windows\Start Menu
