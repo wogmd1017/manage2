@@ -1774,9 +1774,9 @@
 127.0.0.1 www.bko.kr
 
 # video
-#127.0.0.1 www.youtube.com
-#127.0.0.1 youtube.com
-#127.0.0.1 m.youtube.com
+127.0.0.1 www.youtube.com
+127.0.0.1 youtube.com
+127.0.0.1 m.youtube.com
 127.0.0.1 accounts.youtube.com
 127.0.0.1 studio.youtube.com
 127.0.0.1 www.youtubekids.com
