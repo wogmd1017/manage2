@@ -50,7 +50,7 @@ goto top
 
 :3
 @echo on
-schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\update.bat /sc minute
+schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat /sc minute
 schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute
 pause
 @echo off
