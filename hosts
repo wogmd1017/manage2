@@ -46,10 +46,12 @@
 127.0.0.1 reddit.com
 127.0.0.1 www.reddit.com
 
+# Appinventor
+#127.0.0.1 accounts.google.com
+
 # Google
 127.0.0.1 www.google.com
 127.0.0.1 google.com
-127.0.0.1 accounts.google.com
 127.0.0.1 www.google.co.kr
 127.0.0.1 google.co.kr
 127.0.0.1 research.google.com
