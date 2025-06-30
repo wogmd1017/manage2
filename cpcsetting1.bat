@@ -4,8 +4,6 @@ set A2=0
 set A3=0
 set A4=0
 set A5=0
-set A6=0
-set A7=0
 
 :top
 @echo off
@@ -16,9 +14,7 @@ echo 1. Delete Start App lists, %A1% times runed!
 echo 2. Desktop deny setting, %A2% times runed!
 echo 3. Schedule start, %A3% times runed!
 echo 4. HKU resitry setting, %A4% times runed!
-echo 5. HKLM resitry setting for elice.io, %A5% times runed!
-echo 6. HKLM resitry setting for 1g app inventor, %A6% times runed!
-echo 7. HKLM resitry setting for 1g AI, %A7% times runed!
+echo 5. HKLM resitry setting, %A5% times runed!
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -83,24 +79,4 @@ call hklm1.bat
 pause
 @echo off
 set /a A5+=1
-goto top
-
-:6
-@echo on
-cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.bat
-call hklm2.bat
-pause
-@echo off
-set /a A6+=1
-goto top
-
-:7
-@echo on
-cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm3.bat
-call hklm3.bat
-pause
-@echo off
-set /a A7+=1
 goto top
