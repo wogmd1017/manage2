@@ -8,7 +8,10 @@ echo 3. hklm for 1g AI
 echo ====================================================================================================
 set /p x=Choose work number:
 
-goto %x%
+if "%x%"=="1" goto 1
+if "%x%"=="2" goto 2
+if "%x%"=="3" goto 3
+goto top
 
 :common
 REM Logon
@@ -185,6 +188,7 @@ REM UAC enable
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 1 /f
 REM Disable CMD
 REM reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows" /v "DisableCMD" /t REG_DWORD /d 2 /f
+exit /b
 
 :1
 @echo on
