@@ -39,7 +39,7 @@
 127.0.0.1 www.openai.com
 127.0.0.1 chatgpt.com
 127.0.0.1 www.chatgpt.com
-127.0.0.1 getgpt.app
+#127.0.0.1 getgpt.app
 127.0.0.1 www.getgpt.app
 127.0.0.1 t.me
 127.0.0.1 www.t.me
