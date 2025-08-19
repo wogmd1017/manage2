@@ -5,12 +5,14 @@ echo ===========================================================================
 echo 1. hklm for elice.io
 echo 2. hklm for 1g app inventor
 echo 3. hklm for 1g AI
+echo 4. hklm for 3g Hamster
 echo ====================================================================================================
 set /p x=Choose work number:
 
 if "%x%"=="1" goto 1
 if "%x%"=="2" goto 2
 if "%x%"=="3" goto 3
+if "%x%"=="4" goto 4
 goto top
 
 :common
@@ -225,5 +227,14 @@ exit /b
 :3
 @echo on
 call :common
+gpupdate /force
+exit /b
+
+:4
+@echo on
+call :common
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "playentry.org" /f
 gpupdate /force
 exit /b
