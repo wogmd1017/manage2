@@ -3,9 +3,13 @@
 cd c:\windows\system32
 echo ====================================================================================================
 echo 1. hklm for elice.io
-echo 2. hklm for 1g app inventor
-echo 3. hklm for 1g AI
-echo 4. hklm for 3g Hamster
+echo 2. hklm for Hamster(Entry)
+echo 3. hklm for 1g app inventor
+echo 4. hklm for 1g AI
+echo 6. delete 1.
+echo 7. delete 2.
+echo 8. delete 3.
+echo 9. delete 4.
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -13,6 +17,10 @@ if "%x%"=="1" goto 1
 if "%x%"=="2" goto 2
 if "%x%"=="3" goto 3
 if "%x%"=="4" goto 4
+if "%x%"=="6" goto 6
+if "%x%"=="7" goto 7
+if "%x%"=="8" goto 8
+if "%x%"=="9" goto 9
 goto top
 
 :common
@@ -209,13 +217,19 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "29
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "30" /t REG_SZ /d "api-cms.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "31" /t REG_SZ /d "api-course.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "32" /t REG_SZ /d "gyeongnam-gm-m.elice.io" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "33" /t REG_SZ /d "account.google.com" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "34" /t REG_SZ /d "account.google.co.kr" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "35" /t REG_SZ /d "colab.research.google.com" /f
 gpupdate /force
 exit /b
 
 :2
+@echo on
+call :common
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "playentry.org" /f
+gpupdate /force
+exit /b
+
+:3
 @echo on
 call :common
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /t REG_SZ /d "https://appinventor.mit.edu" /f
@@ -227,18 +241,52 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27
 gpupdate /force
 exit /b
 
-:3
-@echo on
-call :common
-gpupdate /force
-exit /b
-
 :4
 @echo on
 call :common
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "playentry.org" /f
 gpupdate /force
 exit /b
 
+:6
+@echo on
+call :common
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "28" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "29" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "30" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "31" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "32" /f
+gpupdate /force
+exit /b
+
+:7
+@echo on
+call :common
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /f
+gpupdate /force
+exit /b
+
+:8
+@echo on
+call :common
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /f
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /f
+gpupdate /force
+exit /b
+
+:9
+@echo on
+call :common
+gpupdate /force
+exit /b
