@@ -148,6 +148,26 @@ reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\S
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "NoUserAccountControl" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Uninstall" /v "NoStore" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowVPN" /v "value" /t REG_DWORD /d 0 /f
+REM SRP
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "DefaultLevel" /t REG_DWORD /d 0x00040000 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "PolicyScope" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "TransparentEnabled" /t REG_DWORD /d 1 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "AuthenticodeEnabled" /t REG_DWORD /d 0 /f
+REM 무비메이커 차단
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "ItemData" /t REG_SZ /d "C:\Program Files (x86)\Windows Live\Photo Gallery\moviemk.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+REM 그림판 (mspaint.exe) 차단
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{22222222-2222-2222-2222-222222222222}" /v "ItemData" /t REG_SZ /d "%SystemRoot%\System32\mspaint.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{22222222-2222-2222-2222-222222222222}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+REM 사진 (Microsoft.Photos.exe) 차단
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{33333333-3333-3333-3333-333333333333}" /v "ItemData" /t REG_SZ /d "%ProgramFiles%\WindowsApps\Microsoft.Windows.Photos_*\Microsoft.Photos.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{33333333-3333-3333-3333-333333333333}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+REM 카메라 (WindowsCamera.exe) 차단
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{44444444-4444-4444-4444-444444444444}" /v "ItemData" /t REG_SZ /d "%ProgramFiles%\WindowsApps\Microsoft.WindowsCamera_*\WindowsCamera.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{44444444-4444-4444-4444-444444444444}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+REM 돋보기 (Magnify.exe) 차단
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{55555555-5555-5555-5555-555555555555}" /v "ItemData" /t REG_SZ /d "%SystemRoot%\System32\Magnify.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{55555555-5555-5555-5555-555555555555}" /v "SaferFlags" /t REG_DWORD /d 0 /f
 REM disallowrun
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisallowRun" /t REG_DWORD /d 1 /f
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "1" /t REG_MULTI_SZ /d "notepad.exe" /f
@@ -300,3 +320,4 @@ exit /b
 call :common
 gpupdate /force
 exit /b
+
