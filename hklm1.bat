@@ -251,6 +251,7 @@ REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "31" /t REG_SZ /d "accounts.google.co.kr" /f
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "32" /t REG_SZ /d "www.onlinegdb.com" /f
 gpupdate /force
+set N5=1
 exit /b
 
 :2
@@ -265,6 +266,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "22
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "23" /t REG_SZ /d "googleusercontent.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24" /t REG_SZ /d "playentry.org" /f
 gpupdate /force
+set N5=2
 exit /b
 
 :3
@@ -282,12 +284,14 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "mywaycoding.tistory.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "mywaycoding.tistory.com/*" /f
 gpupdate /force
+set N5=3
 exit /b
 
 :4
 @echo on
 call :common
 gpupdate /force
+set N5=4
 exit /b
 
 :6
@@ -301,6 +305,7 @@ for /L %%i in (19,1,32) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
+set N5=6
 exit /b
 
 :7
@@ -313,6 +318,7 @@ for /L %%i in (19,1,24) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
+set N5=7
 exit /b
 
 :8
@@ -326,13 +332,16 @@ for /L %%i in (19,1,26) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
+set N5=8
 exit /b
 
 :9
 @echo on
 call :common
 gpupdate /force
+set N5=9
 exit /b
+
 
 
 
