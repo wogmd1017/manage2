@@ -156,21 +156,31 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "Aut
 REM moviemk.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "ItemData" /t REG_SZ /d "C:\Program Files (x86)\Windows Live\Photo Gallery\moviemk.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "Level" /t REG_DWORD /d 0 /f
 REM mspaint.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111112}" /v "ItemData" /t REG_SZ /d "%SystemRoot%\System32\mspaint.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111112}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111112}" /v "Level" /t REG_DWORD /d 0 /f
 REM Microsoft.Photos.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111113}" /v "ItemData" /t REG_SZ /d "%ProgramFiles%\WindowsApps\Microsoft.Windows.Photos_*\Microsoft.Photos.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111113}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111113}" /v "Level" /t REG_DWORD /d 0 /f
 REM WindowsCamera.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111114}" /v "ItemData" /t REG_SZ /d "%ProgramFiles%\WindowsApps\Microsoft.WindowsCamera_*\WindowsCamera.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111114}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111114}" /v "Level" /t REG_DWORD /d 0 /f
 REM Magnify.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111115}" /v "ItemData" /t REG_SZ /d "%SystemRoot%\System32\Magnify.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111115}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111115}" /v "Level" /t REG_DWORD /d 0 /f
 REM AcroRD32.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111116}" /v "ItemData" /t REG_SZ /d "C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111116}" /v "SaferFlags" /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111116}" /v "Level" /t REG_DWORD /d 0 /f
+REM Explorer.exe
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v ItemData /t REG_SZ /d "C:\Windows\explorer.exe" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v SaferFlags /t REG_DWORD /d 0 /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v Level /t REG_DWORD /d 0 /f
 REM disallowrun
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisallowRun" /t REG_DWORD /d 1 /f
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "1" /t REG_MULTI_SZ /d "notepad.exe" /f
@@ -323,6 +333,7 @@ exit /b
 call :common
 gpupdate /force
 exit /b
+
 
 
 
