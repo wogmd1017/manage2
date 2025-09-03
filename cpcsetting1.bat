@@ -4,6 +4,7 @@ set A2=0
 set A3=0
 set A4=0
 set A5=0
+set N5=0
 
 :top
 @echo off
@@ -14,7 +15,7 @@ echo 1. Delete Start App lists, %A1% times runed!
 echo 2. Desktop deny setting, %A2% times runed!
 echo 3. Schedule start, %A3% times runed!
 echo 4. HKU resitry setting, %A4% times runed!
-echo 5. HKLM resitry setting, %A5% times runed!
+echo 5. HKLM resitry setting, (%N5%), %A5% times runed!
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -80,3 +81,4 @@ pause
 @echo off
 set /a A5+=1
 goto top
+
