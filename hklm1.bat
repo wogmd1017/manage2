@@ -268,8 +268,10 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "https://playentry.org/*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "http://playentry.org/" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /t REG_SZ /d "https://playentry.org/" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "30" /t REG_SZ /d "http://playentry.org/project*" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "31" /t REG_SZ /d "https://playentry.org/project*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "30" /t REG_SZ /d "http://playentry.org/project" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "31" /t REG_SZ /d "https://playentry.org/project" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "32" /t REG_SZ /d "http://playentry.org/project/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "33" /t REG_SZ /d "https://playentry.org/project/*" /f
 gpupdate /force
 set N5=2
 exit /b
@@ -346,4 +348,5 @@ call :common
 gpupdate /force
 set N5=9
 exit /b
+
 
