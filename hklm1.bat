@@ -320,7 +320,7 @@ exit /b
 :7
 @echo on
 call :common
-for /L %%i in (28,1,31) do (
+for /L %%i in (28,1,35) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "%%i" /f
 )
 for /L %%i in (19,1,27) do (
@@ -350,6 +350,7 @@ call :common
 gpupdate /force
 set N5=9
 exit /b
+
 
 
 
