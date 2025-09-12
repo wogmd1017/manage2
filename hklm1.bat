@@ -272,6 +272,8 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "30
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "31" /t REG_SZ /d "https://playentry.org/project" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "32" /t REG_SZ /d "http://playentry.org/project/*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "33" /t REG_SZ /d "https://playentry.org/project/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "34" /t REG_SZ /d "http://playentry.org/project*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "35" /t REG_SZ /d "https://playentry.org/project*" /f
 gpupdate /force
 set N5=2
 exit /b
@@ -348,6 +350,7 @@ call :common
 gpupdate /force
 set N5=9
 exit /b
+
 
 
 
