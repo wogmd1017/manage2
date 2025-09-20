@@ -231,9 +231,15 @@ function Apply-Choice($num) {
         "1" {
             Apply-Common
             New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -Value "https://gyeongnam-gm-m.elice.io" -PropertyType String -Force
-            New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name "28" -Value "http://*" -PropertyType String -Force
-            New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name "29" -Value "https://*" -PropertyType String -Force
-            # URLAllowlist (19~35)
+            # URLBlocklist (28~29)
+            $blocklist = @{
+                "28"  = "http://*"
+                "29"  = "https://*"
+            }
+            foreach ($k in $blocklist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $k -Value $blocklist[$k] -PropertyType String -Force
+            }
+            # URLAllowlist (19~31)
             $allowlist = @{
                 "19"  = "*.elice.io/*"
                 "20"  = "accounts.elice.io"
@@ -243,19 +249,163 @@ function Apply-Choice($num) {
                 "24"  = "api-cms.elice.io"
                 "25"  = "api-course.elice.io"
                 "26"  = "gyeongnam-gm-m.elice.io"
-                "27" = "googleusercontent.com"
-                "28" = "account.google.com"
-                "29" = "account.google.co.kr"
-                "30" = "accounts.google.com"
-                "31" = "accounts.google.co.kr"
+                "27"  = "googleusercontent.com"
+                "28"  = "account.google.com"
+                "29"  = "account.google.co.kr"
+                "30"  = "accounts.google.com"
+                "31"  = "accounts.google.co.kr"
                 # "32" = "www.onlinegdb.com"
                 }
             foreach ($k in $allowlist.Keys) {
                 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
                 }
             gpupdate /force
+            $global:N5 = 1
         }
-        # ... 동일하게 :2, :3, :4, :6, :7, :8, :9 전부 변환
+        "2" {
+            Apply-Common
+            New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -Value "https://playentry.org" -PropertyType String -Force
+            # URLBlocklist (28~35)
+            $blocklist = @{
+                "28"  = "http://*"
+                "29"  = "https://*"
+                "30"  = "http://playentry.org/project"
+                "31"  = "https://playentry.org/project"
+                "32"  = "http://playentry.org/project/*"
+                "33"  = "https://playentry.org/project/*"
+                "34"  = "http://playentry.org/project*"
+                "35"  = "https://playentry.org/project*"
+            }
+            foreach ($k in $blocklist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $k -Value $blocklist[$k] -PropertyType String -Force
+            }
+            # URLAllowlist (19~27)
+            $allowlist = @{
+                "19"  = "account.google.com"
+                "20"  = "account.google.co.kr"
+                "21"  = "accounts.google.com"
+                "22"  = "accounts.google.co.kr"
+                "23"  = "googleusercontent.com"
+                "24"  = "http://playentry.org/"
+                "25"  = "https://playentry.org/"
+                "26"  = "http://playentry.org/*"
+                "27"  = "https://playentry.org/*"
+                }
+            foreach ($k in $allowlist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
+                }
+            gpupdate /force
+            $global:N5 = 2
+        }
+        "3" {
+            Apply-Common
+            New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -Value "https://appinventor.mit.edu" -PropertyType String -Force
+            # URLBlocklist (28~29)
+            $blocklist = @{
+                "28"  = "http://*"
+                "29"  = "https://*"
+            }
+            foreach ($k in $blocklist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $k -Value $blocklist[$k] -PropertyType String -Force
+            }
+            # URLAllowlist (19~26)
+            $allowlist = @{
+                "19"  = "account.google.com"
+                "20"  = "account.google.co.kr"
+                "21"  = "accounts.google.com"
+                "22"  = "accounts.google.co.kr"
+                "23"  = "googleusercontent.com"
+                "24"  = "appinventor.mit.edu"
+                "25"  = "mywaycoding.tistory.com"
+                "26"  = "mywaycoding.tistory.com/*"
+                }
+            foreach ($k in $allowlist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
+                }
+            gpupdate /force
+            $global:N5 = 3
+        }
+        "4" {
+            Apply-Common
+            # New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -Value "https://" -PropertyType String -Force
+            # URLBlocklist (28~29)
+            $blocklist = @{
+                #"28"  = "http://*"
+                #"29"  = "https://*"
+            }
+            foreach ($k in $blocklist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $k -Value $blocklist[$k] -PropertyType String -Force
+            }
+            # URLAllowlist (19~23)
+            $allowlist = @{
+                "19"  = "account.google.com"
+                "20"  = "account.google.co.kr"
+                "21"  = "accounts.google.com"
+                "22"  = "accounts.google.co.kr"
+                "23"  = "googleusercontent.com"
+                }
+            foreach ($k in $allowlist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
+                }
+            gpupdate /force
+            $global:N5 = 4
+        }
+        "6" {
+            Apply-Common
+            Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -ErrorAction SilentlyContinue
+            # URLBlocklist (28~29)
+            foreach ($i in 28..29) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $i -ErrorAction SilentlyContinue
+            }
+            # URLAllowlist (19~31)
+            foreach ($i in 19..32) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $i -ErrorAction SilentlyContinue
+                }
+            gpupdate /force
+            $global:N5 = 6
+        }
+        "7" {
+            Apply-Common
+            Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -ErrorAction SilentlyContinue
+            # URLBlocklist (28~35)
+            foreach ($i in 28..35) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $i -ErrorAction SilentlyContinue
+            }
+            # URLAllowlist (19~27)
+            foreach ($i in 19..27) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $i -ErrorAction SilentlyContinue
+                }
+            gpupdate /force
+            $global:N5 = 7
+        }
+        "8" {
+            Apply-Common
+            Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -ErrorAction SilentlyContinue
+            # URLBlocklist (28~29)
+            foreach ($i in 28..29) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $i -ErrorAction SilentlyContinue
+            }
+            # URLAllowlist (19~31)
+            foreach ($i in 19..26) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $i -ErrorAction SilentlyContinue
+                }
+            gpupdate /force
+            $global:N5 = 8
+        }
+        "9" {
+            Apply-Common
+            Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -ErrorAction SilentlyContinue
+            # URLBlocklist (28~29)
+            foreach ($i in 28..29) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name $i -ErrorAction SilentlyContinue
+            }
+            # URLAllowlist (19~31)
+            foreach ($i in 19..23) {
+                Remove-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $i -ErrorAction SilentlyContinue
+                }
+            gpupdate /force
+            $global:N5 = 9
+        }
     }
 }
 
@@ -266,10 +416,10 @@ while ($true) {
     Write-Host "2. HKLM for Hamster (Entry)"
     Write-Host "3. HKLM for 1g app inventor"
     Write-Host "4. HKLM for 1g AI"
-    Write-Host "6. delete 1."
-    Write-Host "7. delete 2."
-    Write-Host "8. delete 3."
-    Write-Host "9. delete 4."
+    Write-Host "6. delete 1.(elice.io(Python))"
+    Write-Host "7. delete 2.(Hamster(Entry))"
+    Write-Host "8. delete 3.(1g app inventor)"
+    Write-Host "9. delete 4.(1g AI)"
     Write-Host "================================================"
     $choice = Read-Host "Choose work number"
     Apply-Choice $choice
