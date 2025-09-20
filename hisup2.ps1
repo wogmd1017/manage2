@@ -9,8 +9,22 @@ if (-not (Test-Path $todayFolder)) {
     New-Item -Path $todayFolder -ItemType Directory | Out-Null
 }
 
-# 결과 파일 경로
-$outputFile = Join-Path $todayFolder "st01.csv"
+# 서버 이름 가져오기
+$serverName = $env:COMPUTERNAME   # ex: SERVER01, SERVER02, SERVER03
+
+# 서버 이름에 따라 CSV 파일 접미사 설정
+switch -Regex ($serverName) {
+    "SERVER(\d+)" {
+        $num = $Matches[1]
+        $suffix = $num
+    }
+    default {
+        $suffix = "XX"
+    }   # 예상 밖 서버의 경우 임시 이름
+}
+
+# 결과 파일 생성
+$outputFile = Join-Path $todayFolder ("st{0}.csv" -f $suffix)
 
 # browsinghistoryview.exe 실행
 $exePath = Join-Path $basePath "browsinghistoryview.exe"
