@@ -16,13 +16,13 @@ function Download-AndRun($url, $outFile) {
     catch {
         Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
         Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-        continue
+        return
     }
 
     if (-not (Test-Path $outFile) -or (Get-Item $outFile).Length -eq 0) {
         Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
         Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-        continue
+        return
     }
 
     . $outFile
