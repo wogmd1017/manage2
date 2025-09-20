@@ -74,6 +74,7 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hku2.ps1"
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
             try {
+                $ProgressPreference = 'Continue'
                 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -ErrorAction Stop
                 Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
             }
@@ -96,6 +97,7 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hklm2.ps1"
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
             try {
+                $ProgressPreference = 'Continue'
                 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -ErrorAction Stop
                 Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
             }
