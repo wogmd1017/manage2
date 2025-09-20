@@ -37,6 +37,7 @@ while ($true) {
             Remove-Item "C:\ProgramData\Microsoft\Windows\Start Menu\Programs" -Recurse -Force -ErrorAction SilentlyContinue
 
             $users = 01..30 | ForEach-Object { "{0:D2}" -f $_ }
+            #$users = Get-ChildItem "C:\Users" -Directory | Where-Object { $_.Name -match '^\d{2}$' } | Select-Object -ExpandProperty Name
             foreach ($u in $users) {
                 Remove-Item "C:\Users\$u\AppData\Local\Microsoft\Windows\WinX" -Recurse -Force -ErrorAction SilentlyContinue
                 Remove-Item "C:\Users\$u\AppData\Roaming\Microsoft\Windows\Start Menu\Programs" -Recurse -Force -ErrorAction SilentlyContinue
@@ -61,9 +62,9 @@ while ($true) {
         "3" {
             $dataPath = "C:\Users\Administrator\Desktop\Data"
 
-            schtasks /create /tn "hostup" /tr "powershell.exe -ExecutionPolicy Bypass -File $dataPath\hostup2.ps1" /sc minute /F
-            schtasks /create /tn "hisup" /tr "powershell.exe -ExecutionPolicy Bypass -File $dataPath\hisup2.ps1" /sc minute /F
-
+            schtasks /create /tn "hostup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hostup2.ps1`"" /sc minute /F
+            schtasks /create /tn "hisup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hisup2.ps1`"" /sc minute /F
+            
             Read-Host "계속하려면 Enter를 누르세요..."
             $A3++
         }
@@ -73,7 +74,7 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hku2.ps1"
             Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
             
-            Start-Process "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$dstFile`"" -Wait
+            . $dstFile
 
             Read-Host "계속하려면 Enter를 누르세요..."
             $A4++
@@ -84,8 +85,8 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hklm2.ps1"
             Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
 
-            Start-Process "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$dstFile`"" -Wait
-
+            . $dstFile
+            
             Read-Host "계속하려면 Enter를 누르세요..."
             $A5++
         }
