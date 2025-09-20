@@ -1,6 +1,7 @@
 $zipFile = "browsinghistoryview.zip"
 $destinationFolder = "C:\Users\Administrator\Desktop\Data"
 $zipPath = Join-Path $destinationFolder $zipFile
+$ProgressPreference = 'Continue'
 
 # 작업 폴더 생성 (없으면 새로 만듦)
 if (-not (Test-Path $destinationFolder)) {
