@@ -146,7 +146,7 @@ foreach ($sid in $targets) {
     # Disable Regedit
     New-ItemProperty -Path "Registry::HKEY_USERS\$sidPath\Software\Microsoft\Windows\CurrentVersion\Policies\System" -Name "DisableRegistryTools" -Value 1 -PropertyType DWord -Force
     # Disable USB Storage
-    New-ItemProperty -Path "Registry::HKEY_USERS\$sidPath\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "Start" -Value 4 -PropertyType DWord 4 -Force
+    New-ItemProperty -Path "Registry::HKEY_USERS\$sidPath\SYSTEM\CurrentControlSet\Services\USBSTOR" -Name "Start" -Value 4 -PropertyType DWord -Force
     # restrict drivers
     New-ItemProperty -Path "Registry::HKEY_USERS\$sidPath\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoDrives" -Value 0 -PropertyType DWord -Force
     # New-ItemProperty -Path "Registry::HKEY_USERS\$sidPath\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoDrives" -Value 67108863 -PropertyType DWord -Force
@@ -162,4 +162,4 @@ foreach ($sid in $targets) {
 }
 
 Write-Host "정책 적용 완료. 그룹 정책 새로 고침 실행..."
-gpupdate -Forceorce
+gpupdate /Force
