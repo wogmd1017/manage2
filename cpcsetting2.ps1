@@ -64,8 +64,23 @@ while ($true) {
         "3" {
             $dataPath = "C:\Users\Administrator\Desktop\Data"
 
-            schtasks /create /tn "hostup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hostup2.ps1`"" /sc minute /F
-            schtasks /create /tn "hisup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hisup2.ps1`"" /sc minute /F
+            #schtasks /create /tn "hostup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hostup2.ps1`"" /sc minute /F
+            #schtasks /create /tn "hisup" /tr "powershell.exe -ExecutionPolicy Bypass -File `"$dataPath\hisup2.ps1`"" /sc minute /F
+
+            # hostup 작업 등록
+            $actionHostup   = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$dataPath\hostup2.ps1`""
+            $triggerHostup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration ([TimeSpan]::MaxValue)
+            $principalHostup = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+
+            Register-ScheduledTask -TaskName "hostup" -Action $actionHostup -Trigger $triggerHostup -Principal $principalHostup -Force
+
+
+            # hisup 작업 등록
+            $actionHisup   = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$dataPath\hisup2.ps1`""
+            $triggerHisup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration ([TimeSpan]::MaxValue)
+            $principalHisup = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+
+            Register-ScheduledTask -TaskName "hisup" -Action $actionHisup -Trigger $triggerHisup -Principal $principalHisup -Force
             
             Read-Host "계속하려면 Enter를 누르세요..."
             $A3++
