@@ -93,7 +93,7 @@ function Apply-Common {
         New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
     }
 
-    # dism /online /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
+    Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
 
     # moviemk.exe
     New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" -Name "ItemData" -Value "C:\Program Files (x86)\Windows Live\Photo Gallery\moviemk.exe" -PropertyType String -Force
@@ -123,11 +123,7 @@ function Apply-Common {
     New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111117}" -Name "ItemData" -Value "C:\Windows\explorer.exe" -PropertyType String -Force
     New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111117}" -Name "SaferFlags" -Value 0 -PropertyType DWord -Force
     New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111117}" -Name "Level" -Value 0 -PropertyType DWord -Force
-    # disallowrun
-    # New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "DisallowRun" -Value 1 -PropertyType DWord -Force
-    # New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" -Name "1" -Value "notepad.exe" -PropertyType MultiString -Force
-    # New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" -Name "2" -Value "iexplore.exe" -PropertyType MultiString -Force
-    # New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" -Name "2" -Value "powershell.exe" -PropertyType MultiString -Force
+    
 }
 
 function Apply-Choice($num) {
