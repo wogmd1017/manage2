@@ -233,6 +233,26 @@ function Apply-Choice($num) {
             New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "NewTabPageLocation" -Value "https://gyeongnam-gm-m.elice.io" -PropertyType String -Force
             New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name "28" -Value "http://*" -PropertyType String -Force
             New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLBlocklist" -Name "29" -Value "https://*" -PropertyType String -Force
+            # URLAllowlist (19~35)
+            $allowlist = @{
+                "19"  = "*.elice.io/*"
+                "20"  = "accounts.elice.io"
+                "21"  = "testroom.elice.io"
+                "22"  = "api-activity.elice.io"
+                "23"  = "api-rest.elice.io"
+                "24"  = "api-cms.elice.io"
+                "25"  = "api-course.elice.io"
+                "26"  = "gyeongnam-gm-m.elice.io"
+                "27" = "googleusercontent.com"
+                "28" = "account.google.com"
+                "29" = "account.google.co.kr"
+                "30" = "accounts.google.com"
+                "31" = "accounts.google.co.kr"
+                # "32" = "www.onlinegdb.com"
+                }
+            foreach ($k in $allowlist.Keys) {
+                New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\URLAllowlist" -Name $k -Value $allowlist[$k] -PropertyType String -Force
+                }
             gpupdate /force
         }
         # ... 동일하게 :2, :3, :4, :6, :7, :8, :9 전부 변환
