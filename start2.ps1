@@ -11,8 +11,8 @@ Set-Location -Path $destinationFolder
 
 # 파일 다운로드 (기존 파일 새로 덮어쓰기 - wget -N 유사 기능)
 Invoke-WebRequest -Uri "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $zipPath -UseBasicParsing
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting1.bat" -OutFile "cpcsetting1.bat" -UseBasicParsing
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup.bat" -OutFile "hostup.bat" -UseBasicParsing
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting2.ps1" -OutFile "cpcsetting2.ps1" -UseBasicParsing
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup2.ps1" -OutFile "hostup2.ps1" -UseBasicParsing
 
 # 압축 해제 (기존 파일이 있으면 덮어쓰기)
 if (Test-Path $zipPath) {
@@ -27,5 +27,5 @@ if (Test-Path $zipPath) {
 Write-Host "계속하려면 Enter 키를 누르세요..."
 [void][System.Console]::ReadLine()
 
-# BAT 파일 실행 (PowerShell에서 직접 실행 가능)
-Start-Process "cpcsetting1.ps1" -Wait
+# PowerShell 스크립트 실행 (동일 콘솔, 스코프 공유)
+. "$destinationFolder\cpcsetting2.ps1"
