@@ -1,7 +1,7 @@
 function Apply-Common {
     Write-Host "공통 설정 적용 중..."
     $url = "https://docs.google.com/spreadsheets/d/1iC_J3OYWdtBEL-bCIFUoHtESe6uRYTh_-7Lk7zSBOTg/export?format=csv&gid=0"
-    $regItems = Invoke-WebRequest -Uri $url | Where-Object {$_ -notmatch "^#"} |ConvertFrom-Csv
+    $regItems = (Invoke-WebRequest -Uri $url).Content | Where-Object {$_ -notmatch "^#"} | ConvertFrom-Csv
 
     foreach ($item in $regItems) {
         try {
