@@ -14,9 +14,8 @@ $serverName = $env:COMPUTERNAME   # ex: SERVER01, SERVER02, SERVER03
 
 # 서버 이름에 따라 CSV 파일 접미사 설정
 switch -Regex ($serverName) {
-    "SERVER(\d+)" {
-        $num = $Matches[1]
-        $suffix = $num
+    "(\d+)$" {
+        $suffix = "{0:D2}" -f [int]$Matches[1]
     }
     default {
         $suffix = "XX"
