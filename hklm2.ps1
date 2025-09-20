@@ -224,6 +224,10 @@ function Apply-Common {
     New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableLUA" -Value 1 -PropertyType DWord -Force
     # Disable CMD
     New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows" -Name "DisableCMD" -Value 2 -PropertyType DWord -Force
+
+    Disable-WindowsOptionalFeature -Online -FeatureName Internet-Explorer-Optional-amd64 -NoRestart
+
+    gpupdate /force
 }
 
 function Apply-Choice($num) {
