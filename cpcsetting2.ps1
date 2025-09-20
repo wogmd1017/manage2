@@ -72,7 +72,18 @@ while ($true) {
         "4" {
             $dataPath = "C:\Users\Administrator\Desktop\Data"
             $dstFile = Join-Path $dataPath "hku2.ps1"
-            Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
+            #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
+            try {
+                Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -ErrorAction Stop
+                Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
+            }
+            catch {
+                Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
+                continue
+            }
+            if (-not (Test-Path $dstFile) -or (Get-Item $dstFile).Length -eq 0) {
+                Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
+            }
             
             . $dstFile
 
@@ -83,8 +94,20 @@ while ($true) {
         "5" {
             $dataPath = "C:\Users\Administrator\Desktop\Data"
             $dstFile = Join-Path $dataPath "hklm2.ps1"
-            Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
-
+            #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
+            try {
+                Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -ErrorAction Stop
+                Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
+            }
+            catch {
+                Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
+                continue
+            }
+            
+            if (-not (Test-Path $dstFile) -or (Get-Item $dstFile).Length -eq 0) {
+                Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
+            }
+            
             . $dstFile
             
             Read-Host "계속하려면 Enter를 누르세요..."
