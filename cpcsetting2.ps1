@@ -16,6 +16,7 @@ function Show-Menu {
     Write-Host "3. Schedule start, $A3 times runned!"
     Write-Host "4. HKU registry setting, $A4 times runned!"
     Write-Host "5. HKLM registry setting, ($N5), $A5 times runned!"
+    Write-Host "0. !!Exit!!"
     Write-Host "===================================================================================================="
     $choice = Read-Host "Choose work number"
     return $choice
@@ -85,6 +86,8 @@ while ($true) {
             }
             if (-not (Test-Path $dstFile) -or (Get-Item $dstFile).Length -eq 0) {
                 Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
+                Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
+                continue
             }
             
             . $dstFile
@@ -109,6 +112,9 @@ while ($true) {
             
             if (-not (Test-Path $dstFile) -or (Get-Item $dstFile).Length -eq 0) {
                 Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
+                Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
+                continue
+
             }
             
             . $dstFile
@@ -116,6 +122,7 @@ while ($true) {
             Read-Host "계속하려면 Enter를 누르세요..."
             $A5++
         }
+        "0" { break }
 
         default {
             Write-Host "잘못된 입력입니다. 다시 시도하세요."
