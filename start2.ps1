@@ -11,63 +11,30 @@ if (-not (Test-Path $destinationFolder)) {
 Set-Location -Path $destinationFolder
 
 # 파일 다운로드 (기존 파일 새로 덮어쓰기 - wget -N 유사 기능)
-#Invoke-WebRequest -Uri "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $zipPath -UseBasicParsing
-#Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting2.ps1" -OutFile "cpcsetting2.ps1" -UseBasicParsing
-#Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup2.ps1" -OutFile "hostup2.ps1" -UseBasicParsing
+function Download-UntilSuccess($url, $outFile) {
+    while ($true) {
+        try {
+            Invoke-WebRequest -Uri $url -OutFile $outFile -ErrorAction Stop
+            if ((Test-Path $outFile) -and ((Get-Item $outFile).Length -gt 0)) {
+                Write-Host "다운로드 성공: $outFile" -ForegroundColor Green
+                break  # 성공하면 반복 중단
+            } else {
+                Write-Host "다운로드된 파일이 비어있습니다. 재시도합니다..." -ForegroundColor Yellow
+            }
+        }
+        catch {
+            Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
+        }
 
-# browsinghistoryview down
-try {
-    Invoke-WebRequest -Uri "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $zipPath -ErrorAction Stop
-    Write-Host "다운로드 성공: $zipPath" -ForegroundColor Green
-}
-catch {
-    Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
-    Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-    continue
-}
-if (-not (Test-Path $zipPath) -or (Get-Item $zipPath).Length -eq 0) {
-    Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
-}
-#cpcsetting down
-try {
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting2.ps1" -OutFile "cpcsetting2.ps1" -ErrorAction Stop
-    Write-Host "다운로드 성공: cpcsetting2.ps1" -ForegroundColor Green
-}
-catch {
-    Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
-    Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-    continue
-}
-if (-not (Test-Path "cpcsetting2.ps1") -or (Get-Item "cpcsetting2.ps1").Length -eq 0) {
-    Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
-}
-#hostup down
-try {
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup2.ps1" -OutFile "hostup2.ps1" -ErrorAction Stop
-    Write-Host "다운로드 성공: hostup2.ps1" -ForegroundColor Green
-}
-catch {
-    Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
-    Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-    continue
-}
-if (-not (Test-Path "hostup2.ps1") -or (Get-Item "hostup2.ps1").Length -eq 0) {
-    Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
-}
-#hisup down
-try {
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hisup2.ps1" -OutFile "hisup2.ps1" -ErrorAction Stop
-    Write-Host "다운로드 성공: hisup2.ps1" -ForegroundColor Green
-}
-catch {
-    Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
-    Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
-    continue
-}
-if (-not (Test-Path "hisup2.ps1") -or (Get-Item "hisup2.ps1").Length -eq 0) {
-    Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
+        # 잠깐 대기 후 재시도 (예: 5초)
+        Start-Sleep -Seconds 5
+    }
 }
 
+Download-UntilSuccess "https://www.nirsoft.net/utils/browsinghistoryview.zip" "$zipPath"
+Download-UntilSuccess "https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting2.ps1" "$destinationFolder\cpcsetting2.ps1"
+Download-UntilSuccess "https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup2.ps1" "$destinationFolder\hostup2.ps1"
+Download-UntilSuccess "https://raw.githubusercontent.com/wogmd1017/manage2/main/hisup2.ps1" "$destinationFolder\hisup2.ps1"
 
 # 압축 해제 (기존 파일이 있으면 덮어쓰기)
 if (Test-Path $zipPath) {
