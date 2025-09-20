@@ -5,6 +5,7 @@ $A3 = 0
 $A4 = 0
 $A5 = 0
 $N5 = 0
+$ProgressPreference = 'Continue'
 
 function Show-Menu {
     Clear-Host
@@ -74,12 +75,12 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hku2.ps1"
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
             try {
-                $ProgressPreference = 'Continue'
                 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -ErrorAction Stop
                 Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
             }
             catch {
                 Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
+                Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
                 continue
             }
             if (-not (Test-Path $dstFile) -or (Get-Item $dstFile).Length -eq 0) {
@@ -97,12 +98,12 @@ while ($true) {
             $dstFile = Join-Path $dataPath "hklm2.ps1"
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
             try {
-                $ProgressPreference = 'Continue'
                 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -ErrorAction Stop
                 Write-Host "다운로드 성공: $dstFile" -ForegroundColor Green
             }
             catch {
                 Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
+                Read-Host "Enter를 누르면 메뉴로 돌아갑니다"                
                 continue
             }
             
