@@ -65,7 +65,7 @@ while ($true) {
             $users = 01..30 | ForEach-Object { "{0:D2}" -f $_ }
             #$users = Get-ChildItem "C:\Users" -Directory | Where-Object { $_.Name -match '^\d{2}$' } | Select-Object -ExpandProperty Name
             foreach ($u in $users) {
-                Remove-Item "C:\Users\$u\AppData\Local\Microsoft\Windows\WinX" -Recurse -Force -ErrorAction SilentlyContinue
+                Remove-Item "C:\Users\$u\AppData\Local\Microsoft\Windows\WinX" -Recurse -Force -ErrorAction SilentlyContinue -Verbose
                 Remove-Item "C:\Users\$u\AppData\Roaming\Microsoft\Windows\Start Menu\Programs" -Recurse -Force -ErrorAction SilentlyContinue
             }
 
