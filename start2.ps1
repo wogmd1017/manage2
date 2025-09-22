@@ -1,3 +1,5 @@
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 $zipFile = "browsinghistoryview.zip"
 $destinationFolder = "C:\Users\Administrator\Desktop\Data"
 $zipPath = Join-Path $destinationFolder $zipFile
