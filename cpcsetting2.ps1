@@ -6,22 +6,25 @@ $A4 = 0
 $A5 = 0
 $N5 = 0
 $ProgressPreference = 'Continue'
+$VerbosePreference = "Continue"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 # Download 함수 정의
 function Download-AndRun($url, $outFile) {
     try {
-        Invoke-WebRequest -Uri $url -OutFile $outFile -ErrorAction Stop
-        Write-Host "다운로드 성공: $outFile" -ForegroundColor Green
+        Invoke-WebRequest -Uri $url -OutFile $outFile -ErrorAction Stop `
+            -Headers @{ "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
+        Write-Host "Down Success: $outFile" -ForegroundColor Green
     }
     catch {
-        Write-Host "다운로드 실패: $($_.Exception.Message)" -ForegroundColor Red
-        Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
+        Write-Host "Down Fail: $($_.Exception.Message)" -ForegroundColor Red
+        Read-Host "Press Enter to go Menu"
         return
     }
 
     if (-not (Test-Path $outFile) -or (Get-Item $outFile).Length -eq 0) {
-        Write-Host "다운로드된 파일이 없거나 비어있습니다!" -ForegroundColor Red
-        Read-Host "Enter를 누르면 메뉴로 돌아갑니다"
+        Write-Host "Empty File!" -ForegroundColor Red
+        Read-Host "Press Enter to go Menu"
         return
     }
 
@@ -66,7 +69,7 @@ while ($true) {
                 Remove-Item "C:\Users\$u\AppData\Roaming\Microsoft\Windows\Start Menu\Programs" -Recurse -Force -ErrorAction SilentlyContinue
             }
 
-            Read-Host "계속하려면 Enter를 누르세요..."
+            Read-Host "Press Enter to continue..."
             $A1++
         }
 
@@ -78,7 +81,7 @@ while ($true) {
                 icacls "C:\Users\$u\Desktop" /grant "$u":RX /deny "$u":W
             }
 
-            Read-Host "계속하려면 Enter를 누르세요..."
+            Read-Host "Press Enter to continue..."
             $A2++
         }
 
@@ -103,7 +106,7 @@ while ($true) {
 
             Register-ScheduledTask -TaskName "hisup" -Action $actionHisup -Trigger $triggerHisup -Principal $principalHisup -Force
             
-            Read-Host "계속하려면 Enter를 누르세요..."
+            Read-Host "Press Enter to continue..."
             $A3++
         }
 
@@ -113,7 +116,7 @@ while ($true) {
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" -OutFile $dstFile -UseBasicParsing
             Download-AndRun "https://raw.githubusercontent.com/wogmd1017/manage2/main/hku2.ps1" $dstFile
 
-            Read-Host "계속하려면 Enter를 누르세요..."
+            Read-Host "Press Enter to continue..."
             $A4++
         }
 
@@ -123,13 +126,13 @@ while ($true) {
             #Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" -OutFile $dstFile -UseBasicParsing
             Download-AndRun "https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm2.ps1" $dstFile
 
-            Read-Host "계속하려면 Enter를 누르세요..."
+            Read-Host "Press Enter to continue..."
             $A5++
         }
         "0" { break }
 
         default {
-            Write-Host "잘못된 입력입니다. 다시 시도하세요."
+            Write-Host "Wrong Input. Try Again."
             Start-Sleep -Seconds 1
         }
     }
