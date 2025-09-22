@@ -13,7 +13,9 @@ Set-Location -Path $destinationFolder
 function Download-UntilSuccess($url, $outFile) {
     while ($true) {
         try {
-            Invoke-WebRequest -Uri $url -OutFile $outFile -ErrorAction Stop
+            Invoke-WebRequest -Uri $url -OutFile $outFile -ErrorAction Stop `
+                -Headers @{ "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" }
+                
             if ((Test-Path $outFile) -and ((Get-Item $outFile).Length -gt 0)) {
                 Write-Host "Down Success: $outFile" -ForegroundColor Green
                 break
