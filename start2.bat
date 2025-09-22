@@ -8,5 +8,6 @@ if %errorlevel% neq 0 (
 )
 
 :: 관리자 권한으로 PowerShell 실행 (작업 끝나면 창 닫힘)
-PowerShell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Administrator\Desktop\Data\start2.ps1"
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command ^
+ "Start-Process PowerShell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""C:\Users\Administrator\Desktop\Data\start2.ps1""' -Verb RunAs"
 exit
