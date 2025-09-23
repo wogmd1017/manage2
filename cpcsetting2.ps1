@@ -1,3 +1,10 @@
+$ErrorActionPreference = "Continue"
+trap {
+    Write-Host "💥 예외 발생: $($_.Exception.Message)" -ForegroundColor Red
+    Read-Host "Press Enter to resume..."
+    continue
+}
+
 # 실행 횟수 저장 변수
 $A1 = 0
 $A2 = 0
