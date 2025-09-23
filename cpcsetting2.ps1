@@ -79,9 +79,8 @@ while ($true) {
             $users = 01..30 | ForEach-Object { "{0:D2}" -f $_ }
             foreach ($u in $users) {
                 $account = "$ComputerName\$u"
-                icacls "C:\Users\$u" /t /deny "$account":'(M)'
-                icacls "C:\Users\$u\Desktop" /grant "$account":'(RX)'
-                icacls "C:\Users\$u\Desktop" /deny "$account":'(M)'
+                icacls --% C:\Users\$u /t /deny $account:(M)
+                icacls --% C:\Users\$u\Desktop /grant $account:(RX) /deny $account:(M)
             }
 
             Read-Host "Press Enter to continue..."
