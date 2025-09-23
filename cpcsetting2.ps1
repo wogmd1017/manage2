@@ -102,9 +102,7 @@ while ($true) {
 
             # hostup 작업 등록
             $actionHostup   = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$dataPath\hostup2.ps1`""
-            $triggerHostup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1)
-                -RepetitionInterval = (New-TimeSpan -Minutes 1)
-                -RepetitionDuration = (New-TimeSpan -Days 1)
+            $triggerHostup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval = (New-TimeSpan -Minutes 1) -RepetitionDuration = (New-TimeSpan -Days 1)
             $principalHostup = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
 
             Register-ScheduledTask -TaskName "hostup" -Action $actionHostup -Trigger $triggerHostup -Principal $principalHostup -Force
@@ -112,9 +110,7 @@ while ($true) {
 
             # hisup 작업 등록
             $actionHisup   = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$dataPath\hisup2.ps1`""
-            $triggerHisup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1)
-                -RepetitionInterval = (New-TimeSpan -Minutes 1)
-                -RepetitionDuration = (New-TimeSpan -Days 1)
+            $triggerHisup  = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval = (New-TimeSpan -Minutes 1) -RepetitionDuration = (New-TimeSpan -Days 1)
             $principalHisup = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
 
             Register-ScheduledTask -TaskName "hisup" -Action $actionHisup -Trigger $triggerHisup -Principal $principalHisup -Force
