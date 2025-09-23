@@ -8,6 +8,7 @@ $N5 = 0
 $ProgressPreference = 'Continue'
 $VerbosePreference = "Continue"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$ComputerName = $env:COMPUTERNAME
 
 # Download 함수 정의
 function Download-AndRun($url, $outFile) {
@@ -77,8 +78,9 @@ while ($true) {
             # Desktop deny setting
             $users = 01..30 | ForEach-Object { "{0:D2}" -f $_ }
             foreach ($u in $users) {
-                icacls "C:\Users\$u" /t /deny "$u":W
-                icacls "C:\Users\$u\Desktop" /grant "$u":RX /deny "$u":W
+                $account = "$ComputerName\$u"
+                icacls "C:\Users\$u" /t /deny "$account":W
+                icacls "C:\Users\$u\Desktop" /grant "$account":RX /deny "$account":W
             }
 
             Read-Host "Press Enter to continue..."
