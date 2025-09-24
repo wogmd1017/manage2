@@ -44,7 +44,7 @@ foreach ($sid in $targets) {
         "onenote.exe","msaccess.exe","excel.exe","winword.exe","powerpnt.exe",
         "hwp.exe","ODTEditor.exe","wordpad.exe","notepad.exe","WmsManager.exe",
         "WmsSelfHealingSvc.exe","WmsSessionAgent.exe","WmsShell.exe","WmsSvc.exe",
-        "mstsc.exe","seclogon.exe","runas.exe","notepad++.exe"#,
+        "mstsc.exe","seclogon.exe","runas.exe","notepad++.exe"
         #"Entry.exe","Entry_HW.exe","HncTT.exe","explorer.exe"
     )
     $keyPath = "Registry::HKEY_USERS\$sidPath\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun"
