@@ -49,4 +49,9 @@ if (Test-Path $zipPath) {
 Write-Host "Press Enter to continue..."
 [void][System.Console]::ReadLine()
 
-. "$destinationFolder\cpcsetting2.ps1"
+try {
+    . "$destinationFolder\cpcsetting2.ps1"
+} catch {
+    Write-Host "오류 발생: $($_.Exception.Message)" -ForegroundColor Red
+    Read-Host "Press Enter"
+}
