@@ -7,6 +7,7 @@ $A5 = 0
 $N5 = 0
 $ProgressPreference = 'Continue'
 $VerbosePreference = "Continue"
+$ComputerName = $env:COMPUTERNAME
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 # Download 함수 정의
@@ -75,7 +76,6 @@ while ($true) {
 
         "2" {
             # Desktop deny setting
-            $ComputerName = $env:COMPUTERNAME
             $users = 01..30 | ForEach-Object { "{0:D2}" -f $_ }
             foreach ($u in $users) {
                 $account = "$ComputerName\$u"
