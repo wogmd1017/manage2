@@ -33,7 +33,6 @@ function Download-AndRun($url, $outFile) {
 }
 
 function Show-Menu {
-    Clear-Host
     Write-Host "===================================================================================================="
     Write-Host "--- Before run : Uninstall V3 ---"
     Write-Host "1. Delete Start App lists, $A1 times runned!"
