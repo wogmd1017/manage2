@@ -201,7 +201,7 @@
 127.0.0.1 playbot.spaceii.com
 127.0.0.1 lightbot.com
 127.0.0.1 microbit.org
-127.0.0.1 makecode.microbit.org
+#127.0.0.1 makecode.microbit.org
 
 # game
 127.0.0.1 minecraft.net
