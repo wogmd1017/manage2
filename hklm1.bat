@@ -4,12 +4,14 @@ cd c:\windows\system32
 echo ====================================================================================================
 echo 1. hklm for elice.io(Python)
 echo 2. hklm for Hamster(Entry)
-echo 3. hklm for 1g app inventor
-echo 4. hklm for 1g AI
+echo 3. hklm for Microbit(MakeCode)
+echo 4. hklm for 1g app inventor
+echo 5. hklm for 1g AI
 echo 6. delete 1.
 echo 7. delete 2.
 echo 8. delete 3.
 echo 9. delete 4.
+echo 0. delete 5.
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -17,10 +19,12 @@ if "%x%"=="1" goto 1
 if "%x%"=="2" goto 2
 if "%x%"=="3" goto 3
 if "%x%"=="4" goto 4
+if "%x%"=="5" goto 5
 if "%x%"=="6" goto 6
 if "%x%"=="7" goto 7
 if "%x%"=="8" goto 8
 if "%x%"=="9" goto 9
+if "%x%"=="0" goto 0
 goto top
 
 :common
@@ -281,6 +285,24 @@ exit /b
 :3
 @echo on
 call :common
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "19" /t REG_SZ /d "account.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "20" /t REG_SZ /d "account.google.co.kr" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "21" /t REG_SZ /d "accounts.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "22" /t REG_SZ /d "accounts.google.co.kr" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "23" /t REG_SZ /d "googleusercontent.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24" /t REG_SZ /d "http://makecode.microbit.org/" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "https://makecode.microbit.org/" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "http://makecode.microbit.org/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /t REG_SZ /d "https://makecode.microbit.org/*" /f
+gpupdate /force
+set N5=3
+exit /b
+
+:4
+@echo on
+call :common
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /t REG_SZ /d "https://appinventor.mit.edu" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
@@ -293,14 +315,14 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "mywaycoding.tistory.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "mywaycoding.tistory.com/*" /f
 gpupdate /force
-set N5=3
+set N5=4
 exit /b
 
-:4
+:5
 @echo on
 call :common
 gpupdate /force
-set N5=4
+set N5=5
 exit /b
 
 :6
@@ -320,7 +342,7 @@ exit /b
 :7
 @echo on
 call :common
-for /L %%i in (28,1,35) do (
+for /L %%i in (28,1,29) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "%%i" /f
 )
 for /L %%i in (19,1,27) do (
@@ -330,7 +352,7 @@ gpupdate /force
 set N5=7
 exit /b
 
-:8
+:9
 @echo on
 call :common
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /f
@@ -341,17 +363,12 @@ for /L %%i in (19,1,26) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-set N5=8
-exit /b
-
-:9
-@echo on
-call :common
-gpupdate /force
 set N5=9
 exit /b
 
-
-
-
-
+:0
+@echo on
+call :common
+gpupdate /force
+set N5=0
+exit /b
