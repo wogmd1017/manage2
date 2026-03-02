@@ -5,8 +5,8 @@ echo ===========================================================================
 echo 1. hklm for elice.io(Python)
 echo 2. hklm for Hamster(Entry)
 echo 3. hklm for Microbit(MakeCode)
-echo 4. hklm for 1g app inventor
-echo 5. hklm for 1g AI
+echo 4. hklm for app inventor
+echo 5. hklm for google classroom test
 echo 6. delete 1.
 echo 7. delete 2.
 echo 8. delete 3.
@@ -127,6 +127,7 @@ REM reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\URLAllowlist" /
 REM reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\URLAllowlist" /v "11" /t REG_SZ /d "gyeongnam-gm-m.elice.io" /f
 REM reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Edge\URLAllowlist" /v "12" /t REG_SZ /d "donghang-m.elice.io" /f
 REM explorer setting
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\iexplore.exe" /v Debugger /d "cmd.exe" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main" /v "NoBrowser" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" /v "NotifyDisableIEOptions" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v "DisableDeleteBrowsingHistory" /t REG_DWORD /d 1 /f
@@ -324,6 +325,30 @@ exit /b
 :5
 @echo on
 call :common
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "19" /t REG_SZ /d "account.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "20" /t REG_SZ /d "account.google.co.kr" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "21" /t REG_SZ /d "accounts.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "22" /t REG_SZ /d "accounts.google.co.kr" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "23" /t REG_SZ /d "googleusercontent.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24" /t REG_SZ /d "classroom.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "classroom.google.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "ssl.gstatic.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /t REG_SZ /d "ssl.gstatic.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "28" /t REG_SZ /d "www.gstatic.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "29" /t REG_SZ /d "www.gstatic.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "30" /t REG_SZ /d "apis.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "31" /t REG_SZ /d "apis.google.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "32" /t REG_SZ /d "fonts.googleapis.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "33" /t REG_SZ /d "fonts.googleapis.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "34" /t REG_SZ /d "fonts.gstatic.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "35" /t REG_SZ /d "fonts.gstatic.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "36" /t REG_SZ /d "ogs.google.com" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "37" /t REG_SZ /d "ogs.google.com/*" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "38" /t REG_SZ /d "docs.google.com/forms/*" /f
+REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "39" /t REG_SZ /d "" /f
+REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "40" /t REG_SZ /d "" /f
 gpupdate /force
 set N5=5
 exit /b
@@ -385,8 +410,12 @@ exit /b
 :0
 @echo on
 call :common
+for %%i in (28 29) do (
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "%%i" /f
+)
+for /L %%i in (19,1,38) do (
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
+)
 gpupdate /force
 set N5=0
 exit /b
-
-
