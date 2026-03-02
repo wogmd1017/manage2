@@ -134,6 +134,7 @@ reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Contro
 reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Privacy" /v "CleanHistory" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Privacy" /v "EnableInPrivateBrowsing" /t REG_DWORD /d 1 /f
 REM whale setting
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\whale.exe" /v Debugger /d "cmd.exe" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Naver\Naver Whale\URLBlocklist" /v "1" /t REG_SZ /d "*" /f
 REM dism /online /Disable-Feature /FeatureName:Internet-Explorer-Optional-amd64
 REM prevent control box and desktop change
@@ -419,3 +420,4 @@ reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v 
 gpupdate /force
 set N5=0
 exit /b
+
