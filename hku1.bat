@@ -6,9 +6,9 @@ REM 2. 모든 사용자(HKU)를 순회
 FOR /F "tokens=2* delims=\" %%a IN ('REG QUERY HKU ^|Findstr /R "DEFAULT S-1-5-[0-9]*-[0-9-]*$"') DO (
 REM 3. 관리자 SID와 일치하는 경우 작업을 건너뜀
 if /I "%%a"=="%MY_SID%" (
-echo [INFO] Admin Account Detected (%%a) - Skipping...
+echo Admin Account Detected
 ) else (
-echo [LOCK] Applying restrictions to SID: %%a
+echo Applying restrictions to SID: %%a
 REM prevent changing desktop background of current user
 reg add "HKU\%%a\Software\Microsoft\Windows\CurrentVersion\Policies\ActiveDesktop" /v "NoChangingWallPaper" /t REG_DWORD /d 1 /f
 REM prevent control box and desktop change
