@@ -1,13 +1,13 @@
 setlocal enabledelayedexpansion
 
-REM 1. 현재 실행 중인 관리자의 SID 추출
+REM 1. Admin SID
 FOR /f "tokens=2 delims= " %%i in ('whoami /user /fo table /nh') do set MY_SID=%%i
-REM 2. 모든 사용자(HKU)를 순회
+REM 2. All users HKU
 FOR /F "tokens=2* delims=\" %%a IN ('REG QUERY HKU ^|Findstr /R "DEFAULT S-1-5-[0-9]*-[0-9-]*$"') DO (
 call :APPLY_POLICY %%a
 )
 
-REM 4. 마무리
+REM 4. End
 endlocal
 gpupdate /force
 exit /b
@@ -16,7 +16,7 @@ pause
 :APPLY_POLICY
 set "T_SID=%1"
 
-REM 3. 관리자 SID와 일치하는 경우 작업을 건너뜀
+REM 3. Admin SID skip
 if /I "%T_SID%"=="%MY_SID%" (
 echo Admin Account Detected
 goto :eof
@@ -188,11 +188,11 @@ reg add "HKU\%T_SID%\SOFTWARE\Policies\Microsoft\Windows\PowerShell" /v "Disable
 REM Disable CMD
 reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows" /v "DisableCMD" /t REG_DWORD /d 2 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableBatch" /t REG_DWORD /d 1 /f
-REM Windows Script Host 비활성화 (VBS, JS 파일 실행 불가)
+REM Windows Script Host (VBS, JS) disable
 reg add "HKU\%T_SID%\Software\Microsoft\Windows Script Host\Settings" /v "Enabled" /t REG_DWORD /d 0 /f
-REM .reg 파일을 메모장으로만 열리게 하고 실행(병합)은 차단
+REM .reg disable
 reg add "HKU\%T_SID%\Software\Classes\regfile\shell\open\command" /ve /t REG_SZ /d "notepad.exe \"%%%%1\"" /f
-REM USB 저장장치 읽기 및 쓰기 권한 모두 거부
+REM USB read and write disable
 REM reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}" /v "Deny_Write" /t REG_DWORD /d 1 /f
 REM reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}" /v "Deny_Read" /t REG_DWORD /d 1 /f
 
