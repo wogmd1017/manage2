@@ -86,6 +86,12 @@ reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer
 reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "37" /t REG_MULTI_SZ /d "Entry_HW.exe" /f
 reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "38" /t REG_MULTI_SZ /d "arduino.exe" /f
 REM reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun" /v "39" /t REG_MULTI_SZ /d "explorer.exe" /f
+REM 1. Max Tabs Limit
+reg add "HKU\%T_SID%\Software\Policies\Google\Chrome" /v "MaxTabs" /t REG_DWORD /d 10 /f
+REM 2. Force Memory Saver Mode (메모리 절약 모드 강제)
+reg add "HKU\%T_SID%\Software\Policies\Google\Chrome" /v "HighEfficiencyModeEnabled" /t REG_DWORD /d 1 /f
+REM 3. Disable Guest Mode (혹시 게스트 모드로 우회하는 것 방지)
+reg add "HKU\%T_SID%\Software\Policies\Google\Chrome" /v "BrowserGuestModeEnabled" /t REG_DWORD /d 0 /f
 REM Restrict Run
 REM reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "RestrictRun" /t REG_DWORD /d 1 /f
 REM reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\RestrictRun" /v "1" /t REG_SZ /d "chrome.exe" /f
