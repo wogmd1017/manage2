@@ -185,8 +185,10 @@ reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 REM reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoViewOnDrive" /t REG_DWORD /d 67108863 /f
 REM Disable powershell
 reg add "HKU\%T_SID%\SOFTWARE\Policies\Microsoft\Windows\PowerShell" /v "DisablePowerShell" /t REG_DWORD /d 1 /f
+reg add "HKU\%T_SID%\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" /v "ExecutionPolicy" /t REG_SZ /d "Restricted" /f
 REM Disable CMD
 reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows" /v "DisableCMD" /t REG_DWORD /d 2 /f
+reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows\System" /v "DisableCMD" /t REG_DWORD /d 2 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableBatch" /t REG_DWORD /d 1 /f
 REM Windows Script Host (VBS, JS) disable
 reg add "HKU\%T_SID%\Software\Microsoft\Windows Script Host\Settings" /v "Enabled" /t REG_DWORD /d 0 /f
