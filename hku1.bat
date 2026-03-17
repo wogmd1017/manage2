@@ -182,5 +182,6 @@ REM USB 저장장치 읽기 및 쓰기 권한 모두 거부
 REM reg add "HKU\%%a\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}" /v "Deny_Write" /t REG_DWORD /d 1 /f
 REM reg add "HKU\%%a\Software\Policies\Microsoft\Windows\RemovableStorageDevices\{53f5630d-b6bf-11d0-94f2-00a0c91efb8b}" /v "Deny_Read" /t REG_DWORD /d 1 /f
 )
+)
 endlocal
 gpupdate /force
