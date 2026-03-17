@@ -4,6 +4,7 @@ set A2=0
 set A3=0
 set A4=0
 set A5=0
+set A6=0
 set N5=0
 
 :top
@@ -16,6 +17,7 @@ echo 2. Desktop deny setting, %A2% times runed!
 echo 3. Schedule start, %A3% times runed!
 echo 4. HKLM resitry setting, (%N5%), %A4% times runed!
 echo 5. HKU resitry setting, %A5% times runed!
+echo 6. CMDKill, %A6% times runed!
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -80,4 +82,14 @@ call hku1.bat
 pause
 @echo off
 set /a A5+=1
+goto top
+
+:6
+@echo on
+cd C:\Users\Administrator\Desktop\Data
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/cmdkill.bat
+start "CMD_WATCHER" cmdkill.bat
+@echo off
+set /a A6+=1
+pause
 goto top
