@@ -185,3 +185,4 @@ REM reg add "HKU\%%a\Software\Policies\Microsoft\Windows\RemovableStorageDevices
 )
 endlocal
 gpupdate /force
+pause
