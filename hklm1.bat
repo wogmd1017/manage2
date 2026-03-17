@@ -241,7 +241,7 @@ exit /b
 :1
 @echo on
 call :common
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /t REG_SZ /d "https://gyeongnam-gm-m.elice.io" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "NewTabPageLocation" /t REG_SZ /d "https://boonpo-m.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "28" /t REG_SZ /d "http://*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "29" /t REG_SZ /d "https://*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "19" /t REG_SZ /d "*.elice.io/*" /f
@@ -251,7 +251,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "22
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "23" /t REG_SZ /d "api-rest.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24" /t REG_SZ /d "api-cms.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "api-course.elice.io" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "gyeongnam-gm-m.elice.io" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "boonpo-m.elice.io" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /t REG_SZ /d "googleusercontent.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "28" /t REG_SZ /d "account.google.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "29" /t REG_SZ /d "account.google.co.kr" /f
