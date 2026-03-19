@@ -164,6 +164,48 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "Pol
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "TransparentEnabled" /t REG_DWORD /d 1 /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "AuthenticodeEnabled" /t REG_DWORD /d 0 /f
 REM IFEO
+set "IFEO=HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
+reg add "%IFEO%\mspaint.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\SnippingTool.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\ScreenSketch.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\cmd.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\powershell.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\powershell_ise.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\regedit.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\taskmgr.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\SystemSettings.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\msconfig.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\hwp.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\HncTT.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\ODTEditor.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\excel.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\winword.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\powerpnt.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\wordpad.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\mspub.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\msaccess.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\onenote.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\notepad.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\notepad++.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Scratch Desktop.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Entry.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Entry_HW.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\arduino.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\ServerManager.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\ServerManagerLauncher.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\mstsc.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\VideoPlayer.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\J-Player.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Registry_Management.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\iexplore.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\seclogon.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\runas.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\WmsShell.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\WmsManager.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\WmsSelfHealingSvc.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\WmsSessionAgent.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\WmsSvc.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\mmc.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM moviemk.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "ItemData" /t REG_SZ /d "C:\Program Files (x86)\Windows Live\Photo Gallery\moviemk.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "SaferFlags" /t REG_DWORD /d 0 /f
