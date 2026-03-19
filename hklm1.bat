@@ -171,7 +171,7 @@ SystemSettings.exe ServerManager.exe ServerManagerLauncher.exe mmc.exe msconfig.
 VideoPlayer.exe J-Player.exe iexplore.exe mspub.exe onenote.exe msaccess.exe WmsManager.exe WmsSelfHealingSvc.exe WmsSessionAgent.exe WmsShell.exe WmsSvc.exe ^
 mstsc.exe seclogon.exe runas.exe ODTEditor.exe notepad++.exe HncTT.exe hwp.exe wordpad.exe notepad.exe excel.exe winword.exe powerpnt.exe ^
 "Scratch Desktop.exe" "Entry.exe" "Entry_HW.exe" ^
-arduino.exe explorer.exe ^
+arduino.exe ^
 ) do (
     reg add "%IFEO%\%%a" /v Debugger /t REG_SZ /d "systray.exe" /f
 )
