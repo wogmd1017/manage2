@@ -417,7 +417,7 @@ call :common
 for %%i in (28 29) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "%%i" /f
 )
-for /L %%i in (19,1,38) do (
+for /L %%i in (19,1,43) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
