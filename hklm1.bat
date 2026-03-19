@@ -165,16 +165,16 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "Tra
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers" /v "AuthenticodeEnabled" /t REG_DWORD /d 0 /f
 REM IFEO
 set "IFEO=HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
-for %%a in ( ^
-mspaint.exe SnippingTool.exe ScreenSketch.exe cmd.exe powershell.exe regedit.exe taskmgr.exe powershell_ise.exe ^
-SystemSettings.exe ServerManager.exe ServerManagerLauncher.exe mmc.exe msconfig.exe Registry_Management.exe ^
-VideoPlayer.exe J-Player.exe iexplore.exe mspub.exe onenote.exe msaccess.exe WmsManager.exe WmsSelfHealingSvc.exe WmsSessionAgent.exe WmsShell.exe WmsSvc.exe ^
-mstsc.exe seclogon.exe runas.exe ODTEditor.exe notepad++.exe HncTT.exe hwp.exe wordpad.exe notepad.exe excel.exe winword.exe powerpnt.exe ^
-"Scratch Desktop.exe" "Entry.exe" "Entry_HW.exe" ^
-arduino.exe ^
-) do (
-    reg add "%IFEO%\%%a" /v Debugger /t REG_SZ /d "systray.exe" /f
-)
+REM for %%a in ( ^
+REM mspaint.exe SnippingTool.exe ScreenSketch.exe cmd.exe powershell.exe regedit.exe taskmgr.exe powershell_ise.exe ^
+REM SystemSettings.exe ServerManager.exe ServerManagerLauncher.exe mmc.exe msconfig.exe Registry_Management.exe ^
+REM VideoPlayer.exe J-Player.exe iexplore.exe mspub.exe onenote.exe msaccess.exe WmsManager.exe WmsSelfHealingSvc.exe WmsSessionAgent.exe WmsShell.exe WmsSvc.exe ^
+REM mstsc.exe seclogon.exe runas.exe ODTEditor.exe notepad++.exe HncTT.exe hwp.exe wordpad.exe notepad.exe excel.exe winword.exe powerpnt.exe ^
+REM "Scratch Desktop.exe" "Entry.exe" "Entry_HW.exe" ^
+REM arduino.exe ^
+REM ) do (
+REM    reg add "%IFEO%\%%a" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM )
 REM moviemk.exe
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "ItemData" /t REG_SZ /d "C:\Program Files (x86)\Windows Live\Photo Gallery\moviemk.exe" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\{11111111-1111-1111-1111-111111111111}" /v "SaferFlags" /t REG_DWORD /d 0 /f
