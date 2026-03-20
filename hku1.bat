@@ -1,21 +1,24 @@
 setlocal enabledelayedexpansion
 
 REM 1. admin SID
-FOR /f "tokens=2 delims= " %%i in ('whoami /user /fo table /nh') do (
-    set "RAW_SID=%%i"
-    set "MY_SID=!RAW_SID: =!"
+FOR /f "tokens=2 delims=," %%i in ('whoami /user /fo csv /nh') do (
+    set "MY_SID=%%~i"
 )
-echo [SYSTEM] Admin SID identified as: !MY_SID!
+echo [SYSTEM] Admin SID identified as: %MY_SID%
 
 REM 2. HKU
-FOR /F "tokens=2 delims=\" %%a IN ('REG QUERY HKU ^| findstr /r "S-1-5-21-[0-9-]*$"') DO (
-    set "T_SID=%%a"
+FOR /F "tokens=2 delims=\" %%a IN ('REG QUERY HKU ^| findstr /i "S-1-5-21-"') DO (
+    set "FULL_SID=%%a"
     
-    if /i "!T_SID!"=="!MY_SID!" (
-        echo [SKIP] Current Admin Account: !T_SID!
-    ) else (
-        echo [APPLY] Targeting Student SID: !T_SID!
-        call :APPLY_POLICY !T_SID!
+    echo !FULL_SID! | findstr /i "_Classes" >nul
+    if errorlevel 1 (
+        set "T_SID=!FULL_SID!"
+        if /i "!T_SID!"=="%MY_SID%" (
+            echo [SKIP] Current Admin Account: !T_SID!
+        ) else (
+            echo [APPLY] Targeting Student SID: !T_SID!
+            call :APPLY_POLICY !T_SID!
+        )
     )
 )
 
