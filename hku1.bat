@@ -2,22 +2,26 @@ setlocal enabledelayedexpansion
 
 REM 1. admin SID
 for /f "tokens=2 delims==" %%i in ('wmic useraccount where "name='%username%'" get sid /value') do (
-    for /f "delims=" %%j in ("%%i") do set "MY_SID=%%j"
+    for /f "delims=" %%j in ("%%i") do (
+        set "TEMP_SID=%%j"
+        set "MY_SID=!TEMP_SID: =!"
+    )
 )
-set "MY_SID=%MY_SID: =%"
 echo [SYSTEM] Admin SID identified as: [%MY_SID%]
 
 REM 2. HKU
-FOR /F "tokens=2 delims=\" %%a IN ('REG QUERY HKU ^| findstr /i "S-1-5-21-"') DO (
-    set "FULL_SID=%%a"
+for /f "tokens=2 delims=\" %%a in ('reg query HKU ^| findstr /i "S-1-5-21-"') do (
+    set "CURRENT_SID=%%a"
     
-    echo !FULL_SID! | findstr /i "_Classes" >nul
+    
+    echo !CURRENT_SID! | findstr /i "_Classes" >nul
     if errorlevel 1 (
-          if /i "!FULL_SID!"=="!MY_SID!" (
-            echo [SKIP] Admin Account: !FULL_SID!
+        
+        if /i "!CURRENT_SID!"=="!MY_SID!" (
+            echo [SKIP] Admin Account: !CURRENT_SID!
         ) else (
-            echo [APPLY] Targeting Student: !FULL_SID!
-            call :APPLY_POLICY !FULL_SID!
+            echo [APPLY] Targeting Student: !CURRENT_SID!
+            call :APPLY_POLICY !CURRENT_SID!
         )
     )
 )
