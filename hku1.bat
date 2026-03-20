@@ -1,29 +1,27 @@
 setlocal enabledelayedexpansion
 
-REM 1. admin SID
-for /f "tokens=2 delims==" %%i in ('wmic useraccount where "name='%username%'" get sid /value') do (
-    for /f "delims=" %%j in ("%%i") do (
-        set "TEMP_SID=%%j"
-        set "MY_SID=!TEMP_SID: =!"
-    )
+for /f "tokens=3" %%i in ('reg query "HKCU\Volatile Environment" /v "USER_SID" 2^>nul') do (
+set "MY_SID=%%i"
 )
-echo [SYSTEM] Admin SID identified as: [%MY_SID%]
+
+if "!MY_SID!"=="" set "MY_SID=%userdomain%\%username%"
+
+echo [SYSTEM] Admin Identifier: [!MY_SID!]
 
 REM 2. HKU
 for /f "tokens=2 delims=\" %%a in ('reg query HKU ^| findstr /i "S-1-5-21-"') do (
-    set "CURRENT_SID=%%a"
+set "CURRENT_SID=%%a"
     
+echo !CURRENT_SID! | findstr /i "_Classes" >nul
+if errorlevel 1 (
     
-    echo !CURRENT_SID! | findstr /i "_Classes" >nul
-    if errorlevel 1 (
-        
-        if /i "!CURRENT_SID!"=="!MY_SID!" (
-            echo [SKIP] Admin Account: !CURRENT_SID!
-        ) else (
-            echo [APPLY] Targeting Student: !CURRENT_SID!
-            call :APPLY_POLICY !CURRENT_SID!
-        )
-    )
+if "!CURRENT_SID!"=="!MY_SID!" (
+echo [SKIP] Admin Account: !CURRENT_SID!
+) else (
+echo [APPLY] Targeting Student: !CURRENT_SID!
+call :APPLY_POLICY !CURRENT_SID!
+)
+)
 )
 
 REM 4. End
