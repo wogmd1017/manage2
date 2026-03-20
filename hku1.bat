@@ -1,26 +1,30 @@
 setlocal enabledelayedexpansion
 
-REM 1. Admin SID
-FOR /f "tokens=2 delims= " %%i in ('whoami /user /fo table /nh') do set MY_SID=%%i
-REM 2. All users HKU
-FOR /F "tokens=2* delims=\" %%a IN ('REG QUERY HKU ^|Findstr /R "DEFAULT S-1-5-[0-9]*-[0-9-]*$"') DO (
-call :APPLY_POLICY %%a
+REM 1. admin SID
+FOR /f "tokens=2 delims= " %%i in ('whoami /user /fo table /nh') do (
+    set "RAW_SID=%%i"
+    set "MY_SID=!RAW_SID: =!"
+)
+echo [SYSTEM] Admin SID identified as: !MY_SID!
+
+REM 2. HKU
+FOR /F "tokens=2 delims=\" %%a IN ('REG QUERY HKU ^| findstr /r "S-1-5-21-[0-9-]*$"') DO (
+    set "T_SID=%%a"
+    
+    if /i "!T_SID!"=="!MY_SID!" (
+        echo [SKIP] Current Admin Account: !T_SID!
+    ) else (
+        echo [APPLY] Targeting Student SID: !T_SID!
+        call :APPLY_POLICY !T_SID!
+    )
 )
 
 REM 4. End
-endlocal
 gpupdate /force
 exit /b
-pause
 
 :APPLY_POLICY
 set "T_SID=%1"
-
-REM 3. Admin SID skip
-if /I "%T_SID%"=="%MY_SID%" (
-echo Admin Account Detected
-goto :eof
-)
 
 echo Applying restrictions to SID: %T_SID%
 REM prevent changing desktop background of current user
