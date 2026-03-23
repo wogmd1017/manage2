@@ -184,6 +184,9 @@ reg add "%IFEO%\wordpad.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\mspub.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\msaccess.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\onenote.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\ms-teams.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Teams.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\TeamsInstaller.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\notepad.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\notepad++.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Scratch Desktop.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
