@@ -34,10 +34,10 @@ goto %x%
 
 :1
 @echo on
-ICACLS C:\Windows\System32\mspaint.exe /setowner Administrator /C
-ICACLS C:\Windows\System32\mspaint.exe /grant Administrator:F /C
-ICACLS C:\Windows\System32\SnippingTool.exe /setowner Administrator /C
-ICACLS C:\Windows\System32\SnippingTool.exe /grant Administrator:F /C
+icacls C:\Windows\System32\mspaint.exe /setowner Administrator /C
+icacls C:\Windows\System32\mspaint.exe /grant Administrator:F /C
+icacls C:\Windows\System32\SnippingTool.exe /setowner Administrator /C
+icacls C:\Windows\System32\SnippingTool.exe /grant Administrator:F /C
 del C:\Windows\System32\mspaint.exe
 del C:\Windows\System32\SnippingTool.exe
 cd C:\ProgramData\Microsoft\Windows\Start Menu
@@ -55,22 +55,25 @@ goto top
 
 :2
 @echo on
+icacls "C:\Program Files" /inheritance:e /c /l /q
+icacls "C:\Program Files (x86)" /inheritance:e /c /l /q
+
 FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-ICACLS "C:\Users\%%c" /c /deny "%%c:W"
-ICACLS "C:\Users\%%c\Desktop" /grant "%%c:RX" /deny "%%c:W" /c
+icacls "C:\Users\%%c" /c /deny "%%c:W"
+icacls "C:\Users\%%c\Desktop" /grant "%%c:RX" /deny "%%c:W" /c
 )
 
 FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-ICACLS "C:\Program Files" /deny "%%c:(OI)(CI)(X)" /c /l /q
-ICACLS "C:\Program Files (x86)" /deny "%%c:(OI)(CI)(X)" /c /l /q
-ICACLS "C:\ProgramData" /deny "%%c:(OI)(CI)(X)" /c /l /q
-ICACLS "C:\Entry" /deny "%%c:(OI)(CI)(X)" /c /l /q
-ICACLS "C:\Entry_HW" /deny "%%c:(OI)(CI)(X)" /c /l /q
+icacls "C:\Program Files" /deny "%%c:(OI)(CI)(X)" /c /l /q
+icacls "C:\Program Files (x86)" /deny "%%c:(OI)(CI)(X)" /c /l /q
+icacls "C:\ProgramData" /deny "%%c:(OI)(CI)(X)" /c /l /q
+icacls "C:\Entry" /deny "%%c:(OI)(CI)(X)" /c /l /q
+icacls "C:\Entry_HW" /deny "%%c:(OI)(CI)(X)" /c /l /q
 )
 
 FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-ICACLS "C:\Program Files\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
-ICACLS "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
+icacls "C:\Program Files\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
+icacls "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
 )
 
 pause
