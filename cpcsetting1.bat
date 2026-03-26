@@ -47,14 +47,14 @@ goto top
 :2
 @echo on
 FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-ICACLS C:\Users\%%c /t /deny %%c:W
-ICACLS C:\Users\%%c\Desktop /grant %%c:RX /deny %%c:W
-icacls C:\Program Files /deny %%c:(X) /t /c /l /q
-icacls C:\Program Files (x86) /deny %%c:(X) /t /c /l /q
-icacls C:\Program Files\Google\Chrome\Application\chrome.exe /remove:d %%c /c
-icacls C:\Program Files\Google\Chrome\Application\chrome.exe /grant %%c:(RX) /c
-icacls C:\Program Files (x86)\Google\Chrome\Application\chrome.exe /remove:d %%c /c
-icacls C:\Program Files (x86)\Google\Chrome\Application\chrome.exe /grant %%c:(RX) /c
+ICACLS "C:\Users\%%c" /t /deny "%%c:W"
+ICACLS "C:\Users\%%c\Desktop" /grant "%%c:RX" /deny "%%c:W"
+ICACLS "C:\Program Files" /deny "%%c:(X)" /t /c /l /q
+ICACLS "C:\Program Files (x86)" /deny "%%c:(X)" /t /c /l /q
+ICACLS "C:\Program Files\Google\Chrome\Application\chrome.exe" /remove:d %%c /c
+ICACLS "C:\Program Files\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
+ICACLS "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /remove:d %%c /c
+ICACLS "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
 )
 pause
 @echo off
