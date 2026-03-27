@@ -189,11 +189,15 @@ reg add "%IFEO%\onenote.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ms-teams.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Teams.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\TeamsInstaller.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\zoom.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\notepad.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\notepad++.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Scratch Desktop.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\Scratch 3.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Entry.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Entry_HW.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\CodingSchool3.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\module matcher.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\arduino.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ServerManager.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ServerManagerLauncher.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
