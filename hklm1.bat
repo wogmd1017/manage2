@@ -199,6 +199,9 @@ reg add "%IFEO%\Entry_HW.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\CodingSchool3.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\module matcher.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\arduino.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\code.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\VRWARE School.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\python.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ServerManager.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\ServerManagerLauncher.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\mstsc.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
@@ -206,7 +209,6 @@ reg add "%IFEO%\VideoPlayer.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\J-Player.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Registry_Management.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\iexplore.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
-reg add "%IFEO%\code.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\cmd.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\seclogon.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\runas.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
