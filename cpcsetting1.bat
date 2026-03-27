@@ -126,6 +126,11 @@ goto top
 @echo on
 taskkill /F /IM chrome.exe /T
 
+FOR %%u in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+del /q /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Sessions\*" >nul 2>&1
+del /q /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Session Storage\*" >nul 2>&1
+)
+
 @echo off
 set /a A7+=1
 pause
