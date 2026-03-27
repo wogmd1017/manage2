@@ -14,6 +14,7 @@ set A3=0
 set A4=0
 set A5=0
 set A6=0
+set A7=0
 set N5=0
 
 :top
@@ -27,6 +28,7 @@ echo 3. Schedule start, %A3% times runed!
 echo 4. HKLM resitry setting, (%N5%), %A4% times runed!
 echo 5. HKU resitry setting, %A5% times runed!
 echo 6. CMDKill, %A6% times runed!
+echo 7. Kill Chrome and Auto-Logoff Policy, %A7% times runed!
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -117,5 +119,14 @@ wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/cmdkill.bat
 start "CMD_WATCHER" cmdkill.bat
 @echo off
 set /a A6+=1
+pause
+goto top
+
+:7
+@echo on
+taskkill /F /IM chrome.exe /T
+
+@echo off
+set /a A7+=1
 pause
 goto top
