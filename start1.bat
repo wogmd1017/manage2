@@ -9,8 +9,8 @@ wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/cpcsetting1.bat
 wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hostup.bat
 bandizip.exe x -y -aoa "%bhvZip%"
 bandizip.exe x -y -aoa -target:name "%rcZip%"
-move /y "rclone-v1.73.3-windows-amd64\rclone.exe" .
-rd /s /q "rclone-v1.73.3-windows-amd64"
+for /r "rclone" %%f in (rclone.exe) do move /y "%%f" .
+rd /s /q "rclone"
 del /q "%bhvZip%"
 del /q "%rcZip%"
 pause
