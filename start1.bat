@@ -1,7 +1,7 @@
 @echo off
 set "bhvZip=browsinghistoryview.zip"
 set "rcZip=rclone.zip"
-set "destDir=C:\Users\Administrator\Desktop\Data"
+set "destDir=%userprofile%\Desktop\data"
 cd /d "%destDir%"
 wget -N --no-check-certificate https://www.nirsoft.net/utils/browsinghistoryview.zip
 wget -N --no-check-certificate https://downloads.rclone.org/v1.73.3/rclone-v1.73.3-windows-amd64.zip -O %rcZip%
