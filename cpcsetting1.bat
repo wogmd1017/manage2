@@ -7,6 +7,8 @@ exit /b
 pushd "%CD%"
 cd /d "%~dp0"
 
+setlocal enabledelayedexpansion
+
 @echo off
 set A1=0
 set A2=0
@@ -44,7 +46,7 @@ del C:\Windows\System32\mspaint.exe
 del C:\Windows\System32\SnippingTool.exe
 cd C:\ProgramData\Microsoft\Windows\Start Menu
 rd /s /q Programs
-FOR %%b in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+FOR %%b in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
 cd C:\Users\%%b\AppData\Local\Microsoft\Windows
 rd /s /q WinX
 cd C:\Users\%%b\AppData\Roaming\Microsoft\Windows\Start Menu
@@ -60,12 +62,12 @@ goto top
 icacls "C:\Program Files" /inheritance:e /c /l /q
 icacls "C:\Program Files (x86)" /inheritance:e /c /l /q
 
-FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+FOR %%c in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
 icacls "C:\Users\%%c" /c /deny "%%c:W"
 icacls "C:\Users\%%c\Desktop" /grant "%%c:RX" /deny "%%c:W" /c
 )
 
-FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+FOR %%c in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
 icacls "C:\Program Files" /deny "%%c:(OI)(CI)(X)" /c /l /q
 icacls "C:\Program Files (x86)" /deny "%%c:(OI)(CI)(X)" /c /l /q
 icacls "C:\ProgramData" /deny "%%c:(OI)(CI)(X)" /c /l /q
@@ -73,7 +75,7 @@ icacls "C:\Entry" /deny "%%c:(OI)(CI)(X)" /c /l /q
 icacls "C:\Entry_HW" /deny "%%c:(OI)(CI)(X)" /c /l /q
 )
 
-FOR %%c in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+FOR %%c in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
 icacls "C:\Program Files\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
 icacls "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /grant "%%c:(RX)" /c
 )
@@ -126,16 +128,23 @@ goto top
 @echo on
 taskkill /F /IM chrome.exe /T >nul 2>&1
 
-timeout /t 2 /nobreak >nul
+timeout /t 3 /nobreak >nul
 
-FOR %%u in (01,02,03,04,05,06,07,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-    del /q /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Cookies" >nul 2>&1
-    del /q /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies" >nul 2>&1
+FOR %%u in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
+set "CHROME_DIR=C:\Users\%%u\AppData\Local\Google\Chrome\User Data"
+
+del /q /f "!CHROME_DIR!\Last Version" >nul 2>&1
+del /q /f "!CHROME_DIR!\Last Tabs" >nul 2>&1
+
+del /q /f "!CHROME_DIR!\Default\Cookies" >nul 2>&1
+del /q /f "!CHROME_DIR!\Default\Network\Cookies" >nul 2>&1
     
-    del /q /s /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Sessions\*" >nul 2>&1
-    del /q /s /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Default\Session Storage\*" >nul 2>&1
+del /q /s /f "!CHROME_DIR!\Default\Sessions\*" >nul 2>&1
+del /q /s /f "!CHROME_DIR!\Default\Session Storage\*" >nul 2>&1
+rd /s /q "!CHROME_DIR!\Default\Sessions" >nul 2>&1
+rd /s /q "!CHROME_DIR!\Default\Session Storage" >nul 2>&1
     
-    del /q /f "C:\Users\%%u\AppData\Local\Google\Chrome\User Data\Last Version" >nul 2>&1
+
 )
 
 @echo off
