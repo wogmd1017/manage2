@@ -131,20 +131,27 @@ taskkill /F /IM chrome.exe /T >nul 2>&1
 timeout /t 3 /nobreak >nul
 
 FOR %%u in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-set "CHROME_DIR=C:\Users\%%u\AppData\Local\Google\Chrome\User Data"
-
-del /q /f "!CHROME_DIR!\Last Version" >nul 2>&1
-del /q /f "!CHROME_DIR!\Last Tabs" >nul 2>&1
-
-del /q /f "!CHROME_DIR!\Default\Cookies" >nul 2>&1
-del /q /f "!CHROME_DIR!\Default\Network\Cookies" >nul 2>&1
+set "USER_DATA=C:\Users\%%u\AppData\Local\Google\Chrome\User Data"
     
-del /q /s /f "!CHROME_DIR!\Default\Sessions\*" >nul 2>&1
-del /q /s /f "!CHROME_DIR!\Default\Session Storage\*" >nul 2>&1
-rd /s /q "!CHROME_DIR!\Default\Sessions" >nul 2>&1
-rd /s /q "!CHROME_DIR!\Default\Session Storage" >nul 2>&1
-    
+if exist "!USER_DATA!" (
 
+del /q /f "!USER_DATA!\Local State" >nul 2>&1
+del /q /f "!USER_DATA!\Last Version" >nul 2>&1
+del /q /f "!USER_DATA!\Last Tabs" >nul 2>&1
+
+for /d %%p in ("!USER_DATA!\*") do (
+
+if exist "%%p\Cookies" (
+                
+del /q /f "%%p\Cookies" >nul 2>&1
+del /q /f "%%p\Network\Cookies" >nul 2>&1
+del /q /f "%%p\Last Tabs" >nul 2>&1
+del /q /f "%%p\Last Session" >nul 2>&1
+rd /s /q "%%p\Sessions" >nul 2>&1
+rd /s /q "%%p\Session Storage" >nul 2>&1
+)
+)
+)
 )
 
 @echo off
