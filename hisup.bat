@@ -21,7 +21,8 @@ set "CUR_TIME=%CUR_TIME: =0%"
 if %CUR_TIME% LSS 0955 ( set "PRD=P1" ) else ^
 if %CUR_TIME% LSS 1050 ( set "PRD=P2" ) else ^
 if %CUR_TIME% LSS 1145 ( set "PRD=P3" ) else ^
-if %CUR_TIME% LSS 1330 ( set "PRD=P4" ) else ^
+if %CUR_TIME% LSS 1230 ( set "PRD=P4" ) else ^
+if %CUR_TIME% LSS 1330 ( set "PRD=Lunch" ) else ^
 if %CUR_TIME% LSS 1425 ( set "PRD=P5" ) else ^
 if %CUR_TIME% LSS 1520 ( set "PRD=P6" ) else ^
 if %CUR_TIME% LSS 1615 ( set "PRD=P7" ) else ^
