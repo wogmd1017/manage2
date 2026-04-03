@@ -192,9 +192,9 @@ reg add "HKU\%T_SID%\Software\Policies\Microsoft\MMC\{8FC0B734-A0E1-11D1-A7D3-00
 REM Disable USB Storage
 reg add "HKU\%T_SID%\SYSTEM\CurrentControlSet\Services\USBSTOR" /v "Start" /t REG_DWORD /d 4 /f
 REM restrict drivers
-reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoDrives" /t REG_DWORD /d 0 /f
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoDrives" /t REG_DWORD /d 12 /f
 REM reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoDrives" /t REG_DWORD /d 67108863 /f
-reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoViewOnDrive" /t REG_DWORD /d 0 /f
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoViewOnDrive" /t REG_DWORD /d 12 /f
 REM reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoViewOnDrive" /t REG_DWORD /d 67108863 /f
 REM .reg disable
 reg add "HKU\%T_SID%\Software\Classes\regfile\shell\open\command" /ve /t REG_SZ /d "notepad.exe \"%%%%1\"" /f
