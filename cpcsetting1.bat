@@ -87,7 +87,7 @@ goto top
 
 :3
 @echo on
-schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat /sc minute
+schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat /sc minute /rl highest /f
 schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute /mo 5 /rl highest /f
 pause
 @echo off
