@@ -34,6 +34,8 @@ set "T_SID=%1"
 echo Applying restrictions to SID: %T_SID%
 REM prevent changing desktop background of current user
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\ActiveDesktop" /v "NoChangingWallPaper" /t REG_DWORD /d 1 /f
+reg add "HKU\%T_SID%\control panel\Desktop" /v "Wallpaper" /t REG_SZ /d "C:\Users\Public\Pictures\wall1.png" /f
+reg add "HKU\%T_SID%\Control Panel\Desktop" /v "WallpaperStyle" /t REG_SZ /d "0" /f
 REM prevent control box and desktop change
 reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "ForceActiveDesktopOn" /t REG_DWORD /d 0 /f
 reg add "HKU\%T_SID%\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoActiveDesktop" /t REG_DWORD /d 1 /f
