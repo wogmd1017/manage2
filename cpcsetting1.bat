@@ -97,6 +97,7 @@ goto top
 :4
 @echo on
 cd C:\Users\Administrator\Desktop\Data
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/wall1.png
 wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm1.bat
 call hklm1.bat
 pause
