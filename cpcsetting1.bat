@@ -52,6 +52,8 @@ rd /s /q WinX
 cd C:\Users\%%b\AppData\Roaming\Microsoft\Windows\Start Menu
 rd /s /q Programs
 )
+cd C:\Users\Public\Pictures\
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/wall1.png
 pause
 @echo off
 set /a A1+=1
@@ -97,7 +99,6 @@ goto top
 :4
 @echo on
 cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/wall1.png
 wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm1.bat
 call hklm1.bat
 pause
