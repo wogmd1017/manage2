@@ -332,7 +332,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "41
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "42" /t REG_SZ /d "www.codelove.kr" /f
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "43" /t REG_SZ /d "www.onlinegdb.com" /f
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=1
 exit /b
 
@@ -357,7 +356,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "33
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "34" /t REG_SZ /d "http://playentry.org/project*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLBlocklist" /v "35" /t REG_SZ /d "https://playentry.org/project*" /f
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=2
 exit /b
 
@@ -377,7 +375,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "27" /t REG_SZ /d "http://makecode.microbit.org/*" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "28" /t REG_SZ /d "https://makecode.microbit.org/*" /f
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=3
 exit /b
 
@@ -396,7 +393,6 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "24
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "25" /t REG_SZ /d "mywaycoding.tistory.com" /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "26" /t REG_SZ /d "mywaycoding.tistory.com/*" /f
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=4
 exit /b
 
@@ -434,7 +430,6 @@ REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "43" /t REG_SZ /d "" /f
 REM reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "44" /t REG_SZ /d "" /f
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=5
 exit /b
 
@@ -449,7 +444,6 @@ for /L %%i in (19,1,32) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=6
 exit /b
 
@@ -463,7 +457,6 @@ for /L %%i in (19,1,35) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=7
 exit /b
 
@@ -477,7 +470,6 @@ for /L %%i in (19,1,28) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=8
 exit /b
 
@@ -492,7 +484,6 @@ for /L %%i in (19,1,26) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=9
 exit /b
 
@@ -506,7 +497,6 @@ for /L %%i in (19,1,43) do (
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist" /v "%%i" /f
 )
 gpupdate /force
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 set N5=0
 exit /b
 
