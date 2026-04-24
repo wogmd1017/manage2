@@ -129,6 +129,31 @@ goto top
 :7
 @echo on
 taskkill /F /IM chrome.exe /T >nul 2>&1
+taskkill /F /IM mspaint.exe /T >nul 2>&1
+taskkill /F /IM hwp.exe /T >nul 2>&1
+taskkill /F /IM HncTT.exe /T >nul 2>&1
+taskkill /F /IM ODTEditor.exe /T >nul 2>&1
+taskkill /F /IM Hword.exe /T >nul 2>&1
+taskkill /F /IM excel.exe /T >nul 2>&1
+taskkill /F /IM winword.exe /T >nul 2>&1
+taskkill /F /IM powerpnt.exe /T >nul 2>&1
+taskkill /F /IM wordpad.exe /T >nul 2>&1
+taskkill /F /IM mspub.exe /T >nul 2>&1
+taskkill /F /IM msaccess.exe /T >nul 2>&1
+taskkill /F /IM onenote.exe /T >nul 2>&1
+taskkill /F /IM ms-teams.exe /T >nul 2>&1
+taskkill /F /IM Teams.exe /T >nul 2>&1
+taskkill /F /IM TeamsInstaller.exe /T >nul 2>&1
+taskkill /F /IM zoom.exe /T >nul 2>&1
+taskkill /F /IM notepad.exe /T >nul 2>&1
+taskkill /F /IM "Scratch Desktop.exe" /T >nul 2>&1
+taskkill /F /IM "Scratch 3.exe" /T >nul 2>&1
+taskkill /F /IM Entry.exe /T >nul 2>&1
+taskkill /F /IM Entry_HW.exe /T >nul 2>&1
+taskkill /F /IM CodingSchool3.exe /T >nul 2>&1
+taskkill /F /IM module matcher.exe /T >nul 2>&1
+taskkill /F /IM arduino.exe /T >nul 2>&1
+taskkill /F /IM code.exe /T >nul 2>&1
 
 timeout /t 3 /nobreak >nul
 
