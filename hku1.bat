@@ -155,6 +155,7 @@ reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTaskbarMessaging" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTrayContextMenu" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTrayItemsDisplay" /t REG_DWORD /d 1 /f
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTrayNotificationCenter" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoToolbarsOnTaskbar" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoViewContextMenu" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "TaskbarLockAll" /t REG_DWORD /d 1 /f
