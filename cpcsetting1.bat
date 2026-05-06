@@ -25,12 +25,12 @@ cd c:\windows\system32
 echo ====================================================================================================
 echo ---Before run : Uninstall V3---
 echo 1. Delete Start App lists, %A1% times runed!
-echo 2. Desktop deny setting, %A2% times runed!
-echo 3. Schedule start, %A3% times runed!
-echo 4. HKLM resitry setting, (%N5%), %A4% times runed!
-echo 5. HKU resitry setting, %A5% times runed!
-echo 6. CMDKill, %A6% times runed!
-echo 7. Kill Chrome and Auto-Logoff Policy, %A7% times runed!
+echo 2. Schedule start, %A2% times runed!
+echo 3. HKLM resitry setting, (%N5%), %A3% times runed!
+echo 4. HKU resitry setting, %A4% times runed!
+echo 5. Desktop deny setting, %A5% times runed!
+echo 6. Kill Chrome and Auto-Logoff Policy, %A6% times runed!
+echo 7. CMDKill, %A7% times runed!
 echo ====================================================================================================
 set /p x=Choose work number:
 
@@ -64,6 +64,37 @@ goto top
 
 :2
 @echo on
+schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat /sc minute /rl highest /f
+schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute /mo 3 /rl highest /f
+call hostup.bat
+call hisup.bat
+pause
+@echo off
+set /a A2+=1
+goto top
+
+:3
+@echo on
+cd C:\Users\Administrator\Desktop\Data
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm1.bat
+call hklm1.bat
+pause
+@echo off
+set /a A3+=1
+goto top
+
+:4
+@echo on
+cd C:\Users\Administrator\Desktop\Data
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hku1.bat
+call hku1.bat
+pause
+@echo off
+set /a A4+=1
+goto top
+
+:5
+@echo on
 icacls "C:\Program Files" /inheritance:e /c /l /q
 icacls "C:\Program Files (x86)" /inheritance:e /c /l /q
 
@@ -87,49 +118,11 @@ icacls "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" /grant "%%c
 
 pause
 @echo off
-set /a A2+=1
-goto top
-
-:3
-@echo on
-schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat /sc minute /rl highest /f
-schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute /mo 5 /rl highest /f
-pause
-@echo off
-set /a A3+=1
-goto top
-
-:4
-@echo on
-cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hklm1.bat
-call hklm1.bat
-pause
-@echo off
-set /a A4+=1
-goto top
-
-:5
-@echo on
-cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/hku1.bat
-call hku1.bat
-pause
-@echo off
 set /a A5+=1
 goto top
 
-:6
-@echo on
-cd C:\Users\Administrator\Desktop\Data
-wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/cmdkill.bat
-start "CMD_WATCHER" cmdkill.bat
-@echo off
-set /a A6+=1
-pause
-goto top
 
-:7
+:6
 @echo on
 taskkill /F /IM chrome.exe /T >nul 2>&1
 taskkill /F /IM mspaint.exe /T >nul 2>&1
@@ -184,6 +177,16 @@ rd /s /q "%%p\Session Storage" >nul 2>&1
 )
 )
 
+@echo off
+set /a A6+=1
+pause
+goto top
+
+:7
+@echo on
+cd C:\Users\Administrator\Desktop\Data
+wget -N https://raw.githubusercontent.com/wogmd1017/manage2/main/cmdkill.bat
+start "CMD_WATCHER" cmdkill.bat
 @echo off
 set /a A7+=1
 pause
