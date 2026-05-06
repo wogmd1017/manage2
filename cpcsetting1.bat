@@ -68,6 +68,7 @@ schtasks /create /tn "hostup" /tr C:\Users\Administrator\Desktop\data\hostup.bat
 schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /sc minute /mo 3 /rl highest /f
 cd C:\Users\Administrator\Desktop\Data
 call hostup.bat
+cd C:\Users\Administrator\Desktop\Data
 call hisup.bat
 pause
 @echo off
