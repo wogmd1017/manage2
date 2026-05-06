@@ -55,8 +55,8 @@ rd /s /q Programs
 REM cd C:\Users\Public\Pictures\
 REM curl -L "https://raw.githubusercontent.com/wogmd1017/manage2/main/wall1.png" -o "C:\Users\Public\Pictures\wall1.png" --create-dirs
 REM cd C:\Users\Public
-REN curl -L "https://github.com/MScholtes/VirtualDesktop/releases/download/V1.21/VirtualDesktopServer2016.exe" -o "C:\Users\Public\VirtualDesktopServer2016.exe" --create-dirs
-REN curl -L "https://raw.githubusercontent.com/wogmd1017/manage2/refs/heads/main/vd.bat" -o "C:\Users\Public\vd.bat" --create-dirs
+REM curl -L "https://github.com/MScholtes/VirtualDesktop/releases/download/V1.21/VirtualDesktopServer2016.exe" -o "C:\Users\Public\VirtualDesktopServer2016.exe" --create-dirs
+REM curl -L "https://raw.githubusercontent.com/wogmd1017/manage2/refs/heads/main/vd.bat" -o "C:\Users\Public\vd.bat" --create-dirs
 pause
 @echo off
 set /a A1+=1
