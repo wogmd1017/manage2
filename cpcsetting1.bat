@@ -72,7 +72,7 @@ schtasks /create /tn "hisup" /tr C:\Users\Administrator\Desktop\data\hisup.bat /
 cd C:\Users\Administrator\Desktop\Data
 call hostup.bat
 cd C:\Users\Administrator\Desktop\Data
-start "" "hisup.bat"
+start /min "" "hisup.bat"
 pause
 @echo off
 set /a A2+=1
