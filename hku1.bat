@@ -220,5 +220,7 @@ reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows\System" /v "DisableCMD"
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableBatch" /t REG_DWORD /d 1 /f
 REM Disable Regedit
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools" /t REG_DWORD /d 1 /f
-taskkill /f /im explorer.exe & start explorer.exe
+taskkill /f /im explorer.exe
+timeout /t 2 >nul
+start explorer.exe
 goto :eof
