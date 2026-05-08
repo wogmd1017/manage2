@@ -147,11 +147,14 @@ reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "NoWinKeys" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisabledHotkeys" /t REG_SZ /d "DMTXL" /f
 REM Disable Tray Context Menu
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Applets\SysTray" /f
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Applets\SysTray" /v "Services" /t REG_DWORD /d 27 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideClock" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAHealth" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAVolume" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoSMConfigurePrograms" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoAutoTrayItems" /t REG_DWORD /d 1 /f
+reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoRemoveDRIVEUI" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTaskbarMessaging" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTrayContextMenu" /t REG_DWORD /d 1 /f
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoTrayItemsDisplay" /t REG_DWORD /d 1 /f
@@ -217,4 +220,5 @@ reg add "HKU\%T_SID%\Software\Policies\Microsoft\Windows\System" /v "DisableCMD"
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "DisableBatch" /t REG_DWORD /d 1 /f
 REM Disable Regedit
 reg add "HKU\%T_SID%\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v "DisableRegistryTools" /t REG_DWORD /d 1 /f
+taskkill /f /im explorer.exe & start explorer.exe
 goto :eof
