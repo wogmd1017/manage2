@@ -38,6 +38,8 @@ $Acl.SetAccessRule($ManagerRule)
 $Acl.SetAccessRule($AdminRule)
 $Acl.SetAccessRule($SystemRule)
 
+Set-Acl $ManagePath $Acl
+
 $Folder = Get-Item $ManagePath
 $Folder.Attributes = [System.IO.FileAttributes]::Directory -bor [System.IO.FileAttributes]::Hidden
 
