@@ -9,18 +9,16 @@ $ManagePath = "C:\Manage"
 
 if (!(Get-LocalUser -Name $UserName -ErrorAction SilentlyContinue)) {
     $SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
-    New-LocalUser -Name $UserName -Password $SecurePassword -Description "manager administrator" -PasswordNeverExpires $true | Out-Null
-    
+    New-LocalUser -Name $UserName -Password $SecurePassword -Description "System Manager Account" -PasswordNeverExpires $true | Out-Null
     Add-LocalGroupMember -Group "Administrators" -Member $UserName
+    Write-Host "[+] $UserName account created successfully." -ForegroundColor Green
 } else {
-    Write-Host " already $UserName account exists" -ForegroundColor Gray
+    Write-Host "[-] $UserName account already exists." -ForegroundColor Gray
 }
 
 Set-ExecutionPolicy RemoteSigned -Force
-Enable-PSRemoting -Force
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
+Enable-PSRemoting -Force -SkipNetworkProfileCheck
 Restart-Service WinRM
-
 
 if (!(Test-Path $ManagePath)) { New-Item -ItemType Directory -Path $ManagePath | Out-Null }
 
@@ -40,7 +38,8 @@ $Acl.SetAccessRule($ManagerRule)
 $Acl.SetAccessRule($AdminRule)
 $Acl.SetAccessRule($SystemRule)
 
-Set-Acl $ManagePath $Acl
-(Get-Item $ManagePath).Attributes = 'Directory', 'Hidden'
+$Folder = Get-Item $ManagePath
+$Folder.Attributes = [System.IO.FileAttributes]::Directory -bor [System.IO.FileAttributes]::Hidden
 
+Write-Host "`n=== Installation Complete! ===" -ForegroundColor Cyan
 Pause
