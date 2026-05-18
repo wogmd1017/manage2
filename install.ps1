@@ -20,6 +20,12 @@ if (!(Get-LocalUser -Name $UserName -ErrorAction SilentlyContinue)) {
 
 Set-ExecutionPolicy RemoteSigned -Force -ErrorAction SilentlyContinue
 Enable-PSRemoting -Force -SkipNetworkProfileCheck
+
+$RegistryPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System"
+$Name = "LocalAccountTokenFilterPolicy"
+if (!(Get-ItemProperty -Path $RegistryPath -Name $Name -ErrorAction SilentlyContinue)) {
+    New-ItemProperty -Path $RegistryPath -Name $Name -Value 1 -PropertyType DWord -Force
+}
 Restart-Service WinRM
 
 if (!(Test-Path $ManagePath)) { New-Item -ItemType Directory -Path $ManagePath | Out-Null }
