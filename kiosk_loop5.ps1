@@ -134,7 +134,7 @@ $initJobs = foreach ($serverGroup in $sessionsByServer) {
                     $bat, $content, [System.Text.Encoding]::ASCII)
 
                 Write-Host "[$env:COMPUTERNAME][$owner] 세션 $sid 키오스크 실행"
-                & $psexec -accepteula -i $sid -s cmd /c $bat 2>&1
+                & $psexec -accepteula -i $sid -s -sw cmd /c $bat 2>&1
             }
         } -ArgumentList $sessionData, $url
     } -ArgumentList $serverIP, $cred, $sessionData, $url
