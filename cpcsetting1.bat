@@ -158,29 +158,42 @@ taskkill /F /IM code.exe /T >nul 2>&1
 
 timeout /t 3 /nobreak >nul
 
-FOR %%u in (01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40) DO (
-set "USER_DATA=C:\Users\%%u\AppData\Local\Google\Chrome\User Data"
-    
-if exist "!USER_DATA!" (
+setlocal enabledelayedexpansion
 
-del /q /f "!USER_DATA!\Local State" >nul 2>&1
-del /q /f "!USER_DATA!\Last Version" >nul 2>&1
-del /q /f "!USER_DATA!\Last Tabs" >nul 2>&1
+set "BASE=C:\Users\Administrator\AppData\Local\Google\Chrome\User Data"
 
-for /d %%p in ("!USER_DATA!\*") do (
+if not exist "!BASE!" (
+    echo Chrome User Data cannot find: !BASE!
+    exit /b 1
+)
 
-if exist "%%p\Cookies" (
-                
-del /q /f "%%p\Cookies" >nul 2>&1
-del /q /f "%%p\Network\Cookies" >nul 2>&1
-del /q /f "%%p\Last Tabs" >nul 2>&1
-del /q /f "%%p\Last Session" >nul 2>&1
-rd /s /q "%%p\Sessions" >nul 2>&1
-rd /s /q "%%p\Session Storage" >nul 2>&1
+del /q /f "!BASE!\Local State" >nul 2>&1
+del /q /f "!BASE!\Last Version" >nul 2>&1
+del /q /f "!BASE!\Last Tabs" >nul 2>&1
+
+for /d %%p in ("!BASE!\Session_*") do (
+    echo reset: %%p
+
+    del /q /f "%%p\Cookies" >nul 2>&1
+    del /q /f "%%p\Network\Cookies" >nul 2>&1
+    del /q /f "%%p\Last Tabs" >nul 2>&1
+    del /q /f "%%p\Last Session" >nul 2>&1
+    del /q /f "%%p\Login Data" >nul 2>&1
+    del /q /f "%%p\Login Data For Account" >nul 2>&1
+    del /q /f "%%p\Web Data" >nul 2>&1
+    del /q /f "%%p\History" >nul 2>&1
+    del /q /f "%%p\Visited Links" >nul 2>&1
+    del /q /f "%%p\Shortcuts" >nul 2>&1
+
+    rd /s /q "%%p\Sessions" >nul 2>&1
+    rd /s /q "%%p\Session Storage" >nul 2>&1
+    rd /s /q "%%p\Local Storage" >nul 2>&1
+    rd /s /q "%%p\IndexedDB" >nul 2>&1
+    rd /s /q "%%p\Cache" >nul 2>&1
+    rd /s /q "%%p\Code Cache" >nul 2>&1
 )
-)
-)
-)
+
+echo success!
 
 @echo off
 set /a A6+=1
