@@ -104,17 +104,23 @@ $initJobs = foreach ($serverGroup in $sessionsByServer) {
             foreach ($session in $sessionData) {
                 $sid     = [int]$session.SessionId
                 $owner   = $session.User
-                $profile = "C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Session_$sid"
+                $profile = "C:\Users\$owner\AppData\Local\Google\Chrome\User Data"
                 $bat     = "C:\Windows\Temp\kiosk_$sid.bat"
 
-                Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
-                    Where-Object { $_.SessionId -eq $sid } |
-                    ForEach-Object { $_.Terminate() | Out-Null }
+					Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
+						Where-Object { $_.SessionId -eq $sid } |
+						ForEach-Object { Stop-Process -Id $_.ProcessId -ErrorAction SilentlyContinue }
+						Start-Sleep -Milliseconds 1000
+					Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
+						Where-Object { $_.SessionId -eq $sid } |
+						ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
 
                 Start-Sleep -Milliseconds 500
 
                     $content = "@echo off`r`n" +
-								"start `"`" /b `"$chrome`" " +
+								"del /f /q `"$profile\Default\Last Session`" >nul 2>&1`r`n" +
+								"del /f /q `"$profile\Default\Last Tabs`" >nul 2>&1`r`n" +
+								"start `"`" `"$chrome`" " +
 								"--kiosk $url " +
 								"--no-first-run " +
 								"--disable-sync " +
@@ -135,7 +141,7 @@ $initJobs = foreach ($serverGroup in $sessionsByServer) {
                     $bat, $content, [System.Text.Encoding]::ASCII)
 
                 Write-Host "[$env:COMPUTERNAME][$owner] 세션 $sid 키오스크 실행"
-                & $psexec -accepteula -i $sid -s -sw cmd /c $bat 2>&1
+                & $psexec -accepteula -i $sid -s cmd /c $bat 2>&1
             }
         } -ArgumentList $sessionData, $url
     } -ArgumentList $serverIP, $cred, $sessionData, $url
@@ -232,22 +238,28 @@ try {
             $lastLaunch[$key] = $now
 
             Start-Job -ScriptBlock {
-                param($serverIP, $cred, $sid, $url)
+                param($serverIP, $cred, $sid, $owner, $url)
                 Invoke-Command -ComputerName $serverIP -Credential $cred -ScriptBlock {
-                    param($sid, $url)
+                    param($sid, $owner, $url)
                     $chrome  = "C:\Program Files\Google\Chrome\Application\chrome.exe"
                     $psexec  = "C:\Users\Administrator\Desktop\data\PsExec.exe"
-                    $profile = "C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Session_$sid"
+                    $profile = "C:\Users\$owner\AppData\Local\Google\Chrome\User Data"
                     $bat     = "C:\Windows\Temp\kiosk_$sid.bat"
 
-                    Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
-                        Where-Object { $_.SessionId -eq $sid } |
-                        ForEach-Object { $_.Terminate() | Out-Null }
+					Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
+						Where-Object { $_.SessionId -eq $sid } |
+						ForEach-Object { Stop-Process -Id $_.ProcessId -ErrorAction SilentlyContinue }
+						Start-Sleep -Milliseconds 1000
+					Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
+						Where-Object { $_.SessionId -eq $sid } |
+						ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
 
                     Start-Sleep -Milliseconds 500
 
                     $content = "@echo off`r`n" +
-								"start `"`" /b `"$chrome`" " +
+								"del /f /q `"$profile\Default\Last Session`" >nul 2>&1`r`n" +
+								"del /f /q `"$profile\Default\Last Tabs`" >nul 2>&1`r`n" +
+								"start `"`" `"$chrome`" " +
 								"--kiosk $url " +
 								"--no-first-run " +
 								"--disable-sync " +
@@ -269,8 +281,8 @@ try {
 
                     & $psexec -accepteula -i $sid -s cmd /c $bat 2>&1
 
-                } -ArgumentList $sid, $url
-            } -ArgumentList $serverIP, $cred, $sid, $url | Out-Null
+                } -ArgumentList $sid, $owner, $url
+            } -ArgumentList $serverIP, $cred, $sid, $owner, $url | Out-Null
         }
 
         Get-Job -State Completed | Remove-Job
