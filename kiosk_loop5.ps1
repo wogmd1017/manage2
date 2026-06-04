@@ -1,4 +1,4 @@
-﻿$S = "10.65.167.11", "10.65.167.12", "10.65.167.13", "10.65.167.14"
+$S = "10.65.167.11", "10.65.167.12", "10.65.167.13", "10.65.167.14"
 $user = "manager"
 $secpasswd = Read-Host -Prompt "$user, Enter Password." -AsSecureString
 $cred = New-Object System.Management.Automation.PSCredential($user, $secpasswd)
@@ -82,13 +82,11 @@ if ($initSessions) {
     Write-Host "감지된 세션 없음! query session 파싱 확인 필요" -ForegroundColor Red
 }
 
-# 서버별로 그룹핑 후 병렬 실행
 $sessionsByServer = $initSessions | Group-Object PSComputerName
 
 $initJobs = foreach ($serverGroup in $sessionsByServer) {
     $serverIP = $serverGroup.Name
 
-    # PSCustomObject → 해시테이블로 변환 (직렬화 안전)
     $sessionData = $serverGroup.Group | ForEach-Object {
         @{
             User      = $_.User
@@ -106,7 +104,7 @@ $initJobs = foreach ($serverGroup in $sessionsByServer) {
             foreach ($session in $sessionData) {
                 $sid     = [int]$session.SessionId
                 $owner   = $session.User
-                $profile = "$env:APPDATA\Local\Google\Chrome\User Data\Session_$sid"
+                $profile = "C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Session_$sid"
                 $bat     = "C:\Windows\Temp\kiosk_$sid.bat"
 
                 Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
@@ -115,20 +113,23 @@ $initJobs = foreach ($serverGroup in $sessionsByServer) {
 
                 Start-Sleep -Milliseconds 500
 
-                $content = "@echo off`r`n" +
-                           "`"$chrome`" --kiosk $url --no-first-run " +
-							"--disable-sync " +
-							"--user-data-dir=`"$profile`" " +
-							"--no-default-browser-check " +
-							"--disable-default-apps " +
-							"--disable-extensions " +
-							"--disable-features=ChromeWhatsNewUI " +
-							"--suppress-message-center-popups " +
-							"--disable-pinch " +
-							"--overscroll-history-navigation=0 " +
-							"--noerrdialogs " +
-							"--disable-session-crashed-bubble " +
-							"--kiosk-printing"
+                    $content = "@echo off`r`n" +
+								"start `"`" /b `"$chrome`" " +
+								"--kiosk $url " +
+								"--no-first-run " +
+								"--disable-sync " +
+								"--user-data-dir=`"$profile`" " +
+								"--no-default-browser-check " +
+								"--disable-default-apps " +
+								"--disable-extensions " +
+								"--disable-features=ChromeWhatsNewUI " +
+								"--suppress-message-center-popups " +
+								"--disable-pinch " +
+								"--overscroll-history-navigation=0 " +
+								"--noerrdialogs " +
+								"--disable-session-crashed-bubble " +
+								"--kiosk-printing`r`n" +
+								"exit"
 
                 [System.IO.File]::WriteAllText(
                     $bat, $content, [System.Text.Encoding]::ASCII)
@@ -172,13 +173,33 @@ try {
 
             foreach ($s in $sessions) {
                 $sid = [int]$s.SessionId
+
+                $chromeProcs = Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
+                    Where-Object { $_.SessionId -eq $sid }
+
+                $chromeCount = ($chromeProcs | Measure-Object).Count
+
+                # 임계값 초과 → 강제 종료 후 KioskRunning=false 반환
+                if ($chromeCount -gt 20) {
+                    Write-Host "[$($s.User)] 세션 $sid 크롬 $chromeCount 개 → 강제 종료" `
+                        -ForegroundColor Red
+                    $chromeProcs | ForEach-Object {
+						Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+					}
+                    [PSCustomObject]@{
+                        User         = $s.User
+                        SessionId    = $sid
+                        KioskRunning = $false
+                    }
+                    continue
+                }
+
                 $kioskRunning = [bool](
-                    Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
-                    Where-Object {
-                        $_.SessionId -eq $sid -and
+                    $chromeProcs | Where-Object {
                         $_.CommandLine -like "*--kiosk*"
                     }
                 )
+
                 [PSCustomObject]@{
                     User         = $s.User
                     SessionId    = $sid
@@ -216,7 +237,7 @@ try {
                     param($sid, $url)
                     $chrome  = "C:\Program Files\Google\Chrome\Application\chrome.exe"
                     $psexec  = "C:\Users\Administrator\Desktop\data\PsExec.exe"
-                    $profile = "C:\Windows\Temp\ChromeKiosk_$sid"
+                    $profile = "C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Session_$sid"
                     $bat     = "C:\Windows\Temp\kiosk_$sid.bat"
 
                     Get-WmiObject Win32_Process -Filter "Name='chrome.exe'" |
@@ -226,11 +247,22 @@ try {
                     Start-Sleep -Milliseconds 500
 
                     $content = "@echo off`r`n" +
-                               "`"$chrome`" --kiosk $url --no-first-run --bwsi " +
-                               "--disable-sync --user-data-dir=`"$profile`" " +
-                               "--disable-pinch --overscroll-history-navigation=0 " +
-                               "--noerrdialogs --disable-session-crashed-bubble " +
-                               "--kiosk-printing"
+								"start `"`" /b `"$chrome`" " +
+								"--kiosk $url " +
+								"--no-first-run " +
+								"--disable-sync " +
+								"--user-data-dir=`"$profile`" " +
+								"--no-default-browser-check " +
+								"--disable-default-apps " +
+								"--disable-extensions " +
+								"--disable-features=ChromeWhatsNewUI " +
+								"--suppress-message-center-popups " +
+								"--disable-pinch " +
+								"--overscroll-history-navigation=0 " +
+								"--noerrdialogs " +
+								"--disable-session-crashed-bubble " +
+								"--kiosk-printing`r`n" +
+								"exit"
 
                     [System.IO.File]::WriteAllText(
                         $bat, $content, [System.Text.Encoding]::ASCII)
