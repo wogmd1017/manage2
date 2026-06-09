@@ -81,7 +81,7 @@ function Start-Loop {
                                     `$chrome  = (Get-Item 'C:\Program Files\Google\Chrome\Application\chrome.exe','C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' -ErrorAction SilentlyContinue | Select-Object -First 1).FullName
                                     `$profile = `"C:\Users\`$owner\AppData\Local\Google\Chrome\User Data`"
                                     `$url     = (Import-PowerShellDataFile 'C:\Users\manager\Desktop\data\config.psd1').KioskUrl
-                                    & `$psexec -i `$sid -s -d `$chrome --kiosk `$url --user-data-dir=`"`$profile`" 2>`$null
+                                    & `$psexec -accepteula -i `$sid -s -d `$chrome --kiosk `$url --user-data-dir=`"`$profile`" 2>`$null
                                 } elseif (`$chromes.Count -gt 20) {
                                     `$chromes | Sort-Object StartTime | Select-Object -Skip 1 | Stop-Process -Force
                                 }
@@ -219,7 +219,7 @@ function Invoke-Action {
 function Select-Mode {
     Write-Host ""
     Write-Host "  Select class mode:" -ForegroundColor Cyan
-    Write-Host "  1. Elice"
+    Write-Host "  1. Python(Elice)"
     Write-Host "  2. Entry"
     Write-Host "  3. MakeCode"
     Write-Host "  4. AppInventor"
@@ -259,12 +259,13 @@ function Show-Menu {
     Write-Host "  [4] Apply permissions (icacls)"
     Write-Host "  [5] Apply HKLM policy"
     Write-Host "  [6] Apply HKU policy"
+    Write-Host ""
     Write-Host "  [7] Stop Chrome + clean data"
     Write-Host ""
     Write-Host "  [L] Loop start    [K] Loop stop"
     Write-Host "  [M] Change mode   [0] Exit"
     Write-Host ""
-    Write-Host "  Enter numbers to run (e.g. 1,3,5 / Enter = all 1-7)"
+    Write-Host "  Enter numbers to run (e.g. 1,3,5 / Enter = all 1-6)"
     Write-Host "=============================================" -ForegroundColor DarkCyan
 }
 
@@ -293,7 +294,7 @@ while ($true) {
 
     # Enter = run all 1-7
     if ([string]::IsNullOrWhiteSpace($input)) {
-        $items = @("1","2","3","4","5","6","7")
+        $items = @("1","2","3","4","5","6")
     } else {
         $items = $input -split '[,\s]+' | ForEach-Object { $_.Trim().ToUpper() }
     }
