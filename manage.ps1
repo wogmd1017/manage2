@@ -126,80 +126,91 @@ function Get-LoopStatus {
 function Invoke-Action {
     param([string[]]$Items, [string]$Mode)
 
+    # Download server.ps1 on remote first
+    $gb = $GithubBase
+    Invoke-OnAll -Block {
+        param($base, $data)
+        if (-not (Test-Path $data)) { New-Item -ItemType Directory -Path $data -Force | Out-Null }
+        Invoke-WebRequest "$base/server.ps1" -OutFile "$data\server.ps1" -UseBasicParsing
+    } -ArgList $gb, "C:\Users\manager\Desktop\data"
+
     foreach ($item in $Items) {
         switch ($item.Trim()) {
             "1" {
                 Write-Host "[1] PsExec check..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Get-PsExec
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[1] Done" -ForegroundColor Green
             }
             "2" {
                 Write-Host "[2] Cleanup startup items..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Clear-StartupItems
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[2] Done" -ForegroundColor Green
             }
             "3" {
                 Write-Host "[3] Registering schedulers..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Register-Schedulers
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[3] Done" -ForegroundColor Green
             }
             "4" {
                 Write-Host "[4] Applying permissions..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Set-Permissions
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[4] Done" -ForegroundColor Green
             }
             "5" {
                 Write-Host "[5] Applying HKLM policy (mode: $Mode)..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    param($m)
-                    . "$using:ServerScript"
+                    param($data, $m)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Set-HKLMPolicy -Mode $m
-                } -ArgList $Mode
+                } -ArgList "C:\Users\manager\Desktop\data", $Mode
                 Write-Host "[5] Done" -ForegroundColor Green
             }
             "6" {
                 Write-Host "[6] Applying HKU policy..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Set-HKUPolicy
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[6] Done" -ForegroundColor Green
             }
             "7" {
                 Write-Host "[7] Stop Chrome + clean data..." -ForegroundColor Cyan
                 Invoke-OnAll -Block {
-                    . "$using:ServerScript"
+                    param($data)
+                    . "$data\server.ps1"
                     Initialize-Server
                     Stop-ChromeAndClean
-                }
+                } -ArgList "C:\Users\manager\Desktop\data"
                 Write-Host "[7] Done" -ForegroundColor Green
             }
-            "L" {
-                Start-Loop
-            }
-            "K" {
-                Stop-Loop
-            }
+            "L" { Start-Loop }
+            "K" { Stop-Loop }
         }
     }
+
 }
 
 # ============================================================
