@@ -48,7 +48,8 @@ function Get-PsExec {
         Write-Host "[PsExec] Downloading..." -ForegroundColor Cyan
         Invoke-WebRequest "https://live.sysinternals.com/PsExec.exe" -OutFile $psexecPath -UseBasicParsing
     }
-
+    # Accept EULA silently
+    & $psexecPath -accepteula 2>$null
     Write-Host "[PsExec] Done" -ForegroundColor Green
 }
 
