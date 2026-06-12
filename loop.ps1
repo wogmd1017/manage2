@@ -1,6 +1,5 @@
 # ============================================================
 #  loop.ps1 - Kiosk watchdog loop (launched by manage.ps1)
-#  Params: -EncPassword -Servers -User -Url -Data -LockFile
 # ============================================================
 param(
     [string]$EncPassword,
@@ -18,9 +17,9 @@ if (Test-Path $LockFile) {
 }
 New-Item $LockFile -Force | Out-Null
 
-$sec   = $EncPassword | ConvertTo-SecureString
-$cred  = New-Object System.Management.Automation.PSCredential($User, $sec)
-$svrs  = $Servers -split ","
+$sec        = $EncPassword | ConvertTo-SecureString
+$cred       = New-Object System.Management.Automation.PSCredential($User, $sec)
+$svrs       = $Servers -split ","
 $lastLaunch = @{}
 
 try {
@@ -54,6 +53,12 @@ try {
                 $_.SessionId -match '^\d+$'
             }
         } -ErrorAction SilentlyContinue
+
+        # Debug: session count
+        Write-Host "$(Get-Date -Format 'HH:mm:ss') Sessions: $($allSessions.Count)" -ForegroundColor Cyan
+        foreach ($dbg in $allSessions) {
+            Write-Host "  -> [$($dbg.PSComputerName)][$($dbg.User)] sid $($dbg.SessionId) kiosk=$($dbg.KioskRunning)" -ForegroundColor DarkCyan
+        }
 
         $allOk = $true
 
