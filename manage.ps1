@@ -70,7 +70,7 @@ function Start-Session {
     Write-Host "[Session] Parsing sessions..." -ForegroundColor Cyan
     $initSessions = Invoke-Command -ComputerName $servers -Credential $cred -ScriptBlock {
         (query session 2>$null) | Select-Object -Skip 1 | ForEach-Object {
-            if ($_ -match '^\s+(\S+)\s+(\d+)\s+(Active|Disc|활성|디스크)') {
+            if ($_ -match '^\s+(\S+)\s+(\d+)\s+\S+') {
                 [PSCustomObject]@{ User = $matches[1]; SessionId = $matches[2] }
             }
         } | Where-Object {
