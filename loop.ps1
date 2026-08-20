@@ -50,7 +50,9 @@ try {
             } | Where-Object {
                 $_ -and
                 $_.User -notin @('Administrator', $using:User) -and
-                $_.SessionId -match '^\d+$'
+                $_.SessionId -match '^\d+$' -and
+                [int]$_.SessionId -lt 65536 -and
+                $_.User -notmatch '^(console|rdp-tcp.*|services)$'
             }
         } -ErrorAction SilentlyContinue
 
