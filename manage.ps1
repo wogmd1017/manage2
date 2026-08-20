@@ -74,8 +74,11 @@ function Start-Session {
                 [PSCustomObject]@{ User = $matches[1]; SessionId = $matches[2] }
             }
         } | Where-Object {
-            $_.User -notin @('Administrator', $using:user) -and
-            $_.SessionId -match '^\d+$'
+            $_ -and
+            $_.User -notin @('Administrator', $using:User) -and
+            $_.SessionId -match '^\d+$' -and
+            [int]$_.SessionId -lt 65536 -and
+            $_.User -notmatch '^(console|rdp-tcp.*|services)$'
         }
     } -ErrorAction SilentlyContinue
 
