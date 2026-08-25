@@ -327,6 +327,19 @@ function Select-Mode {
 }
 
 # ============================================================
+#  Mode -> URL resolver
+# ============================================================
+function Get-KioskUrl {
+    param([string]$Mode)
+    $url = $script:Config.KioskUrls[$Mode]
+    if (-not $url) {
+        Write-Host "  [경고] '$Mode' 모드에 대한 URL이 config에 없습니다. 기본값 사용." -ForegroundColor Red
+        $url = $script:Config.KioskUrls['Elice']
+    }
+    return $url
+}
+
+# ============================================================
 #  Menu display
 # ============================================================
 function Show-Menu {
