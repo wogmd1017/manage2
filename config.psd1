@@ -18,7 +18,13 @@
     StudentsPerServer = 10
 
     # Kiosk
-    KioskUrl   = "https://boonpo-m.elice.io"
+    KioskUrls = @{
+        Elice       = "https://boonpo-m.elice.io"
+        Entry       = "https://playentry.org"
+        MakeCode    = "https://makecode.microsoft.com"
+        AppInventor = "https://appinventor.mit.edu"
+        Classroom   = "https://classroom.google.com"
+    }
     ChromePath = @(
         "C:\Program Files\Google\Chrome\Application\chrome.exe"
         "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
