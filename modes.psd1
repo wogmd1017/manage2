@@ -134,6 +134,10 @@
             "https://docs.google.com/accounts/"
             "edu.google.com"
             "myaccount.google.com"
+            "www.bigkinds.or.kr"
+            "bigkinds.or.kr"
+            "www.bigkinds.or.kr/*"
+            "bigkinds.or.kr/*"
         )
         Blocklist  = @(
             "http://*"
