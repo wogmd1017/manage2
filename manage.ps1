@@ -44,10 +44,12 @@ function Invoke-OnAll {
 #  Session: explorer stop + kiosk launch
 # ============================================================
 function Start-Session {
+	param([string]$Mode)
+    
     $servers = $script:Config.Servers
     $cred    = $script:Cred
     $data    = $script:Config.DataPath
-    $url     = $script:Config.KioskUrl
+    $url     = Get-KioskUrl -Mode $Mode
     $user    = $script:Config.User
 
     Write-Host "[Session] Stopping explorer..." -ForegroundColor Cyan
