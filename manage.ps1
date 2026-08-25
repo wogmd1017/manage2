@@ -165,6 +165,8 @@ function Start-Session {
 #  Loop control
 # ============================================================
 function Start-Loop {
+    param([string]$Mode)
+	
     if ($script:loopProcess -and -not $script:loopProcess.HasExited) {
         Write-Host "[Loop] Already running (PID $($script:loopProcess.Id))" -ForegroundColor Yellow
         return
@@ -175,7 +177,7 @@ function Start-Loop {
     $enc        = $script:EncPassword
     $servers    = $script:Config.Servers -join ","
     $user       = $script:Config.User
-    $url        = $script:Config.KioskUrl
+    $url        = Get-KioskUrl -Mode $Mode
     $data       = $script:Config.DataPath
 
     $args = "-NoExit -File `"$loopScript`"" +
@@ -295,8 +297,8 @@ function Invoke-Action {
                 } -ArgList $data
                 Write-Host "[7] Done" -ForegroundColor Green
             }
-            "S" { Start-Session }
-            "L" { Start-Loop }
+            "S" { Start-Session -Mode $Mode }
+            "L" { Start-Loop -Mode $Mode }
             "K" { Stop-Loop }
         }
     }
