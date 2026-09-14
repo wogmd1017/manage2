@@ -3,10 +3,12 @@
 #  Run: powershell.exe -File manage.ps1
 # ============================================================
 
-$GithubBase  = "https://raw.githubusercontent.com/wogmd1017/manage2/main"
-$DataPath    = "$env:USERPROFILE\Desktop\data"
-$LockFile    = "$DataPath\loop.lock"
-$loopProcess = $null
+$GithubBase   = "https://raw.githubusercontent.com/wogmd1017/manage2/main"
+$DataPath     = "$env:USERPROFILE\Desktop\data"
+$LockFile     = "$DataPath\loop.lock"
+$EventLockFile = "$DataPath\eventcollect.lock"
+$loopProcess  = $null
+$eventProcess = $null
 
 # ============================================================
 #  Init
@@ -14,9 +16,10 @@ $loopProcess = $null
 function Initialize-Manage {
     if (-not (Test-Path $DataPath)) { New-Item -ItemType Directory -Path $DataPath -Force | Out-Null }
     Write-Host "[Init] Downloading config + scripts..." -ForegroundColor Cyan
-    Invoke-WebRequest "$GithubBase/config.psd1" -OutFile "$DataPath\config.psd1" -UseBasicParsing
-    Invoke-WebRequest "$GithubBase/server.ps1"  -OutFile "$DataPath\server.ps1"  -UseBasicParsing
-    Invoke-WebRequest "$GithubBase/loop.ps1"    -OutFile "$DataPath\loop.ps1"    -UseBasicParsing
+    Invoke-WebRequest "$GithubBase/config.psd1"      -OutFile "$DataPath\config.psd1"      -UseBasicParsing
+    Invoke-WebRequest "$GithubBase/server.ps1"       -OutFile "$DataPath\server.ps1"       -UseBasicParsing
+    Invoke-WebRequest "$GithubBase/loop.ps1"         -OutFile "$DataPath\loop.ps1"         -UseBasicParsing
+    Invoke-WebRequest "$GithubBase/eventcollect.ps1" -OutFile "$DataPath\eventcollect.ps1" -UseBasicParsing
     $script:Config = Import-PowerShellDataFile "$DataPath\config.psd1"
     Write-Host "[Init] Done" -ForegroundColor Green
 }
@@ -211,6 +214,51 @@ function Get-LoopStatus {
 }
 
 # ============================================================
+#  Event log collector control
+# ============================================================
+function Start-EventCollector {
+    if ($script:eventProcess -and -not $script:eventProcess.HasExited) {
+        Write-Host "[EventCollector] Already running (PID $($script:eventProcess.Id))" -ForegroundColor Yellow
+        return
+    }
+    if (Test-Path $EventLockFile) { Remove-Item $EventLockFile -Force }
+
+    $collectScript = "$DataPath\eventcollect.ps1"
+    $outDir        = "$DataPath\EventLog"
+    $enc           = $script:EncPassword
+    $servers       = $script:Config.Servers -join ","
+    $user          = $script:Config.User
+
+    $args = "-NoExit -File `"$collectScript`"" +
+            " -EncPassword `"$enc`"" +
+            " -Servers `"$servers`"" +
+            " -User `"$user`"" +
+            " -OutDir `"$outDir`"" +
+            " -LockFile `"$EventLockFile`""
+
+    $script:eventProcess = Start-Process powershell -ArgumentList $args -PassThru
+    Write-Host "[EventCollector] Started (PID $($script:eventProcess.Id))" -ForegroundColor Green
+}
+
+function Stop-EventCollector {
+    if ($script:eventProcess -and -not $script:eventProcess.HasExited) {
+        $script:eventProcess.Kill()
+        Write-Host "[EventCollector] Stopped" -ForegroundColor Green
+    } else {
+        Write-Host "[EventCollector] Not running" -ForegroundColor Yellow
+    }
+    Remove-Item $EventLockFile -Force -ErrorAction SilentlyContinue
+    $script:eventProcess = $null
+}
+
+function Get-EventCollectorStatus {
+    if ($script:eventProcess -and -not $script:eventProcess.HasExited) {
+        return "RUNNING (PID $($script:eventProcess.Id))"
+    }
+    return "STOPPED"
+}
+
+# ============================================================
 #  Menu actions
 # ============================================================
 function Invoke-Action {
@@ -300,6 +348,8 @@ function Invoke-Action {
             "S" { Start-Session -Mode $Mode }
             "L" { Start-Loop -Mode $Mode }
             "K" { Stop-Loop }
+            "EC" { Start-EventCollector }
+            "ES" { Stop-EventCollector }
         }
     }
 }
@@ -348,13 +398,15 @@ function Get-KioskUrl {
 # ============================================================
 function Show-Menu {
     param([string]$Mode)
-    $loopStatus = Get-LoopStatus
+    $loopStatus  = Get-LoopStatus
+    $eventStatus = Get-EventCollectorStatus
     Clear-Host
     Write-Host "=============================================" -ForegroundColor DarkCyan
     Write-Host "  Lab Management Console" -ForegroundColor Cyan
-    Write-Host "  Servers : $($script:Config.Servers -join ', ')" -ForegroundColor DarkGray
-    Write-Host "  Mode    : $Mode" -ForegroundColor DarkGray
-    Write-Host "  Loop    : $loopStatus" -ForegroundColor DarkGray
+    Write-Host "  Servers  : $($script:Config.Servers -join ', ')" -ForegroundColor DarkGray
+    Write-Host "  Mode     : $Mode" -ForegroundColor DarkGray
+    Write-Host "  Loop     : $loopStatus" -ForegroundColor DarkGray
+    Write-Host "  EventLog : $eventStatus" -ForegroundColor DarkGray
     Write-Host "=============================================" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  [1] PsExec check / download"
@@ -368,6 +420,7 @@ function Show-Menu {
     Write-Host ""
     Write-Host "  [S] Session start (explorer stop + kiosk launch)"
     Write-Host "  [L] Loop start    [K] Loop stop"
+    Write-Host "  [EC] Event log collector start   [ES] Event log collector stop"
     Write-Host "  [M] Change mode   [0] Exit"
     Write-Host ""
     Write-Host "  Enter = run 1-6 / select: e.g. 1,3,5"
@@ -387,6 +440,7 @@ while ($true) {
 
     if ($rawInput -eq "0") {
         Stop-Loop
+        Stop-EventCollector
         Write-Host "Bye." -ForegroundColor DarkGray
         break
     }

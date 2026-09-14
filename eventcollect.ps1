@@ -1,0 +1,101 @@
+# ============================================================
+#  eventcollect.ps1 - Remote System/Application event log watcher
+#  Polls all servers for new Critical/Error events and saves them
+#  locally on the teacher PC (per-server csv), so the history is
+#  kept even if a server later goes unreachable or has to be
+#  power-cycled. Launched by manage.ps1 (Start-EventCollector).
+# ============================================================
+param(
+    [string]$EncPassword,
+    [string]$Servers,
+    [string]$User,
+    [string]$OutDir,
+    [string]$LockFile,
+    [int]$PollSeconds = 20
+)
+
+if (Test-Path $LockFile) {
+    Write-Host "[EventCollector] Already running. Exit."
+    Start-Sleep 2
+    exit
+}
+New-Item $LockFile -Force | Out-Null
+
+if (-not (Test-Path $OutDir)) { New-Item -ItemType Directory -Path $OutDir -Force | Out-Null }
+
+$sec  = $EncPassword | ConvertTo-SecureString
+$cred = New-Object System.Management.Automation.PSCredential($User, $sec)
+$svrs = $Servers -split ","
+
+$lastCheck = @{}
+$offline   = @{}
+$now0      = Get-Date
+foreach ($s in $svrs) { $lastCheck[$s] = $now0; $offline[$s] = $false }
+
+function Get-ServerId {
+    param([string]$Ip)
+    return "st$($Ip.Split('.')[-1])"
+}
+
+function Write-EventRow {
+    param(
+        [string]$Server, [string]$Status, [string]$LogName,
+        [int]$Level, [string]$Provider, [int]$EventId,
+        [string]$Message, [datetime]$Time
+    )
+    $sid  = Get-ServerId $Server
+    $file = Join-Path $OutDir "$sid.csv"
+    $row  = [PSCustomObject]@{
+        Time     = $Time.ToString("yyyy-MM-dd HH:mm:ss")
+        Server   = $Server
+        Status   = $Status
+        LogName  = $LogName
+        Level    = $Level
+        Provider = $Provider
+        EventId  = $EventId
+        Message  = ($Message -replace "`r`n", " " -replace "`n", " ")
+    }
+    $row | Export-Csv -Path $file -Append -NoTypeInformation -Encoding UTF8
+}
+
+try {
+    while ($true) {
+        foreach ($server in $svrs) {
+            $since = $lastCheck[$server]
+            try {
+                $events = Invoke-Command -ComputerName $server -Credential $cred -ScriptBlock {
+                    param($since)
+                    Get-WinEvent -FilterHashtable @{
+                        LogName   = 'System', 'Application'
+                        Level     = 1, 2   # 1=Critical, 2=Error
+                        StartTime = $since
+                    } -ErrorAction SilentlyContinue
+                } -ArgumentList $since -ErrorAction Stop
+
+                if ($offline[$server]) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 복구됨" -ForegroundColor Green
+                    Write-EventRow -Server $server -Status "RECOVERED" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "서버 응답 복구" -Time (Get-Date)
+                    $offline[$server] = $false
+                }
+
+                if ($events) {
+                    $events = $events | Sort-Object TimeCreated
+                    foreach ($e in $events) {
+                        Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] EventID $($e.Id) ($($e.LevelDisplayName)) $($e.ProviderName)" -ForegroundColor Yellow
+                        Write-EventRow -Server $server -Status "EVENT" -LogName $e.LogName -Level $e.Level -Provider $e.ProviderName -EventId $e.Id -Message $e.Message -Time $e.TimeCreated
+                    }
+                    $lastCheck[$server] = ($events | Measure-Object -Property TimeCreated -Maximum).Maximum.AddMilliseconds(1)
+                }
+            } catch {
+                if (-not $offline[$server]) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 응답없음" -ForegroundColor Red
+                    Write-EventRow -Server $server -Status "OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time (Get-Date)
+                    $offline[$server] = $true
+                }
+            }
+        }
+        Start-Sleep -Seconds $PollSeconds
+    }
+} finally {
+    Remove-Item $LockFile -Force -ErrorAction SilentlyContinue
+}
