@@ -65,14 +65,17 @@ try {
         foreach ($server in $svrs) {
             $since = $lastCheck[$server]
             try {
+                # StartTime is intentionally not passed into the remote FilterHashtable -
+                # a DateTime handed across Invoke-Command's remoting boundary here reliably
+                # blew up Get-WinEvent with a Win32 "parameter is incorrect" error. Instead,
+                # pull the most recent events and filter by $since locally below.
                 $events = Invoke-Command -ComputerName $server -Credential $cred -ScriptBlock {
-                    param($since)
                     Get-WinEvent -FilterHashtable @{
-                        LogName   = 'System', 'Application'
-                        Level     = 1, 2   # 1=Critical, 2=Error
-                        StartTime = $since
-                    } -ErrorAction SilentlyContinue
-                } -ArgumentList $since -ErrorAction Stop
+                        LogName = 'System', 'Application'
+                        Level   = 1, 2   # 1=Critical, 2=Error
+                    } -MaxEvents 100 -ErrorAction SilentlyContinue
+                } -ErrorAction Stop
+                $events = $events | Where-Object { $_.TimeCreated -gt $since }
 
                 if ($offline[$server]) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 복구됨" -ForegroundColor Green
