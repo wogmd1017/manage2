@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 #  eventcollect.ps1 - Remote System/Application event log watcher
 #  Polls all servers for new Critical/Error events and saves them
 #  locally on the teacher PC (per-server csv), so the history is
