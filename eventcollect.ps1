@@ -27,10 +27,12 @@ $sec  = $EncPassword | ConvertTo-SecureString
 $cred = New-Object System.Management.Automation.PSCredential($User, $sec)
 $svrs = $Servers -split ","
 
-$lastCheck = @{}
-$offline   = @{}
-$now0      = Get-Date
-foreach ($s in $svrs) { $lastCheck[$s] = $now0; $offline[$s] = $false }
+$lastCheck     = @{}
+$offline       = @{}
+$offlineNotice = @{}
+$now0          = Get-Date
+$NoticeEvery   = [TimeSpan]::FromMinutes(5)
+foreach ($s in $svrs) { $lastCheck[$s] = $now0; $offline[$s] = $false; $offlineNotice[$s] = $now0 }
 
 function Get-ServerId {
     param([string]$Ip)
@@ -87,10 +89,16 @@ try {
                     $lastCheck[$server] = ($events | Measure-Object -Property TimeCreated -Maximum).Maximum.AddMilliseconds(1)
                 }
             } catch {
+                $nowFail = Get-Date
                 if (-not $offline[$server]) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 응답없음" -ForegroundColor Red
-                    Write-EventRow -Server $server -Status "OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time (Get-Date)
-                    $offline[$server] = $true
+                    Write-EventRow -Server $server -Status "OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time $nowFail
+                    $offline[$server]       = $true
+                    $offlineNotice[$server] = $nowFail
+                } elseif (($nowFail - $offlineNotice[$server]) -ge $NoticeEvery) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 응답없음 (계속됨)" -ForegroundColor Red
+                    Write-EventRow -Server $server -Status "STILL_OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time $nowFail
+                    $offlineNotice[$server] = $nowFail
                 }
             }
         }
