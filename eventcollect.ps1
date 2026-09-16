@@ -14,7 +14,7 @@ param(
     [int]$PollSeconds = 20
 )
 
-$ScriptVersion = "2026-09-16.1"
+$ScriptVersion = "2026-09-16.2"
 Write-Host "[EventCollector] eventcollect.ps1 version $ScriptVersion" -ForegroundColor Cyan
 
 if (Test-Path $LockFile) {
@@ -30,12 +30,19 @@ $sec  = $EncPassword | ConvertTo-SecureString
 $cred = New-Object System.Management.Automation.PSCredential($User, $sec)
 $svrs = $Servers -split ","
 
-$lastCheck     = @{}
-$offline       = @{}
-$offlineNotice = @{}
-$now0          = Get-Date
-$NoticeEvery   = [TimeSpan]::FromMinutes(5)
-foreach ($s in $svrs) { $lastCheck[$s] = $now0; $offline[$s] = $false; $offlineNotice[$s] = $now0 }
+$lastCheck      = @{}
+$offline        = @{}
+$offlineNotice  = @{}
+$lastHeartbeat  = @{}
+$now0           = Get-Date
+$NoticeEvery    = [TimeSpan]::FromMinutes(5)
+$HeartbeatEvery = [TimeSpan]::FromMinutes(15)
+foreach ($s in $svrs) {
+    $lastCheck[$s]     = $now0
+    $offline[$s]       = $false
+    $offlineNotice[$s] = $now0
+    $lastHeartbeat[$s] = $now0
+}
 
 function Get-ServerId {
     param([string]$Ip)
@@ -93,6 +100,13 @@ try {
                         Write-EventRow -Server $server -Status "EVENT" -LogName $e.LogName -Level $e.Level -Provider $e.ProviderName -EventId $e.Id -Message $e.Message -Time $e.TimeCreated
                     }
                     $lastCheck[$server] = ($events | Measure-Object -Property TimeCreated -Maximum).Maximum.AddMilliseconds(1)
+                }
+
+                $nowOk = Get-Date
+                if (($nowOk - $lastHeartbeat[$server]) -ge $HeartbeatEvery) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 정상 폴링 중" -ForegroundColor DarkGray
+                    Write-EventRow -Server $server -Status "HEARTBEAT" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "정상 폴링 중 (조용함 = 이상 없음)" -Time $nowOk
+                    $lastHeartbeat[$server] = $nowOk
                 }
             } catch {
                 $nowFail = Get-Date
