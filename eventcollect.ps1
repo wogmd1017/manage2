@@ -14,6 +14,9 @@ param(
     [int]$PollSeconds = 20
 )
 
+$ScriptVersion = "2026-09-16.1"
+Write-Host "[EventCollector] eventcollect.ps1 version $ScriptVersion" -ForegroundColor Cyan
+
 if (Test-Path $LockFile) {
     Write-Host "[EventCollector] Already running. Exit."
     Start-Sleep 2
