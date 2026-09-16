@@ -65,15 +65,15 @@ try {
         foreach ($server in $svrs) {
             $since = $lastCheck[$server]
             try {
-                # StartTime is intentionally not passed into the remote FilterHashtable -
-                # a DateTime handed across Invoke-Command's remoting boundary here reliably
-                # blew up Get-WinEvent with a Win32 "parameter is incorrect" error. Instead,
-                # pull the most recent events and filter by $since locally below.
+                # -FilterHashtable with both LogName and Level as arrays reliably threw a
+                # Win32 "parameter is incorrect" error on these servers' event log engine,
+                # even with no DateTime involved at all. Falling back to the plain -LogName
+                # form (no FilterHashtable/XPath translation) and filtering Level/time
+                # locally sidesteps whatever that incompatibility is.
                 $events = Invoke-Command -ComputerName $server -Credential $cred -ScriptBlock {
-                    Get-WinEvent -FilterHashtable @{
-                        LogName = 'System', 'Application'
-                        Level   = 1, 2   # 1=Critical, 2=Error
-                    } -MaxEvents 100 -ErrorAction SilentlyContinue
+                    @('System', 'Application') | ForEach-Object {
+                        Get-WinEvent -LogName $_ -MaxEvents 50 -ErrorAction SilentlyContinue
+                    } | Where-Object { $_.Level -eq 1 -or $_.Level -eq 2 }
                 } -ErrorAction Stop
                 $events = $events | Where-Object { $_.TimeCreated -gt $since }
 
