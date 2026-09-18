@@ -165,6 +165,92 @@ function Start-Session {
 }
 
 # ============================================================
+#  Snapshot: per-session periodic screenshot (readable-resolution
+#  forensic record - who's logged into which seat and what's on
+#  screen, reviewed after the fact rather than watched live)
+# ============================================================
+function Start-Snapshot {
+    $servers = $script:Config.Servers
+    $cred    = $script:Cred
+    $data    = $script:Config.DataPath
+    $user    = $script:Config.User
+
+    Write-Host "[Snapshot] Deploying snapshot.ps1..." -ForegroundColor Cyan
+    Invoke-OnAll -Block {
+        param($base, $d)
+        if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null }
+        Invoke-WebRequest "$base/snapshot.ps1" -OutFile "$d\snapshot.ps1" -UseBasicParsing
+    } -ArgList $GithubBase, $data
+
+    Write-Host "[Snapshot] Parsing sessions..." -ForegroundColor Cyan
+    $initSessions = Invoke-Command -ComputerName $servers -Credential $cred -ScriptBlock {
+        (query session 2>$null) | Select-Object -Skip 1 | ForEach-Object {
+            if ($_ -match '^\s+(\S+)\s+(\d+)\s+\S+') {
+                [PSCustomObject]@{ User = $matches[1]; SessionId = $matches[2] }
+            }
+        } | Where-Object {
+            $_ -and
+            $_.User -notin @('Administrator', $using:user) -and
+            $_.SessionId -match '^\d+$' -and
+            [int]$_.SessionId -lt 65536 -and
+            $_.User -notmatch '^(console|rdp-tcp.*|services)$'
+        }
+    } -ErrorAction SilentlyContinue
+
+    if (-not $initSessions) {
+        Write-Host "[Snapshot] No sessions found." -ForegroundColor Red
+        return
+    }
+
+    $sessionsByServer = $initSessions | Group-Object PSComputerName
+
+    $jobs = foreach ($serverGroup in $sessionsByServer) {
+        $serverIP    = $serverGroup.Name
+        $sessionData = $serverGroup.Group | ForEach-Object {
+            @{ User = $_.User; SessionId = $_.SessionId }
+        }
+        Start-Job -ScriptBlock {
+            param($serverIP, $cred, $sessionData, $data)
+            Invoke-Command -ComputerName $serverIP -Credential $cred -ScriptBlock {
+                param($sessionData, $data)
+                $psexec = "$data\PsExec.exe"
+
+                foreach ($session in $sessionData) {
+                    $sid   = [int]$session.SessionId
+                    $owner = $session.User
+                    $bat   = "C:\Windows\Temp\snapshot_$sid.bat"
+
+                    $content = "@echo off`r`n" +
+                        "start `"`" powershell -WindowStyle Hidden -ExecutionPolicy Bypass " +
+                        "-File `"$data\snapshot.ps1`" -Owner $owner -OutDir `"$data\Snapshots`" -IntervalSec 15`r`n" +
+                        "exit"
+
+                    [System.IO.File]::WriteAllText($bat, $content, [System.Text.Encoding]::ASCII)
+                    Write-Host "[$env:COMPUTERNAME][$owner] sid $sid snapshot start"
+                    & $psexec -accepteula -i $sid -s cmd /c $bat 2>&1
+                }
+            } -ArgumentList $sessionData, $data
+        } -ArgumentList $serverIP, $cred, $sessionData, $data
+    }
+
+    if ($jobs) {
+        $jobs | Wait-Job -Timeout 60 | Out-Null
+        $jobs | Remove-Job -Force
+    }
+    Write-Host "[Snapshot] Started on $($initSessions.Count) session(s)." -ForegroundColor Green
+}
+
+function Stop-Snapshot {
+    Write-Host "[Snapshot] Stopping..." -ForegroundColor Cyan
+    Invoke-OnAll -Block {
+        Get-WmiObject Win32_Process -Filter "Name='powershell.exe'" |
+            Where-Object { $_.CommandLine -like '*snapshot.ps1*' } |
+            ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
+    }
+    Write-Host "[Snapshot] Stopped." -ForegroundColor Green
+}
+
+# ============================================================
 #  Loop control
 # ============================================================
 function Start-Loop {
@@ -350,6 +436,8 @@ function Invoke-Action {
             "K" { Stop-Loop }
             "EC" { Start-EventCollector }
             "ES" { Stop-EventCollector }
+            "SNAP" { Start-Snapshot }
+            "UNSNAP" { Stop-Snapshot }
         }
     }
 }
@@ -421,6 +509,7 @@ function Show-Menu {
     Write-Host "  [S] Session start (explorer stop + kiosk launch)"
     Write-Host "  [L] Loop start    [K] Loop stop"
     Write-Host "  [EC] Event log collector start   [ES] Event log collector stop"
+    Write-Host "  [SNAP] Per-seat snapshot start   [UNSNAP] Snapshot stop"
     Write-Host "  [M] Change mode   [0] Exit"
     Write-Host ""
     Write-Host "  Enter = run 1-6 / select: e.g. 1,3,5"
