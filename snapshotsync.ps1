@@ -34,6 +34,19 @@ function Get-ServerId {
     return "st$($Ip.Split('.')[-1])"
 }
 
+function Get-DestPath {
+    # snapshot.ps1 names files yyyyMMdd_HHmmss.jpg under <owner>\ - group them
+    # further into <owner>\yyyy-MM-dd\ so weeks of accumulation stay easy to
+    # browse and delete a day at a time. Falls back to no date folder if a
+    # filename ever doesn't match the expected pattern.
+    param([string]$LocalFolder, [string]$Owner, [System.IO.FileInfo]$RemoteFile)
+    if ($RemoteFile.BaseName -match '^(\d{4})(\d{2})(\d{2})_') {
+        $dateTag = "$($Matches[1])-$($Matches[2])-$($Matches[3])"
+        return Join-Path $LocalFolder (Join-Path $Owner (Join-Path $dateTag $RemoteFile.Name))
+    }
+    return Join-Path $LocalFolder (Join-Path $Owner $RemoteFile.Name)
+}
+
 try {
     while ($true) {
         foreach ($server in $svrs) {
@@ -53,7 +66,8 @@ try {
 
                     foreach ($rf in $remoteFiles) {
                         $relative = $rf.FullName.Substring($remoteFolder.Length).TrimStart('\')
-                        $destPath = Join-Path $localFolder $relative
+                        $owner    = ($relative -split '\\')[0]
+                        $destPath = Get-DestPath -LocalFolder $localFolder -Owner $owner -RemoteFile $rf
                         $destDir  = Split-Path $destPath -Parent
                         if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
                         Copy-Item -FromSession $session -Path $rf.FullName -Destination $destPath -Force -ErrorAction SilentlyContinue
