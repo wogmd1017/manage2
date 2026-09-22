@@ -270,7 +270,7 @@ function Start-SnapshotSync {
     if (Test-Path $SnapshotSyncLockFile) { Remove-Item $SnapshotSyncLockFile -Force }
 
     $syncScript = "$DataPath\snapshotsync.ps1"
-    $outDir     = "$DataPath\Snapshots"
+    $outDir     = "D:\stsnapshot"
     $enc        = $script:EncPassword
     $servers    = $script:Config.Servers -join ","
     $user       = $script:Config.User
