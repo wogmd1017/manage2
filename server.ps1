@@ -96,7 +96,16 @@ function Clear-StartupItems {
 function Ensure-HisupTools {
     # browsinghistoryview.exe and rclone.exe are only ever used by hisup.bat, so they're
     # provisioned here rather than as a separate global step. rclone.conf (the Google auth)
-    # can't be shipped this way - it stays a manual, one-time drop onto each server.
+    # can't be fetched from GitHub, but a copy has survived rollbacks under the built-in
+    # Administrator profile from an older setup - recover it from there if manager's own
+    # copy is missing.
+    $rcloneConfPath = "$DataPath\rclone.conf"
+    $adminConfPath  = "C:\Users\Administrator\Desktop\data\rclone.conf"
+    if ((-not (Test-Path $rcloneConfPath)) -and (Test-Path $adminConfPath)) {
+        Write-Host "[Scheduler] Recovering rclone.conf from Administrator profile..." -ForegroundColor Cyan
+        Copy-Item $adminConfPath $rcloneConfPath -Force -ErrorAction SilentlyContinue
+    }
+
     $bhvPath = "$DataPath\browsinghistoryview.exe"
     if (-not (Test-Path $bhvPath)) {
         Write-Host "[Scheduler] Downloading BrowsingHistoryView..." -ForegroundColor Cyan
