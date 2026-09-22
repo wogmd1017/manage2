@@ -47,6 +47,27 @@ function Invoke-OnAll {
 }
 
 # ============================================================
+#  Ensure PsExec is on every server before anything that needs it
+#  (Start-Session, Loop, Snapshot) can run. These servers roll back
+#  local state on reboot, so this can't be a one-time "run menu 1"
+#  step - it has to be re-checked every time manage.ps1 starts.
+# ============================================================
+function Ensure-PsExec {
+    Write-Host "[Init] Ensuring PsExec on all servers..." -ForegroundColor Cyan
+    $data = "C:\Users\$($script:Config.User)\Desktop\data"
+    Invoke-OnAll -Block {
+        param($d)
+        if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null }
+        $psexecPath = "$d\PsExec.exe"
+        if (-not (Test-Path $psexecPath)) {
+            Invoke-WebRequest "https://live.sysinternals.com/PsExec.exe" -OutFile $psexecPath -UseBasicParsing
+        }
+        & $psexecPath -accepteula 2>$null
+    } -ArgList $data
+    Write-Host "[Init] PsExec ready." -ForegroundColor Green
+}
+
+# ============================================================
 #  Session: explorer stop + kiosk launch
 # ============================================================
 function Start-Session {
@@ -579,6 +600,7 @@ function Show-Menu {
 # ============================================================
 Initialize-Manage
 Get-Cred
+Ensure-PsExec
 $currentMode = Select-Mode
 
 while ($true) {
