@@ -144,8 +144,14 @@ function Register-Schedulers {
     Invoke-WebRequest "$GithubBase/hisup.bat"  -OutFile "$DataPath\hisup.bat"  -UseBasicParsing
     Ensure-HisupTools
 
-    schtasks /create /tn "hostup" /tr "$DataPath\hostup.bat" /sc minute        /rl highest /f | Out-Null
-    schtasks /create /tn "hisup"  /tr "$DataPath\hisup.bat"  /sc minute /mo 3  /rl highest /f | Out-Null
+    # /ru SYSTEM: without an explicit run-as account, schtasks defaults to
+    # "run only when this user is logged on" (tied to whoever registered it -
+    # manager, over a WinRM session that doesn't count as a logon). That left
+    # the task registered but silently never firing unless manager happened
+    # to have an interactive session open. SYSTEM needs no password and runs
+    # unconditionally, logged on or not.
+    schtasks /create /tn "hostup" /tr "$DataPath\hostup.bat" /sc minute        /rl highest /ru SYSTEM /f | Out-Null
+    schtasks /create /tn "hisup"  /tr "$DataPath\hisup.bat"  /sc minute /mo 3  /rl highest /ru SYSTEM /f | Out-Null
 
     & "$DataPath\hostup.bat"
     Start-Process "$DataPath\hisup.bat" -WindowStyle Minimized
