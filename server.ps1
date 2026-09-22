@@ -108,24 +108,32 @@ function Ensure-HisupTools {
 
     $bhvPath = "$DataPath\browsinghistoryview.exe"
     if (-not (Test-Path $bhvPath)) {
-        Write-Host "[Scheduler] Downloading BrowsingHistoryView..." -ForegroundColor Cyan
-        $bhvZip = "$DataPath\browsinghistoryview.zip"
-        Invoke-WebRequest "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $bhvZip -UseBasicParsing
-        Expand-Archive -Path $bhvZip -DestinationPath $DataPath -Force
-        Remove-Item $bhvZip -Force -ErrorAction SilentlyContinue
+        try {
+            Write-Host "[Scheduler] Downloading BrowsingHistoryView..." -ForegroundColor Cyan
+            $bhvZip = "$DataPath\browsinghistoryview.zip"
+            Invoke-WebRequest "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $bhvZip -UseBasicParsing
+            Expand-Archive -Path $bhvZip -DestinationPath $DataPath -Force
+            Remove-Item $bhvZip -Force -ErrorAction SilentlyContinue
+        } catch {
+            Write-Host "[Scheduler] WARNING: BrowsingHistoryView download failed: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
     }
 
     $rclonePath = "$DataPath\rclone.exe"
     if (-not (Test-Path $rclonePath)) {
-        Write-Host "[Scheduler] Downloading rclone..." -ForegroundColor Cyan
-        $rcZip     = "$DataPath\rclone.zip"
-        $rcExtract = "$DataPath\rclone_extract"
-        Invoke-WebRequest "https://downloads.rclone.org/v1.73.3/rclone-v1.73.3-windows-amd64.zip" -OutFile $rcZip -UseBasicParsing
-        Expand-Archive -Path $rcZip -DestinationPath $rcExtract -Force
-        $found = Get-ChildItem -Path $rcExtract -Filter "rclone.exe" -Recurse | Select-Object -First 1
-        if ($found) { Move-Item $found.FullName -Destination $rclonePath -Force }
-        Remove-Item $rcZip -Force -ErrorAction SilentlyContinue
-        Remove-Item $rcExtract -Recurse -Force -ErrorAction SilentlyContinue
+        try {
+            Write-Host "[Scheduler] Downloading rclone..." -ForegroundColor Cyan
+            $rcZip     = "$DataPath\rclone.zip"
+            $rcExtract = "$DataPath\rclone_extract"
+            Invoke-WebRequest "https://downloads.rclone.org/v1.73.3/rclone-v1.73.3-windows-amd64.zip" -OutFile $rcZip -UseBasicParsing
+            Expand-Archive -Path $rcZip -DestinationPath $rcExtract -Force
+            $found = Get-ChildItem -Path $rcExtract -Filter "rclone.exe" -Recurse | Select-Object -First 1
+            if ($found) { Move-Item $found.FullName -Destination $rclonePath -Force }
+            Remove-Item $rcZip -Force -ErrorAction SilentlyContinue
+            Remove-Item $rcExtract -Recurse -Force -ErrorAction SilentlyContinue
+        } catch {
+            Write-Host "[Scheduler] WARNING: rclone download failed: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
     }
 }
 
