@@ -591,7 +591,7 @@ function Show-Menu {
     Write-Host "  [SNAP] Per-seat snapshot start   [UNSNAP] Snapshot stop"
     Write-Host "  [M] Change mode   [0] Exit"
     Write-Host ""
-    Write-Host "  Enter = run 1-6 / select: e.g. 1,3,5"
+    Write-Host "  Enter = run 1-6 + SNAP / select: e.g. 1,3,5"
     Write-Host "=============================================" -ForegroundColor DarkCyan
 }
 
@@ -621,7 +621,7 @@ while ($true) {
     }
 
     if ([string]::IsNullOrWhiteSpace($rawInput)) {
-        $items = @("1","2","3","4","5","6")
+        $items = @("1","2","3","4","5","6","SNAP")
     } else {
         $items = $rawInput -split '[,\s]+' | ForEach-Object { $_.Trim().ToUpper() }
     }
