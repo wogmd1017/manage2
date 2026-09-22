@@ -93,11 +93,39 @@ function Clear-StartupItems {
 # ============================================================
 #  3. Schedulers
 # ============================================================
+function Ensure-HisupTools {
+    # browsinghistoryview.exe and rclone.exe are only ever used by hisup.bat, so they're
+    # provisioned here rather than as a separate global step. rclone.conf (the Google auth)
+    # can't be shipped this way - it stays a manual, one-time drop onto each server.
+    $bhvPath = "$DataPath\browsinghistoryview.exe"
+    if (-not (Test-Path $bhvPath)) {
+        Write-Host "[Scheduler] Downloading BrowsingHistoryView..." -ForegroundColor Cyan
+        $bhvZip = "$DataPath\browsinghistoryview.zip"
+        Invoke-WebRequest "https://www.nirsoft.net/utils/browsinghistoryview.zip" -OutFile $bhvZip -UseBasicParsing
+        Expand-Archive -Path $bhvZip -DestinationPath $DataPath -Force
+        Remove-Item $bhvZip -Force -ErrorAction SilentlyContinue
+    }
+
+    $rclonePath = "$DataPath\rclone.exe"
+    if (-not (Test-Path $rclonePath)) {
+        Write-Host "[Scheduler] Downloading rclone..." -ForegroundColor Cyan
+        $rcZip     = "$DataPath\rclone.zip"
+        $rcExtract = "$DataPath\rclone_extract"
+        Invoke-WebRequest "https://downloads.rclone.org/v1.73.3/rclone-v1.73.3-windows-amd64.zip" -OutFile $rcZip -UseBasicParsing
+        Expand-Archive -Path $rcZip -DestinationPath $rcExtract -Force
+        $found = Get-ChildItem -Path $rcExtract -Filter "rclone.exe" -Recurse | Select-Object -First 1
+        if ($found) { Move-Item $found.FullName -Destination $rclonePath -Force }
+        Remove-Item $rcZip -Force -ErrorAction SilentlyContinue
+        Remove-Item $rcExtract -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
 function Register-Schedulers {
     Write-Host "[Scheduler] Registering..." -ForegroundColor Cyan
 
     Invoke-WebRequest "$GithubBase/hostup.bat" -OutFile "$DataPath\hostup.bat" -UseBasicParsing
     Invoke-WebRequest "$GithubBase/hisup.bat"  -OutFile "$DataPath\hisup.bat"  -UseBasicParsing
+    Ensure-HisupTools
 
     schtasks /create /tn "hostup" /tr "$DataPath\hostup.bat" /sc minute        /rl highest /f | Out-Null
     schtasks /create /tn "hisup"  /tr "$DataPath\hisup.bat"  /sc minute /mo 3  /rl highest /f | Out-Null
