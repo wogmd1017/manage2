@@ -3,12 +3,14 @@
 #  Run: powershell.exe -File manage.ps1
 # ============================================================
 
-$GithubBase   = "https://raw.githubusercontent.com/wogmd1017/manage2/main"
-$DataPath     = "$env:USERPROFILE\Desktop\data"
-$LockFile     = "$DataPath\loop.lock"
-$EventLockFile = "$DataPath\eventcollect.lock"
-$loopProcess  = $null
-$eventProcess = $null
+$GithubBase          = "https://raw.githubusercontent.com/wogmd1017/manage2/main"
+$DataPath            = "$env:USERPROFILE\Desktop\data"
+$LockFile            = "$DataPath\loop.lock"
+$EventLockFile       = "$DataPath\eventcollect.lock"
+$SnapshotSyncLockFile = "$DataPath\snapshotsync.lock"
+$loopProcess         = $null
+$eventProcess        = $null
+$snapshotSyncProcess = $null
 
 # ============================================================
 #  Init
@@ -20,6 +22,7 @@ function Initialize-Manage {
     Invoke-WebRequest "$GithubBase/server.ps1"       -OutFile "$DataPath\server.ps1"       -UseBasicParsing
     Invoke-WebRequest "$GithubBase/loop.ps1"         -OutFile "$DataPath\loop.ps1"         -UseBasicParsing
     Invoke-WebRequest "$GithubBase/eventcollect.ps1" -OutFile "$DataPath\eventcollect.ps1" -UseBasicParsing
+    Invoke-WebRequest "$GithubBase/snapshotsync.ps1"  -OutFile "$DataPath\snapshotsync.ps1"  -UseBasicParsing
     $script:Config = Import-PowerShellDataFile "$DataPath\config.psd1"
     Write-Host "[Init] Done" -ForegroundColor Green
 }
@@ -238,6 +241,8 @@ function Start-Snapshot {
         $jobs | Remove-Job -Force
     }
     Write-Host "[Snapshot] Started on $($initSessions.Count) session(s)." -ForegroundColor Green
+
+    Start-SnapshotSync
 }
 
 function Stop-Snapshot {
@@ -248,6 +253,57 @@ function Stop-Snapshot {
             ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
     }
     Write-Host "[Snapshot] Stopped." -ForegroundColor Green
+
+    Stop-SnapshotSync
+}
+
+# ============================================================
+#  Snapshot sync: pull screenshots off the servers onto the
+#  teacher PC (servers here roll back on an unclean shutdown, so
+#  nothing captured should sit there for long)
+# ============================================================
+function Start-SnapshotSync {
+    if ($script:snapshotSyncProcess -and -not $script:snapshotSyncProcess.HasExited) {
+        Write-Host "[SnapshotSync] Already running (PID $($script:snapshotSyncProcess.Id))" -ForegroundColor Yellow
+        return
+    }
+    if (Test-Path $SnapshotSyncLockFile) { Remove-Item $SnapshotSyncLockFile -Force }
+
+    $syncScript = "$DataPath\snapshotsync.ps1"
+    $outDir     = "$DataPath\Snapshots"
+    $enc        = $script:EncPassword
+    $servers    = $script:Config.Servers -join ","
+    $user       = $script:Config.User
+    $remoteData = $script:Config.DataPath
+
+    $args = "-NoExit -File `"$syncScript`"" +
+            " -EncPassword `"$enc`"" +
+            " -Servers `"$servers`"" +
+            " -User `"$user`"" +
+            " -RemoteDataPath `"$remoteData`"" +
+            " -OutDir `"$outDir`"" +
+            " -LockFile `"$SnapshotSyncLockFile`""
+
+    $script:snapshotSyncProcess = Start-Process powershell -ArgumentList $args -PassThru
+    Write-Host "[SnapshotSync] Started (PID $($script:snapshotSyncProcess.Id))" -ForegroundColor Green
+}
+
+function Stop-SnapshotSync {
+    if ($script:snapshotSyncProcess -and -not $script:snapshotSyncProcess.HasExited) {
+        $script:snapshotSyncProcess.Kill()
+        Write-Host "[SnapshotSync] Stopped" -ForegroundColor Green
+    } else {
+        Write-Host "[SnapshotSync] Not running" -ForegroundColor Yellow
+    }
+    Remove-Item $SnapshotSyncLockFile -Force -ErrorAction SilentlyContinue
+    $script:snapshotSyncProcess = $null
+}
+
+function Get-SnapshotSyncStatus {
+    if ($script:snapshotSyncProcess -and -not $script:snapshotSyncProcess.HasExited) {
+        return "RUNNING (PID $($script:snapshotSyncProcess.Id))"
+    }
+    return "STOPPED"
 }
 
 # ============================================================
@@ -488,6 +544,7 @@ function Show-Menu {
     param([string]$Mode)
     $loopStatus  = Get-LoopStatus
     $eventStatus = Get-EventCollectorStatus
+    $syncStatus  = Get-SnapshotSyncStatus
     Clear-Host
     Write-Host "=============================================" -ForegroundColor DarkCyan
     Write-Host "  Lab Management Console" -ForegroundColor Cyan
@@ -495,6 +552,7 @@ function Show-Menu {
     Write-Host "  Mode     : $Mode" -ForegroundColor DarkGray
     Write-Host "  Loop     : $loopStatus" -ForegroundColor DarkGray
     Write-Host "  EventLog : $eventStatus" -ForegroundColor DarkGray
+    Write-Host "  SnapSync : $syncStatus" -ForegroundColor DarkGray
     Write-Host "=============================================" -ForegroundColor DarkCyan
     Write-Host ""
     Write-Host "  [1] PsExec check / download"
@@ -530,6 +588,7 @@ while ($true) {
     if ($rawInput -eq "0") {
         Stop-Loop
         Stop-EventCollector
+        Stop-SnapshotSync
         Write-Host "Bye." -ForegroundColor DarkGray
         break
     }
