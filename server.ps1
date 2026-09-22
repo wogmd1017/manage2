@@ -150,8 +150,15 @@ function Register-Schedulers {
     # the task registered but silently never firing unless manager happened
     # to have an interactive session open. SYSTEM needs no password and runs
     # unconditionally, logged on or not.
-    schtasks /create /tn "hostup" /tr "$DataPath\hostup.bat" /sc minute        /rl highest /ru SYSTEM /f | Out-Null
-    schtasks /create /tn "hisup"  /tr "$DataPath\hisup.bat"  /sc minute /mo 3  /rl highest /ru SYSTEM /f | Out-Null
+    #
+    # schtasks.exe is an external tool - a failure doesn't throw a PowerShell
+    # exception, it just sets a non-zero exit code, so check it explicitly
+    # instead of silently swallowing it with Out-Null.
+    $hostupOut = schtasks /create /tn "hostup" /tr "$DataPath\hostup.bat" /sc minute        /rl highest /ru SYSTEM /f 2>&1
+    if ($LASTEXITCODE -ne 0) { Write-Host "[Scheduler] WARNING: hostup task registration failed: $hostupOut" -ForegroundColor Yellow }
+
+    $hisupOut = schtasks /create /tn "hisup"  /tr "$DataPath\hisup.bat"  /sc minute /mo 3  /rl highest /ru SYSTEM /f 2>&1
+    if ($LASTEXITCODE -ne 0) { Write-Host "[Scheduler] WARNING: hisup task registration failed: $hisupOut" -ForegroundColor Yellow }
 
     & "$DataPath\hostup.bat"
     Start-Process "$DataPath\hisup.bat" -WindowStyle Minimized
