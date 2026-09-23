@@ -44,7 +44,12 @@ function Get-DestPath {
     # further into <owner>\yyyy-MM-dd\ so weeks of accumulation stay easy to
     # browse and delete a day at a time. Falls back to no date folder if a
     # filename ever doesn't match the expected pattern.
-    param([string]$LocalFolder, [string]$Owner, [System.IO.FileInfo]$RemoteFile)
+    # $RemoteFile is intentionally untyped: it crosses the Invoke-Command
+    # remoting boundary as a Deserialized.System.IO.FileInfo, not a real
+    # FileInfo, and binding that to a [System.IO.FileInfo] parameter threw a
+    # type-conversion error on every single file (property access like
+    # .BaseName/.Name still works fine on the deserialized object either way).
+    param([string]$LocalFolder, [string]$Owner, $RemoteFile)
     if ($RemoteFile.BaseName -match '^(\d{4})(\d{2})(\d{2})_') {
         $dateTag = "$($Matches[1])-$($Matches[2])-$($Matches[3])"
         return Join-Path $LocalFolder (Join-Path $Owner (Join-Path $dateTag $RemoteFile.Name))
