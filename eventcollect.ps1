@@ -3,7 +3,13 @@
 #  Polls all servers for new Critical/Error events and saves them
 #  locally on the teacher PC (per-server csv), so the history is
 #  kept even if a server later goes unreachable or has to be
-#  power-cycled. Launched by manage.ps1 (Start-EventCollector).
+#  power-cycled.
+#
+#  Each server is checked in its own background job so one slow or
+#  unreachable server doesn't delay checking the others in the same
+#  cycle.
+#
+#  Launched by manage.ps1 (Start-EventCollector).
 # ============================================================
 param(
     [string]$EncPassword,
@@ -11,10 +17,11 @@ param(
     [string]$User,
     [string]$OutDir,
     [string]$LockFile,
-    [int]$PollSeconds = 20
+    [int]$PollSeconds = 20,
+    [int]$JobTimeoutSeconds = 60
 )
 
-$ScriptVersion = "2026-09-16.2"
+$ScriptVersion = "2026-09-23.1"
 Write-Host "[EventCollector] eventcollect.ps1 version $ScriptVersion" -ForegroundColor Cyan
 
 if (Test-Path $LockFile) {
@@ -70,60 +77,99 @@ function Write-EventRow {
     $row | Export-Csv -Path $file -Append -NoTypeInformation -Encoding UTF8
 }
 
+# Runs entirely inside a background job (its own runspace/process), so it
+# can't see anything defined outside it. Returns only plain values (never
+# the raw event objects) to avoid any serialization surprises crossing back
+# out of the job.
+$CheckOneServer = {
+    param($server, $cred, $since)
+
+    try {
+        # -FilterHashtable with both LogName and Level as arrays reliably threw a
+        # Win32 "parameter is incorrect" error on these servers' event log engine,
+        # even with no DateTime involved at all. Falling back to the plain -LogName
+        # form (no FilterHashtable/XPath translation) and filtering Level/time
+        # locally sidesteps whatever that incompatibility is.
+        $events = Invoke-Command -ComputerName $server -Credential $cred -ScriptBlock {
+            @('System', 'Application') | ForEach-Object {
+                Get-WinEvent -LogName $_ -MaxEvents 50 -ErrorAction SilentlyContinue
+            } | Where-Object { $_.Level -eq 1 -or $_.Level -eq 2 }
+        } -ErrorAction Stop
+
+        $events = $events | Where-Object { $_.TimeCreated -gt $since } | Sort-Object TimeCreated
+
+        $flat = @()
+        foreach ($e in $events) {
+            $flat += [PSCustomObject]@{
+                Id           = [int]$e.Id
+                Level        = [int]$e.Level
+                LevelDisplay = [string]$e.LevelDisplayName
+                Provider     = [string]$e.ProviderName
+                LogName      = [string]$e.LogName
+                Message      = [string]$e.Message
+                TimeCreated  = [datetime]$e.TimeCreated
+            }
+        }
+
+        [PSCustomObject]@{ Server = $server; Ok = $true; Events = $flat; Error = $null }
+    } catch {
+        [PSCustomObject]@{ Server = $server; Ok = $false; Events = @(); Error = $_.Exception.Message }
+    }
+}
+
 try {
     while ($true) {
-        foreach ($server in $svrs) {
-            $since = $lastCheck[$server]
-            try {
-                # -FilterHashtable with both LogName and Level as arrays reliably threw a
-                # Win32 "parameter is incorrect" error on these servers' event log engine,
-                # even with no DateTime involved at all. Falling back to the plain -LogName
-                # form (no FilterHashtable/XPath translation) and filtering Level/time
-                # locally sidesteps whatever that incompatibility is.
-                $events = Invoke-Command -ComputerName $server -Credential $cred -ScriptBlock {
-                    @('System', 'Application') | ForEach-Object {
-                        Get-WinEvent -LogName $_ -MaxEvents 50 -ErrorAction SilentlyContinue
-                    } | Where-Object { $_.Level -eq 1 -or $_.Level -eq 2 }
-                } -ErrorAction Stop
-                $events = $events | Where-Object { $_.TimeCreated -gt $since }
+        $jobs = foreach ($server in $svrs) {
+            Start-Job -ScriptBlock $CheckOneServer -ArgumentList $server, $cred, $lastCheck[$server]
+        }
 
+        $jobs | Wait-Job -Timeout $JobTimeoutSeconds | Out-Null
+
+        foreach ($job in $jobs) {
+            $result = Receive-Job -Job $job -ErrorAction SilentlyContinue
+            if (-not $result) { continue }
+
+            $server = $result.Server
+            $now    = Get-Date
+
+            if ($result.Ok) {
                 if ($offline[$server]) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 복구됨" -ForegroundColor Green
-                    Write-EventRow -Server $server -Status "RECOVERED" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "서버 응답 복구" -Time (Get-Date)
+                    Write-EventRow -Server $server -Status "RECOVERED" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "서버 응답 복구" -Time $now
                     $offline[$server] = $false
                 }
 
-                if ($events) {
-                    $events = $events | Sort-Object TimeCreated
-                    foreach ($e in $events) {
-                        Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] EventID $($e.Id) ($($e.LevelDisplayName)) $($e.ProviderName)" -ForegroundColor Yellow
-                        Write-EventRow -Server $server -Status "EVENT" -LogName $e.LogName -Level $e.Level -Provider $e.ProviderName -EventId $e.Id -Message $e.Message -Time $e.TimeCreated
+                if ($result.Events.Count -gt 0) {
+                    foreach ($e in $result.Events) {
+                        Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] EventID $($e.Id) ($($e.LevelDisplay)) $($e.Provider)" -ForegroundColor Yellow
+                        Write-EventRow -Server $server -Status "EVENT" -LogName $e.LogName -Level $e.Level -Provider $e.Provider -EventId $e.Id -Message $e.Message -Time $e.TimeCreated
                     }
-                    $lastCheck[$server] = ($events | Measure-Object -Property TimeCreated -Maximum).Maximum.AddMilliseconds(1)
+                    $lastCheck[$server] = ($result.Events | Measure-Object -Property TimeCreated -Maximum).Maximum.AddMilliseconds(1)
                 }
 
-                $nowOk = Get-Date
-                if (($nowOk - $lastHeartbeat[$server]) -ge $HeartbeatEvery) {
+                if (($now - $lastHeartbeat[$server]) -ge $HeartbeatEvery) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 정상 폴링 중" -ForegroundColor DarkGray
-                    Write-EventRow -Server $server -Status "HEARTBEAT" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "정상 폴링 중 (조용함 = 이상 없음)" -Time $nowOk
-                    $lastHeartbeat[$server] = $nowOk
+                    Write-EventRow -Server $server -Status "HEARTBEAT" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message "정상 폴링 중 (조용함 = 이상 없음)" -Time $now
+                    $lastHeartbeat[$server] = $now
                 }
-            } catch {
-                $nowFail = Get-Date
+            } else {
                 if (-not $offline[$server]) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 응답없음" -ForegroundColor Red
-                    Write-EventRow -Server $server -Status "OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time $nowFail
+                    Write-EventRow -Server $server -Status "OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $result.Error -Time $now
                     $offline[$server]       = $true
-                    $offlineNotice[$server] = $nowFail
-                } elseif (($nowFail - $offlineNotice[$server]) -ge $NoticeEvery) {
+                    $offlineNotice[$server] = $now
+                } elseif (($now - $offlineNotice[$server]) -ge $NoticeEvery) {
                     Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 응답없음 (계속됨)" -ForegroundColor Red
-                    Write-EventRow -Server $server -Status "STILL_OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $_.Exception.Message -Time $nowFail
-                    $offlineNotice[$server] = $nowFail
+                    Write-EventRow -Server $server -Status "STILL_OFFLINE" -LogName "-" -Level 0 -Provider "-" -EventId 0 -Message $result.Error -Time $now
+                    $offlineNotice[$server] = $now
                 }
             }
         }
+
+        $jobs | Remove-Job -Force -ErrorAction SilentlyContinue
         Start-Sleep -Seconds $PollSeconds
     }
 } finally {
+    Get-Job | Remove-Job -Force -ErrorAction SilentlyContinue
     Remove-Item $LockFile -Force -ErrorAction SilentlyContinue
 }
