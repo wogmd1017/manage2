@@ -621,7 +621,10 @@ while ($true) {
     }
 
     if ([string]::IsNullOrWhiteSpace($rawInput)) {
-        $items = @("1","2","3","4","5","6","SNAP")
+        # SNAP runs right after 1-3, before 4-6's permission/registry lockdown
+        # and gpupdate - running it after those was observed to silently
+        # prevent the injected snapshot capture from starting.
+        $items = @("1","2","3","SNAP","4","5","6")
     } else {
         $items = $rawInput -split '[,\s]+' | ForEach-Object { $_.Trim().ToUpper() }
     }
