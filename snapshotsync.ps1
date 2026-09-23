@@ -29,6 +29,11 @@ $sec  = $EncPassword | ConvertTo-SecureString
 $cred = New-Object System.Management.Automation.PSCredential($User, $sec)
 $svrs = $Servers -split ","
 
+$offline      = @{}
+$offlineSince = @{}
+$NoticeEvery  = [TimeSpan]::FromMinutes(5)
+foreach ($s in $svrs) { $offline[$s] = $false }
+
 function Get-ServerId {
     param([string]$Ip)
     return "st$($Ip.Split('.')[-1])"
@@ -56,10 +61,15 @@ try {
             try {
                 $session = New-PSSession -ComputerName $server -Credential $cred -ErrorAction Stop
 
+                if ($offline[$server]) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] 복구됨" -ForegroundColor Green
+                    $offline[$server] = $false
+                }
+
                 $remoteFiles = Invoke-Command -Session $session -ScriptBlock {
                     param($f)
                     if (Test-Path $f) { Get-ChildItem $f -Recurse -File -Filter *.jpg }
-                } -ArgumentList $remoteFolder
+                } -ArgumentList $remoteFolder -ErrorAction Stop
 
                 if ($remoteFiles) {
                     if (-not (Test-Path $localFolder)) { New-Item -ItemType Directory -Path $localFolder -Force | Out-Null }
@@ -84,8 +94,17 @@ try {
 
                 Remove-PSSession $session
             } catch {
-                # Server unreachable this cycle - just retry next poll. Whatever landed on
-                # the teacher PC in earlier cycles is already safe regardless.
+                $now = Get-Date
+                if (-not $offline[$server]) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] sync 실패: $($_.Exception.Message)" -ForegroundColor Red
+                    $offline[$server]      = $true
+                    $offlineSince[$server] = $now
+                } elseif (($now - $offlineSince[$server]) -ge $NoticeEvery) {
+                    Write-Host "$(Get-Date -Format 'HH:mm:ss') [$server] sync 실패 (계속됨): $($_.Exception.Message)" -ForegroundColor Red
+                    $offlineSince[$server] = $now
+                }
+                # Whatever already landed on the teacher PC in earlier cycles is safe
+                # regardless - just retry this server next poll.
             }
         }
         Start-Sleep -Seconds $PollSeconds
